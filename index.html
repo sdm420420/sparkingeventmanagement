@@ -860,14 +860,32 @@ html {
     </nav>
 
     <!-- Home Section -->
-    <section class="hero-section">
+    <section class="hero-section" id="hero-section">
   <div class="overlay">
     <h1>Sparkling Event Management Group Patna</h1>
     <p>Creating unforgettable moments with precision, creativity, and excellence</p>
     <button>Plan Your Event</button>
     <button>View Gallery</button>
   </div>
-    </section>
+</section>
+
+<script>
+  // Background images array
+  const images = ['sp1.jpg', 'sp2.jpg', 'sp3.jpg', 'sp4.jpg'];
+  let current = 0;
+  const hero = document.getElementById('hero-section');
+
+  function changeBackground() {
+    current = (current + 1) % images.length;
+    hero.style.backgroundImage = `url(${images[current]})`;
+  }
+
+  // Initial background
+  hero.style.backgroundImage = `url(${images[0]})`;
+
+  // Change background every 4 seconds
+  setInterval(changeBackground, 4000);
+</script>
     
 <!-- 📅 Next Event Upload Button -->
 <a 
