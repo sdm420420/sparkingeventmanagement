@@ -395,18 +395,6 @@ html {
 </section>
 
 <style>
-<!-- Home Section -->
-<section id="home" class="hero">
-    <div class="hero-content">
-        <p>Creating unforgettable moments with precision, creativity, and excellence</p>
-        <div class="hero-buttons">
-            <a href="#contact" class="btn btn-primary">Plan Your Event</a>
-            <a href="#gallery" class="btn btn-secondary">View Gallery</a>
-        </div>
-    </div>
-</section>
-
-<style>
 /* Hero Section */
 .hero {
     position: relative;
@@ -440,7 +428,7 @@ html {
     align-items: center;
 }
 
-/* Main Text - Centered and Bold */
+/* Main Text */
 .hero-content p {
     font-size: 2.2rem;
     font-weight: 900;
@@ -460,13 +448,14 @@ html {
 
 /* Common Button Style */
 .hero-buttons .btn {
-    padding: 14px 28px;
+    padding: 12px 24px;
     border-radius: 8px;
     font-weight: 600;
     transition: all 0.3s ease;
     text-decoration: none;
     font-size: 1rem;
-    min-width: 180px; /* balanced width */
+    min-width: 160px; /* narrower width */
+    max-width: 220px; /* prevent over-expanding */
     text-align: center;
 }
 
@@ -507,9 +496,10 @@ html {
     }
 
     .hero-buttons .btn {
-        width: 80%; /* बटन चौड़े लेकिन संतुलित दिखेंगे */
-        padding: 14px 0;
+        width: 70%;  /* 👈 अब दोनों बटन मोबाइल पर perfect दिखेंगे */
+        max-width: 280px;
         font-size: 1.05rem;
+        padding: 12px 0;
     }
 }
 </style>
