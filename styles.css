@@ -502,3 +502,44 @@ html {
     }
 }
 </style>
+/* Service Card Container */
+.service-card {
+    background-color: #fff;           /* कार्ड का बैकग्राउंड */
+    border-radius: 12px;              /* गोल किनारे */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* हल्का shadow */
+    padding: 20px;
+    text-align: center;               /* फोटो और टेक्स्ट center में */
+    transition: transform 0.3s;       /* hover effect */
+    width: 200px;                     /* कार्ड का width */
+    margin: 15px;
+    display: inline-block;            /* cards side by side दिखाने के लिए */
+}
+
+/* Hover effect */
+.service-card:hover {
+    transform: translateY(-5px);      /* hover पर हल्का उठे */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Service Icon / Photo */
+.service-card .service-icon img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;   /* फोटो को कार्ड के अंदर सही दिखाना */
+    margin-bottom: 15px;
+}
+
+/* Title */
+.service-card h3 {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+/* Description */
+.service-card p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+}
