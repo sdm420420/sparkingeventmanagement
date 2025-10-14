@@ -8,6 +8,9 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+  <!-- Lightbox CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 
@@ -74,6 +77,7 @@
       object-fit: cover;
       border-radius: 10px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
     }
     .gallery-container img:hover {
       transform: scale(1.05);
@@ -146,7 +150,7 @@
 
   <!-- Header -->
   <section class="profile-header">
-    <img src="Images/sakshi.jpg" alt="Sakshi Parashar">
+    <img src="images/sakshi.jpg" alt="Sakshi Parashar">
     <h1>Sakshi Parashar</h1>
     <p>Event Manager | Sparkling Event Management Group Patna</p>
   </section>
@@ -166,15 +170,23 @@
   </section>
 
   <!-- Gallery -->
-<section class="gallery">
-  <h2>Previous Events</h2>
-  <div class="gallery-container">
-    <img src="images/sp5.jpg" alt="Event 1">
-    <img src="images/sp6.jpg" alt="Event 2">
-    <img src="images/sp7.jpg" alt="Event 3">
-    <img src="images/sp8.jpg" alt="Event 4">
-  </div>
-</section>
+  <section class="gallery">
+    <h2>Previous Events</h2>
+    <div class="gallery-container">
+      <a href="images/sp5.jpg" data-lightbox="events" data-title="Event 1">
+        <img src="images/sp5.jpg" alt="Event 1">
+      </a>
+      <a href="images/sp6.jpg" data-lightbox="events" data-title="Event 2">
+        <img src="images/sp6.jpg" alt="Event 2">
+      </a>
+      <a href="images/sp7.jpg" data-lightbox="events" data-title="Event 3">
+        <img src="images/sp7.jpg" alt="Event 3">
+      </a>
+      <a href="images/sp8.jpg" data-lightbox="events" data-title="Event 4">
+        <img src="images/sp8.jpg" alt="Event 4">
+      </a>
+    </div>
+  </section>
 
   <!-- Contact -->
   <section class="contact">
@@ -193,6 +205,9 @@
   <footer>
     &copy; 2025 Sparkling Event Management Group Patna. All Rights Reserved.
   </footer>
+
+  <!-- Lightbox JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 
 </body>
 </html>
