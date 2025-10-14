@@ -399,12 +399,13 @@ html {
 .hero {
     position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center;       /* Vertical center */
+    justify-content: center;   /* Horizontal center */
     height: 100vh;
     background: url('Images/sp1.jpg') no-repeat center center/cover;
     text-align: center;
     overflow: hidden;
+    padding: 0 20px;
 }
 
 .hero::before {
@@ -421,27 +422,37 @@ html {
     z-index: 2;
     color: white;
     max-width: 800px;
-    padding: 0 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Main Text */
+/* Main Text - Centered and Bold */
 .hero-content p {
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 2.2rem;
+    font-weight: 900;
     color: #ffffff;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    text-shadow: 3px 3px 12px rgba(255, 105, 180, 0.7);
     margin-bottom: 40px;
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 /* Buttons */
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;  /* Space between buttons */
+}
+
 .hero-buttons .btn {
-    padding: 12px 25px;
-    margin: 0 10px;
+    padding: 14px 28px;
     border-radius: 8px;
     font-weight: 600;
     transition: all 0.3s ease;
     text-decoration: none;
+    font-size: 1rem;
 }
 
 /* 🎀 Pink Button */
@@ -467,10 +478,20 @@ html {
     transform: translateY(-3px);
 }
 
-/* Responsive */
+/* Responsive - for mobile */
 @media (max-width: 768px) {
     .hero-content p {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero-buttons .btn {
+        width: 80%;
+        font-size: 1rem;
     }
 }
 </style>
