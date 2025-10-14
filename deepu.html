@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deepu Kumar | Corporate Events Head - Sparkling Event Management Group Patna</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Page Header */
+    .profile-header {
+      background: linear-gradient(135deg, #1a365d, #d4af37);
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .profile-header img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 5px solid white;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+    .profile-header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+    .profile-header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    /* About Section */
+    .profile-about {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      line-height: 1.8;
+      color: #333;
+      text-align: center;
+    }
+    .profile-about h2 {
+      color: #1a365d;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+
+    /* Photo Gallery */
+    .gallery {
+      padding: 50px 20px;
+      background: #f8f9fa;
+    }
+    .gallery h2 {
+      text-align: center;
+      color: #1a365d;
+      margin-bottom: 30px;
+    }
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      justify-content: center;
+      padding: 0 10px;
+    }
+    .gallery-container img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .gallery-container img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    /* Contact Section */
+    .contact {
+      background: linear-gradient(135deg, #1a365d, #2a4378);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .contact h2 {
+      margin-bottom: 20px;
+    }
+    .contact p {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+    .social-links {
+      margin-top: 15px;
+    }
+    .social-links a {
+      color: white;
+      font-size: 20px;
+      margin: 0 10px;
+      display: inline-block;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    .social-links a:hover {
+      color: #d4af37;
+      transform: scale(1.2);
+    }
+
+    /* Back Button */
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background: #d4af37;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .back-btn:hover {
+      background: #b8941f;
+      transform: translateY(-3px);
+    }
+
+    footer {
+      background: #111;
+      color: #bbb;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .profile-header h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <section class="profile-header">
+    <img src="Images/deepu.jpg" alt="Deepu Kumar">
+    <h1>Deepu Kumar</h1>
+    <p>Corporate Events Head | Sparkling Event Management Group Patna</p>
+  </section>
+
+  <!-- About -->
+  <section class="profile-about">
+    <h2>About Deepu</h2>
+    <p>
+      Deepu Kumar is an expert Corporate Event Planner known for his precision, creativity, 
+      and flawless execution. With over 8 years of experience in managing large-scale conferences, 
+      business summits, and corporate celebrations, he ensures every event leaves a lasting impression.  
+    </p>
+    <p>
+      His strong leadership and commitment to quality have made Sparkling Event Management Group Patna 
+      a trusted name for top-level corporate clients and organizations.
+    </p>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <h2>Previous Events</h2>
+    <div class="gallery-container">
+      <img src="Images/deepu-event1.jpg" alt="Corporate Event 1">
+      <img src="Images/deepu-event2.jpg" alt="Corporate Event 2">
+      <img src="Images/deepu-event3.jpg" alt="Corporate Event 3">
+      <img src="Images/deepu-event4.jpg" alt="Corporate Event 4">
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact">
+    <h2>Contact Deepu</h2>
+    <p><i class="fa-solid fa-phone"></i> +91 98350 99372</p>
+    <p><i class="fa-solid fa-envelope"></i> deepu@sparklingevent.com</p>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+
+    <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+  </section>
+
+  <footer>
+    &copy; 2025 Sparkling Event Management Group Patna. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
