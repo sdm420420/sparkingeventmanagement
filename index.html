@@ -860,32 +860,17 @@ html {
     </nav>
 
     <!-- Home Section -->
-    <section class="hero-section">
-  <div class="hero-slides">
-    <img src="sp1.jpg" class="slide active">
-    <img src="sp2.jpg" class="slide">
-    <img src="sp3.jpg" class="slide">
-    <img src="sp4.jpg" class="slide">
-  </div>
-  <div class="overlay">
-    <h1>Sparkling Event Management Group Patna</h1>
-    <p>Creating unforgettable moments with precision, creativity, and excellence</p>
-    <button>Plan Your Event</button>
-    <button>View Gallery</button>
-  </div>
-</section>
-
-<script>
-  const slides = document.querySelectorAll('.hero-slides .slide');
-  let current = 0;
-
-  function nextSlide() {
-    slides[current].classList.remove('active');
-    current = (current + 1) % slides.length;
-    slides[current].classList.add('active');
-  }
-
-  setInterval(nextSlide, 4000); // हर 4 सेकंड बदलें
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Sparkling Event Management Group Patna</h1>
+            <p>Creating unforgettable moments with precision, creativity, and excellence</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Plan Your Event</a>
+                <a href="#gallery" class="btn btn-secondary">View Gallery</a>
+            </div>
+        </div>
+        <div class="hero-image"></div>
+    </section>
     
 <!-- 📅 Next Event Upload Button -->
 <a 
