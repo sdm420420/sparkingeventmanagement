@@ -383,3 +383,94 @@ html {
 .hero-image {
   display: none; /* अगर आप सिर्फ बैकग्राउंड इमेज चाहते हैं */
 }
+<!-- Home Section -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <p>Creating unforgettable moments with precision, creativity, and excellence</p>
+        <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">Plan Your Event</a>
+            <a href="#gallery" class="btn btn-secondary">View Gallery</a>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Hero Section */
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: url('Images/sp1.jpg') no-repeat center center/cover;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+/* Main Text */
+.hero-content p {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+/* Buttons */
+.hero-buttons .btn {
+    padding: 12px 25px;
+    margin: 0 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* 🎀 Pink Button */
+.btn-primary {
+    background: #ff4da6;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #ff1a8c;
+    transform: translateY(-3px);
+}
+
+/* White Transparent Button */
+.btn-secondary {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background: rgba(255,255,255,0.4);
+    transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content p {
+        font-size: 1.5rem;
+    }
+}
+</style>
