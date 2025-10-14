@@ -282,3 +282,68 @@ html {
     font-size: 1rem;
   }
 }
+/* ==========================
+   Modern Our Team Section
+   ========================== */
+.team-section {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f8f9fa, #eaf1ff);
+}
+
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.team-member {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  width: 230px;
+  text-align: center;
+  padding: 20px;
+  text-decoration: none;
+  color: #222;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.team-member:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+.team-member img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 4px solid var(--secondary-color);
+  transition: transform 0.3s ease;
+}
+.team-member:hover img {
+  transform: scale(1.08);
+}
+.team-member h3 {
+  margin: 10px 0 5px;
+  font-size: 20px;
+  color: var(--primary-color);
+}
+.team-member p {
+  color: #555;
+  font-size: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .team-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .team-member {
+    width: 85%;
+  }
+}
