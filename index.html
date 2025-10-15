@@ -1307,30 +1307,19 @@ filterBtns.forEach(btn => {
 });
 
 // Form Submission
-document.getElementById('eventForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Get form values
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const eventType = document.getElementById('eventType').value;
-    const eventDate = document.getElementById('eventDate').value;
-    const message = document.getElementById('message').value;
-    
-    // Simple validation
-    if (name === '' || email === '' || phone === '' || eventType === '' || eventDate === '' || message === '') {
-        alert('Please fill in all fields');
-        return;
-    }
-    
-    // Here you would normally send the form data to a server
-    // For demo purposes, we'll just show a success message
-    alert('Thank you for your inquiry! We will contact you soon.');
-    
-    // Reset form
-    this.reset();
-});
+<form action="https://formsubmit.co/sparklingeventpatna@gmail.com" method="POST">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="https://sparklingeventmanagement.vercel.app/thankyou.html">
+
+  <input type="text" id="name" name="name" placeholder="Your Name" required>
+  <input type="email" id="email" name="email" placeholder="Your Email" required>
+  <input type="text" id="phone" name="phone" placeholder="Your Phone Number" required>
+  <input type="text" id="eventType" name="eventType" placeholder="Event Type" required>
+  <input type="date" id="eventDate" name="eventDate" required>
+  <textarea id="message" name="message" placeholder="Event Details" required></textarea>
+  
+  <button type="submit">Send Message</button>
+</form>
 
 // Newsletter Form
 document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
