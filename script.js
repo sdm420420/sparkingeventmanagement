@@ -59,7 +59,6 @@ document.getElementById('eventForm').addEventListener('submit', function(e) {
         alert('Please fill in all fields');
         return;
     }
-    
     alert('Thank you for your inquiry! We will contact you soon.');
     this.reset();
 });
