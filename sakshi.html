@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,6 +7,9 @@
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Lightbox CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
@@ -68,12 +71,16 @@
       justify-content: center;
       padding: 0 10px;
     }
+    .gallery-container a {
+      display: block;
+    }
     .gallery-container img {
       width: 100%;
       height: 250px;
       object-fit: cover;
       border-radius: 10px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
     }
     .gallery-container img:hover {
       transform: scale(1.05);
@@ -169,10 +176,18 @@
   <section class="gallery">
     <h2>Previous Events</h2>
     <div class="gallery-container">
-      <img src="Images/sp5.jpg" alt="Wedding Event 1">
-      <img src="Images/sp6.jpg" alt="Corporate Event 2">
-      <img src="Images/sp7.jpg" alt="Birthday Party 3">
-      <img src="Images/sp8.jpg" alt="Anniversary Event 4">
+      <a href="Images/sp5.jpg" data-lightbox="events" data-title="Wedding Event">
+        <img src="Images/sp5.jpg" alt="Wedding Event 1">
+      </a>
+      <a href="Images/sp6.jpg" data-lightbox="events" data-title="Corporate Event">
+        <img src="Images/sp6.jpg" alt="Corporate Event 2">
+      </a>
+      <a href="Images/sp7.jpg" data-lightbox="events" data-title="Birthday Party">
+        <img src="Images/sp7.jpg" alt="Birthday Party 3">
+      </a>
+      <a href="Images/sp8.jpg" data-lightbox="events" data-title="Anniversary Event">
+        <img src="Images/sp8.jpg" alt="Anniversary Event 4">
+      </a>
     </div>
   </section>
 
@@ -193,6 +208,12 @@
   <footer>
     &copy; 2025 Sparkling Event Management Group Patna. All Rights Reserved.
   </footer>
+
+  <!-- jQuery (Required for Lightbox) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  
+  <!-- Lightbox JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 
 </body>
 </html>
