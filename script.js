@@ -35,8 +35,8 @@ filterBtns.forEach(btn => {
 });
 
 // WhatsApp Form Submission
-document.getElementById('eventForm').addEventListener('submit', function(e){
-    e.preventDefault(); // prevent page reload
+document.getElementById('eventForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // page reload रोकता है
 
     const name = this.querySelector('[name="name"]').value;
     const email = this.querySelector('[name="email"]').value;
@@ -45,16 +45,17 @@ document.getElementById('eventForm').addEventListener('submit', function(e){
     const eventDate = this.querySelector('[name="eventDate"]').value;
     const message = this.querySelector('[name="message"]').value;
 
-    if(name === '' || email === '' || message === ''){
-        alert('Please fill all required fields!');
+    if(name === '' || email === '' || message === '') {
+        alert('Please fill in Name, Email, and Message');
         return;
     }
 
-    const whatsappNumber = '919835099372';
-    const text = `New Event Inquiry:%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AEvent Type: ${eventType}%0AEvent Date: ${eventDate}%0AMessage: ${message}`;
+    const whatsappNumber = '919835099372'; // +91 country code
+    const text = `Hello, I want to book an event.\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nEvent Type: ${eventType}\nEvent Date: ${eventDate}\nMessage: ${message}`;
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
 
-    // Open WhatsApp link
-    window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank');
+    window.open(url, '_blank');
+});;
 
     this.reset();
 });
