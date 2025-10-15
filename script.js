@@ -19,9 +19,7 @@ const galleryItems = document.querySelectorAll('.gallery-item');
 
 filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-        // Remove active class from all buttons
         filterBtns.forEach(btn => btn.classList.remove('active'));
-        // Add active class to clicked button
         btn.classList.add('active');
         
         const filter = btn.getAttribute('data-filter');
@@ -44,24 +42,8 @@ filterBtns.forEach(btn => {
     });
 });
 
-// Form Submission
-document.getElementById('eventForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const eventType = document.getElementById('eventType').value;
-    const eventDate = document.getElementById('eventDate').value;
-    const message = document.getElementById('message').value;
-    
-    if (name === '' || email === '' || phone === '' || eventType === '' || eventDate === '' || message === '') {
-        alert('Please fill in all fields');
-        return;
-    }
-    alert('Thank you for your inquiry! We will contact you soon.');
-    this.reset();
-});
+// ✅ NOTE: FormSubmit के लिए JS में कोई preventDefault() नहीं चाहिए,
+// इसलिए नीचे वाला पुराना "Form Submission" block हटा दिया गया है.
 
 // Newsletter Form
 document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
@@ -120,40 +102,40 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 document.querySelectorAll('.service-card, .testimonial, .team-member, .service-detail-item, .gallery-item').forEach(el => {
-    el
+    observer.observe(el);
+});
+
 // ---------- 3D Hero Section ----------
 const heroContainer = document.getElementById('three-hero');
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-renderer.setSize(window.innerWidth, window.innerHeight);
-heroContainer.appendChild(renderer.domElement);
-
-// Cube
-const geometry = new THREE.BoxGeometry(2, 2, 2);
-const material = new THREE.MeshStandardMaterial({ color: 0x00ff00, wireframe: false });
-const cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
-
-// Light
-const light = new THREE.DirectionalLight(0xffffff, 1);
-light.position.set(5,5,5);
-scene.add(light);
-
-camera.position.z = 5;
-
-// Animate function
-function animateHero() {
-    requestAnimationFrame(animateHero);
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
-    renderer.render(scene, camera);
-}
-animateHero();
-
-// Handle window resize
-window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
+if (heroContainer) {
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
-});
+    heroContainer.appendChild(renderer.domElement);
+
+    const geometry = new THREE.BoxGeometry(2, 2, 2);
+    const material = new THREE.MeshStandardMaterial({ color: 0x00ff00, wireframe: false });
+    const cube = new THREE.Mesh(geometry, material);
+    scene.add(cube);
+
+    const light = new THREE.DirectionalLight(0xffffff, 1);
+    light.position.set(5, 5, 5);
+    scene.add(light);
+
+    camera.position.z = 5;
+
+    function animateHero() {
+        requestAnimationFrame(animateHero);
+        cube.rotation.x += 0.01;
+        cube.rotation.y += 0.01;
+        renderer.render(scene, camera);
+    }
+    animateHero();
+
+    window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+}
