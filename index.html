@@ -1308,12 +1308,13 @@ filterBtns.forEach(btn => {
 
 // Form Submission
 <form action="https://formsubmit.co/sparkingemgpatna@gmail.com" method="POST">
+  <!-- Hidden fields for security and redirect -->
   <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_next" value="https://sparklingeventmanagement.vercel.app/thankyou.html">
+  <input type="hidden" name="_next" value="https://formsubmit.co/thank-you">
 
   <input type="text" id="name" name="name" placeholder="Your Name" required>
   <input type="email" id="email" name="email" placeholder="Your Email" required>
-  <input type="text" id="phone" name="phone" placeholder="Your Phone Number" required>
+  <input type="text" id="phone" name="phone" placeholder="Your Phone Number">
   <input type="text" id="eventType" name="eventType" placeholder="Event Type" required>
   <input type="date" id="eventDate" name="eventDate" required>
   <textarea id="message" name="message" placeholder="Event Details" required></textarea>
