@@ -57,9 +57,6 @@ document.getElementById('eventForm').addEventListener('submit', function(e) {
     window.open(url, '_blank');
 });;
 
-    this.reset();
-});
-
 // Smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
     anchor.addEventListener('click',function(e){
