@@ -42,9 +42,6 @@ filterBtns.forEach(btn => {
     });
 });
 
-// ✅ NOTE: FormSubmit के लिए JS में कोई preventDefault() नहीं चाहिए,
-// इसलिए नीचे वाला पुराना "Form Submission" block हटा दिया गया है.
-
 // Newsletter Form
 document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -60,7 +57,7 @@ document.querySelector('.newsletter-form').addEventListener('submit', function(e
     this.reset();
 });
 
-// Smooth scrolling for all links
+// Smooth scrolling for navigation links only
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
