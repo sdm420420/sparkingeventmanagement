@@ -730,3 +730,17 @@ html {
         transform: translateY(0);
     }
 }
+/* Replace the selector with the real one you found */
+.selector-you-found {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* remove any decorative pseudo-element */
+.selector-you-found::before,
+.selector-you-found::after {
+  background: none !important;
+  display: none !important;
+  content: none !important;
+}
