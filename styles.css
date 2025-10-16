@@ -730,17 +730,13 @@ html {
         transform: translateY(0);
     }
 }
-/* Replace the selector with the real one you found */
-.selector-you-found {
+/* --- Remove Blue Background from 'Shri Krishna Kahte Hain' section --- */
+.krishna-text, 
+.krishna-section, 
+#krishna, 
+h2, h3 {
   background: transparent !important;
   background-color: transparent !important;
   background-image: none !important;
-}
-
-/* remove any decorative pseudo-element */
-.selector-you-found::before,
-.selector-you-found::after {
-  background: none !important;
-  display: none !important;
-  content: none !important;
+  color: #fff !important; /* optional - text visible on dark bg */
 }
