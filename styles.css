@@ -787,3 +787,92 @@ html {
         margin: 10px 0;
     }
 }
+/* ==========================
+   Services Cards 3D Green Glow
+   ========================== */
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.service-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 25px 20px;
+    width: 220px;
+    text-align: center;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.4), 0 0 25px rgba(0, 255, 0, 0.2);
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    cursor: pointer;
+    perspective: 1000px; /* 3D effect */
+}
+
+/* 3D Hover Glow */
+.service-card:hover {
+    transform: rotateY(5deg) rotateX(5deg) translateY(-5px) scale(1.05);
+    box-shadow: 0 0 30px 5px rgba(0, 255, 0, 0.8),
+                0 0 50px 15px rgba(0, 255, 0, 0.6);
+}
+
+/* Service Icon / Image */
+.service-card .service-icon img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* Title */
+.service-card h3 {
+    font-size: 18px;
+    color: #1a365d;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+/* Description */
+.service-card p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* Optional: glowing overlay animation */
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, rgba(0,255,0,0.2), rgba(0,255,0,0.6), rgba(0,255,0,0.2));
+    transform: rotate(0deg);
+    z-index: -1;
+    animation: rotateGlow 4s linear infinite;
+    border-radius: 15px;
+}
+
+/* Animation for 3D glowing overlay */
+@keyframes rotateGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .services-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .service-card {
+        width: 85%;
+        margin-bottom: 20px;
+    }
+}
