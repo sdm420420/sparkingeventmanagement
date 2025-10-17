@@ -1,3 +1,12 @@
+body {
+  background-color: #f0f0f0; /* light grey background */
+  color: #1a365d; /* dark text color */
+}
+
+nav a, .menu a, h1, h2, h3, p, li {
+  color: #1a365d; /* make all text visible */
+}
+
 /* ======================
    Sparkling Event CSS
    ====================== */
