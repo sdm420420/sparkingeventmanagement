@@ -507,3 +507,216 @@ html {
     .quote-hindi { font-size: 1.1rem; }
     .quote-english { font-size: 1rem; }
 }
+/* ==========================
+   Sparkling Event Interactive CSS
+   ========================== */
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1a365d;
+    --secondary-color: #d4af37;
+    --pink-color: #ff4da6;
+    --text-color: #333;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-color: #fff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ==========================
+   Hero Section
+   ========================== */
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: url('Images/sp1.jpg') no-repeat center center/cover;
+    text-align: center;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top:0; left:0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.45);
+    z-index:1;
+}
+
+/* Hero Content */
+.hero-content {
+    position: relative;
+    z-index:2;
+    max-width: 800px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: heroFadeIn 1s ease forwards;
+}
+
+/* Hero Text Animation */
+.hero-content p {
+    font-size: 2.2rem;
+    font-weight: 900;
+    background: linear-gradient(90deg, #ff85c1, var(--pink-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 6px rgba(255,77,166,0.5);
+    margin-bottom: 40px;
+    line-height: 1.4;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: textSlideUp 1.2s ease forwards;
+}
+
+/* Hero Buttons */
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: buttonsFadeIn 1.5s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Primary Button */
+.btn-primary {
+    background: var(--pink-color);
+    color: #fff;
+}
+.btn-primary:hover {
+    background: #ff1a8c;
+    transform: scale(1.05) translateY(-2px);
+}
+
+/* Secondary Button */
+.btn-secondary {
+    background: rgba(255,255,255,0.3);
+    color: var(--pink-color);
+    border: 2px solid var(--pink-color);
+}
+.btn-secondary:hover {
+    background: var(--pink-color);
+    color: #fff;
+    transform: scale(1.05) translateY(-2px);
+}
+
+/* ==========================
+   Services Section
+   ========================== */
+.services-overview {
+    padding: 80px 20px;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 220px;
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s ease forwards;
+}
+
+/* Hover effect */
+.service-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Service Images */
+.service-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* Titles and Description */
+.service-card h3 {
+    font-size: 18px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+.service-card p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* ==========================
+   Animations
+   ========================== */
+@keyframes textSlideUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes buttonsFadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Hero FadeIn for section */
+@keyframes heroFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ==========================
+   Responsive
+   ========================== */
+@media (max-width: 768px) {
+    .hero-content p { font-size: 1.5rem; }
+    .hero-buttons { flex-direction: column; width: 100%; }
+    .hero-buttons .btn { width: 70%; max-width: 280px; font-size: 1.05rem; padding: 12px 0; }
+
+    .services-grid { flex-direction: column; align-items: center; }
+    .service-card { width: 85%; }
+}
