@@ -3,1396 +3,720 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generated Website</title>
+    <title>Sparking Event Management Group Patna</title>
     <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --primary-color: #1a365d; /* Deep Blue */
-    --secondary-color: #d4af37; /* Gold */
-    --light-color: #f8f9fa;
-    --dark-color: #343a40;
-    --text-color: #333;
-    --transition: all 0.3s ease;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    overflow-x: hidden;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: var(--primary-color);
-    position: relative;
-    padding-bottom: 15px;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background: var(--secondary-color);
-}
-
-/* Navigation */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    transition: var(--transition);
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0;
-}
-
-.logo h2 {
-    color: var(--primary-color);
-    font-size: 1.8rem;
-}
-
-.logo i {
-    color: var(--secondary-color);
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-}
-
-.nav-menu li {
-    margin-left: 2rem;
-}
-
-.nav-link {
-    text-decoration: none;
-    color: var(--dark-color);
-    font-weight: 500;
-    transition: var(--transition);
-    position: relative;
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--secondary-color);
-    transition: var(--transition);
-}
-
-.nav-link:hover {
-    color: var(--primary-color);
-}
-
-.nav-link:hover::after {
-    width: 100%;
-}
-
-.hamburger {
-    display: none;
-    cursor: pointer;
-}
-
-.hamburger span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px 0;
-    background: var(--dark-color);
-    transition: var(--transition);
-}
-
-/* Hero Section */
-.hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(rgba(26, 54, 93, 0.8), rgba(26, 54, 93, 0.8)), url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-
-.hero-content {
-    flex: 1;
-    padding-left: 5%;
-    color: white;
-    max-width: 600px;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-}
-
-.hero p {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 1rem;
-}
-
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: var(--transition);
-    cursor: pointer;
-    border: none;
-    font-size: 1rem;
-}
-
-.btn-primary {
-    background: var(--secondary-color);
-    color: white;
-}
-
-.btn-primary:hover {
-    background: #b8941f;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.btn-secondary {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
-}
-
-.btn-secondary:hover {
-    background: white;
-    color: var(--primary-color);
-}
-
-/* Services Overview */
-.services-overview {
-    padding: 5rem 0;
-    background: var(--light-color);
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.service-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: var(--transition);
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-.service-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 1.5rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.service-icon i {
-    font-size: 2rem;
-    color: white;
-}
-
-.service-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-}
-
-/* Testimonials */
-.testimonials {
-    padding: 5rem 0;
-    background: white;
-}
-
-.testimonials-slider {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-.testimonial {
-    background: var(--light-color);
-    padding: 2rem;
-    border-radius: 10px;
-    position: relative;
-}
-
-.testimonial-content i {
-    font-size: 2rem;
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
-}
-
-.testimonial-content p {
-    font-style: italic;
-    margin-bottom: 1.5rem;
-}
-
-.testimonial-author h4 {
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-.client-logos {
-    text-align: center;
-}
-
-.client-logos h3 {
-    margin-bottom: 2rem;
-    color: var(--dark-color);
-}
-
-.logos-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-.logo-item {
-    padding: 1rem 2rem;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.logo-item i {
-    color: var(--secondary-color);
-}
-
-/* About Section */
-.about {
-    padding: 5rem 0;
-    background: var(--light-color);
-}
-
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-}
-
-.about-text h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-size: 1.8rem;
-}
-
-.about-text p {
-    margin-bottom: 1.5rem;
-}
-
-.contact-info {
-    margin-top: 2rem;
-}
-
-.contact-info p {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.contact-info i {
-    color: var(--secondary-color);
-}
-
-.team-section h3 {
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
-}
-
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-}
-
-.team-member {
-    text-align: center;
-}
-
-.team-photo {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    margin: 0 auto 1rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-}
-
-.team-member h4 {
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-/* Services Section */
-.services {
-    padding: 5rem 0;
-    background: white;
-}
-
-.services-detail {
-    display: grid;
-    gap: 3rem;
-}
-
-.service-detail-item {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-}
-
-.service-detail-item:nth-child(even) {
-    direction: rtl;
-}
-
-.service-detail-item:nth-child(even) > * {
-    direction: ltr;
-}
-
-.service-image {
-    height: 300px;
-    border-radius: 10px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-}
-
-.service-detail-content h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-size: 2rem;
-}
-
-.service-detail-content ul {
-    margin: 1.5rem 0;
-    list-style: none;
-}
-
-.service-detail-content ul li {
-    padding: 0.5rem 0;
-    position: relative;
-    padding-left: 1.5rem;
-}
-
-.service-detail-content ul li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--secondary-color);
-    font-weight: bold;
-}
-
-.quote-btn {
-    background: var(--primary-color);
-    color: white;
-    padding: 10px 25px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.quote-btn:hover {
-    background: #0f2444;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Gallery Section */
-.gallery {
-    padding: 5rem 0;
-    background: var(--light-color);
-}
-
-.filter-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-}
-
-.filter-btn {
-    padding: 8px 20px;
-    background: white;
-    border: 1px solid var(--primary-color);
-    border-radius: 5px;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.filter-btn.active,
-.filter-btn:hover {
-    background: var(--primary-color);
-    color: white;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
-}
-
-.gallery-item {
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-    height: 250px;
-    cursor: pointer;
-}
-
-.gallery-image {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    transition: var(--transition);
-}
-
-.gallery-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(26, 54, 93, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: var(--transition);
-}
-
-.gallery-overlay h3 {
-    color: white;
-    font-size: 1.5rem;
-}
-
-.gallery-item:hover .gallery-overlay {
-    opacity: 1;
-}
-
-/* Contact Section */
-.contact {
-    padding: 5rem 0;
-    background: white;
-}
-
-.contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-}
-
-.contact-form h3,
-.contact-details h3 {
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-family: inherit;
-    transition: var(--transition);
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(26, 54, 93, 0.1);
-}
-
-.contact-details p {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.contact-details i {
-    color: var(--secondary-color);
-    width: 20px;
-}
-
-.social-links {
-    margin-top: 2rem;
-}
-
-.social-links h3 {
-    margin-bottom: 1rem;
-}
-
-.social-link {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background: var(--primary-color);
-    color: white;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 40px;
-    margin-right: 10px;
-    transition: var(--transition);
-}
-
-.social-link:hover {
-    background: var(--secondary-color);
-    transform: translateY(-3px);
-}
-
-.map-container {
-    height: 300px;
-    margin-top: 2rem;
-    border-radius: 10px;
-    overflow: hidden;
-    background: #ddd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#map {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-}
-
-/* Footer */
-.footer {
-    background: var(--dark-color);
-    color: white;
-    padding: 4rem 0 1rem;
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-.footer-logo h2 {
-    color: white;
-    margin-bottom: 1rem;
-}
-
-.footer-logo i {
-    color: var(--secondary-color);
-}
-
-.footer-logo p {
-    margin-bottom: 1rem;
-}
-
-.footer-links h3,
-.footer-services h3,
-.footer-newsletter h3 {
-    color: var(--secondary-color);
-    margin-bottom: 1.5rem;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.footer-links h3::after,
-.footer-services h3::after,
-.footer-newsletter h3::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 40px;
-    height: 2px;
-    background: var(--secondary-color);
-}
-
-.footer-links ul,
-.footer-services ul {
-    list-style: none;
-}
-
-.footer-links li,
-.footer-services li {
-    margin-bottom: 0.8rem;
-}
-
-.footer-links a,
-.footer-services li {
-    color: #ccc;
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.footer-links a:hover {
-    color: var(--secondary-color);
-    padding-left: 5px;
-}
-
-.newsletter-form {
-    display: flex;
-    margin-top: 1rem;
-}
-
-.newsletter-form input {
-    flex: 1;
-    padding: 10px;
-    border: none;
-    border-radius: 5px 0 0 5px;
-}
-
-.newsletter-form button {
-    background: var(--secondary-color);
-    color: white;
-    border: none;
-    padding: 0 15px;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.newsletter-form button:hover {
-    background: #b8941f;
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: #ccc;
-}
-
-/* Responsive */
-@media (max-width: 992px) {
-    .hero h1 {
-        font-size: 2.8rem;
-    }
-    
-    .about-content,
-    .service-detail-item,
-    .contact-content {
-        grid-template-columns: 1fr;
-    }
-    
-    .service-detail-item:nth-child(even) {
-        direction: ltr;
-    }
-    
-    .team-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .hamburger {
-        display: block;
-    }
-    
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 70px;
-        flex-direction: column;
-        background: white;
-        width: 100%;
-        text-align: center;
-        transition: var(--transition);
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-        padding: 2rem 0;
-    }
-    
-    .nav-menu.active {
-        left: 0;
-    }
-    
-    .nav-menu li {
-        margin: 1.5rem 0;
-    }
-    
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero p {
-        font-size: 1.1rem;
-    }
-    
-    .hero-buttons {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .team-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .logos-container {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-@media (max-width: 576px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-    
-    .section-title {
-        font-size: 2rem;
-    }
-    
-    .team-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .cta-btn {
+            background: white;
+            color: #667eea;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 150px 2rem 100px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s 0.2s backwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            animation: fadeInUp 1s 0.4s backwards;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: -50px auto 0;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-card h3 {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .service-features {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            color: #666;
+        }
+
+        .service-features li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        /* Promoter Services */
+        .promoter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .promoter-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .promoter-card:hover {
+            transform: scale(1.05);
+        }
+
+        /* Gallery */
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            padding: 1rem;
+            color: white;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .about-features {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .about-features li {
+            padding: 0.5rem 0;
+            color: #666;
+        }
+
+        .about-features li:before {
+            content: "★ ";
+            color: #667eea;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .team-rating {
+            color: #ffd700;
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+        }
+
+        .team-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .skill-tag {
+            background: #f0f0f0;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            color: #667eea;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .info-card {
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        .info-card h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .quick-actions {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .quick-btn {
+            flex: 1;
+            padding: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .quick-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            padding: 0.3rem 0;
+        }
+
+        .footer-section a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+            color: #bbb;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 2rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+        }
     </style>
 </head>
 <body>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sparkling Event Management Group Patna</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  
-  </section>
-</body>
-</html>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <h2><i class="fas fa-sparkles"></i> Sparkling Events</h2>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#gallery" class="nav-link">Gallery</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Sparking Events</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+            <a href="#contact" class="cta-btn">Get Quote</a>
+        </nav>
+    </header>
 
-    <!-- Home Section -->
-<section id="home" class="hero">
-    <div class="hero-content">
-        <p>Creating unforgettable moments with precision, creativity, and excellence</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Sparking Event Management Group Patna</h1>
+        <p>Transform your vision into unforgettable experiences with professional event management services</p>
         <div class="hero-buttons">
-            <a href="#contact" class="btn btn-primary">Plan Your Event</a>
-            <a href="#gallery" class="btn btn-secondary">View Gallery</a>
-        </div>
-    </div>
-    </section>
-    
-<!-- 📅 Next Event Upload Button -->
-<a 
-  href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sparkling+Event+Show+Patna&dates=20251020T170000Z/20251020T200000Z&details=Venue:+Patna+Club,+Patna,+Bihar&location=Patna+Club,+Patna&sf=true&output=xml" 
-  target="_blank" 
-  class="calendar-btn">
-  📅 Next Event Upload / Add to Calendar
-</a>
-
-<!-- 💅 Add this CSS in your <style> or styles.css -->
-<style>
-.calendar-btn {
-  display: inline-block;
-  background: linear-gradient(90deg, #ff7f50, #ff6347);
-  color: white;
-  padding: 12px 25px;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-.calendar-btn:hover {
-  background: linear-gradient(90deg, #ff6347, #e74c3c);
-  transform: scale(1.05);
-}
-</style>
-
-    <!-- Our Services Section -->
-<section class="services-overview">
-  <div class="container">
-    <h2 class="section-title">Our Services</h2>
-    <div class="services-grid">
-
-      <div class="service-card">
-        <img src="Images/kk1.jpg" alt="Wedding Planners" style="width:100%; border-radius:10px;">
-        <h3>Wedding Planners</h3>
-      </div>
-
-      <div class="service-card">
-        <img src="Images/kk2.jpg" alt="Corporate Event" style="width:100%; border-radius:10px;">
-        <h3>Corporate Event</h3>
-      </div>
-
-      <div class="service-card">
-        <img src="Images/kk3.jpg" alt="Product Launches" style="width:100%; border-radius:10px;">
-        <h3>Product Launches</h3>
-      </div>
-
-      <div class="service-card">
-        <img src="Images/kk4.jpg" alt="Male and Female Promoter" style="width:100%; border-radius:10px;">
-        <h3>Male and Female Promoter</h3>
-      </div>
-
-    </div>
-      </div>
-  </div>
-</section>
-
-<!-- Testimonials / Quote Section -->
-<section class="testimonials">
-    <div class="container">
-        <div class="quote-box">
-            <p class="quote-header">
-                || श्री कृष्ण कहते है ||
-            </p>
-
-            <p class="quote-hindi">
-                सबकुछ संभव है बस खुद पर विश्वास रखें
-            </p>
-
-            <p class="quote-english">
-                Everything is possible, just believe<br>
-                in yourself..!!
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- Trusted Partners Section -->
-<section class="partners-section">
-    <div class="container">
-        <div class="client-logos">
-            <h3>Our Trusted Partners</h3>
-            <div class="logos-container">
-                <div class="logo-item"><i class="fas fa-building"></i> Tata Group</div>
-                <div class="logo-item"><i class="fas fa-hotel"></i> Taj Hotel</div>
-                <div class="logo-item"><i class="fas fa-university"></i> Patna University</div>
-                <div class="logo-item"><i class="fas fa-hotel"></i> Hotel Maurya</div>
-                <div class="logo-item"><i class="fas fa-landmark"></i> Bapu Sabhagar</div>
-                <div class="logo-item"><i class="fas fa-hotel"></i> Patna Club</div>
-                <div class="logo-item"><i class="fas fa-hotel"></i> Panash</div>
-                <div class="logo-item"><i class="fas fa-crown"></i> City Palace</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Us</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Our Story</h3>
-                    <p>Sparking Event Management Group Patna was founded in 2022 with a vision to create extraordinary events that leave lasting impressions. Over the past decade, we have grown from a small team of passionate event planners to one of Patna's most trusted event management companies.</p>
-                    <h3>Our Mission</h3>
-                    <p>Our mission is to transform your vision into reality through meticulous planning, creative design, and flawless execution. We believe every event is unique, and we dedicate ourselves to making each one unforgettable.</p>
-                    <div class="contact-info">
-                        <h3>Contact Information</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> Sun Hospital, Kankarbagh Main Road, Patna, Bihar - 800004</p>
-                        <p><i class="fas fa-phone"></i> +91 98350 99372</p>
-                        <p><i class="fas fa-envelope"></i> info@sparkingemgpatna.com</p>
-                    </div>
-                </div>
-                <div class="team-section">
-
-<!-- 🌟 Our Team Section -->
-<section id="team" class="team-section">
-  <h2 class="section-title">Our Team</h2>
-
-  <div class="team-container">
-    <a href="sakshi.html" class="team-member">
-      <img src="Images/sakshi.jpg" alt="Sakshi Parashar">
-      <h3>Sakshi Parashar</h3>
-      <p>Professional Anchor</p>
-    </a>
-
-    <a href="deepu.html" class="team-member">
-      <img src="Images/deepu.jpg" alt="Deepu Kumar">
-      <h3>Deepu Kumar</h3>
-      <p>Corporate Events Head</p>
-    </a>
-
-    <a href="dipendra.html" class="team-member">
-      <img src="Images/dipendra.jpg" alt="Dipendra Jha">
-      <h3>Dipendra Jha</h3>
-      <p>Wedding Planner</p>
-    </a>
-
-     <a href="ganesh.html" class="team-member">
-      <img src="Images/ganesh.jpg" alt="Mr Ganesh Kumar">
-      <h3>Mr. Ganesh Kumar</h3>
-      <p>CEO</p>
-     </a>
-      
-    <a href="kailash.html" class="team-member">
-      <img src="Images/kailash.jpg" alt="Kailash Kumar">
-      <h3>Kailash Kumar</h3>
-      <p>Founder & Creative Director</p>
-    </a>
-  </div>
-</section>
-  
-                    </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <a href="#" class="btn btn-primary" onclick="addToCalendar(); return false;">Add to Calendar</a>
+            <a href="#" class="btn btn-secondary" onclick="alert('Live Event Upload feature coming soon!'); return false;">Live Event Upload</a>
         </div>
     </section>
+
+    <!-- Stats Section -->
+    <div class="stats">
+        <div class="stat-card">
+            <h3>4.9/5</h3>
+            <p>Client Rating</p>
+        </div>
+        <div class="stat-card">
+            <h3>250+</h3>
+            <p>Happy Clients</p>
+        </div>
+        <div class="stat-card">
+            <h3>300+</h3>
+            <p>Events Organized</p>
+        </div>
+        <div class="stat-card">
+            <h3>3+</h3>
+            <p>Years Experience</p>
+        </div>
+    </div>
 
     <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <div class="services-detail">
-                <div class="service-detail-item">
-                    <div class="service-image"></div>
-                    <div class="service-detail-content">
-                        <h3>Corporate Events</h3>
-                        <p>From conferences to product launches, we handle all aspects of corporate event planning with professionalism and attention to detail. Our team ensures your event aligns with your brand and achieves your business objectives.</p>
-                        <ul>
-                            <li>Conference & Seminar Planning</li>
-                            <li>Award Ceremonies</li>
-                            <li>Team Building Events</li>
-                            <li>Annual Day Celebrations</li>
-                        </ul>
-                        <button class="quote-btn">Get a Quote</button>
-                    </div>
-                </div>
-                <div class="service-detail-item">
-                    <div class="service-image"></div>
-                    <div class="service-detail-content">
-                        <h3>Wedding Planning</h3>
-                        <p>Your wedding day should be perfect. Our wedding planners work closely with you to create a celebration that reflects your unique style and personality, handling everything from venue selection to the smallest details.</p>
-                        <ul>
-                            <li>Full Wedding Planning</li>
-                            <li>Theme Weddings</li>
-                            <li>Destination Weddings</li>
-                            <li>Reception Planning</li>
-                        </ul>
-                        <button class="quote-btn">Get a Quote</button>
-                    </div>
-                </div>
-                <div class="service-detail-item">
-                    <div class="service-image"></div>
-                    <div class="service-detail-content">
-                        <h3>Product Launches</h3>
-                        <p>Make a memorable impact with your product launch. We create innovative and engaging launch events that generate buzz and excitement around your new product or service.</p>
-                        <ul>
-                            <li>Launch Event Strategy</li>
-                            <li>Media Management</li>
-                            <li>Guest Experience Design</li>
-                            <li>Post-Launch Analysis</li>
-                        </ul>
-                        <button class="quote-btn">Get a Quote</button>
-                    </div>
-                </div>
-                <div class="service-detail-item">
-                    <div class="service-image"></div>
-                    <div class="service-detail-content">
-                        <h3>Event Decorations</h3>
-                        <p>Transform any venue with our stunning decoration services. Our creative team designs and executes beautiful decor themes that create the perfect ambiance for your event.</p>
-                        <ul>
-                            <li>Floral Arrangements</li>
-                            <li>Lighting Design</li>
-                            <li>Stage Decor</li>
-                            <li>Theme-Based Decoration</li>
-                        </ul>
-                        <button class="quote-btn">Get a Quote</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
-        <div class="container">
-            <h2 class="section-title">Event Gallery</h2>
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="wedding">Weddings</button>
-                <button class="filter-btn" data-filter="corporate">Corporate</button>
-                <button class="filter-btn" data-filter="launch">Product Launches</button>
-                <button class="filter-btn" data-filter="decoration">Decorations</button>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item" data-category="wedding">
-                    <div class="gallery-image"></div>
-                    <div class="gallery-overlay">
-                        <h3>Wedding Reception</h3>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="corporate">
-                    <div class="gallery-image"></div>
-                    <div class="gallery-overlay">
-                        <h3>Corporate Conference</h3>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="launch">
-                    <div class="gallery-image"></div>
-                    <div class="gallery-overlay">
-                        <h3>Product Launch</h3>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="decoration">
-                    <div class="gallery-image"></div>
-                    <div class="gallery-overlay">
-                        <h3>Event Decoration</h3>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="wedding">
-                    <div class="gallery-image"></div>
-                    <div class="gallery-overlay">
-                        <h3>Garden Wedding</h3>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="corporate">
-                    <div class="gallery-image"></div>
-                    <div class="gallery-overlay">
-                        <h3>Award Ceremony</h3>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="launch">
-                    <div class="gallery-image"></div>
-                    <div class="gallery-overlay">
-                        <h3>Tech Product Launch</h3>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="decoration">
-                    <div class="gallery-image"></div>
-                    <div class="gallery-overlay">
-                        <h3>Stage Decoration</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Contact Us</h2>
-            <div class="contact-content">
-                <div class="contact-form">
-                    <h3>Plan Your Event</h3>
-                    <form id="eventForm">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" id="phone" name="phone" placeholder="Your Phone" required>
-                        </div>
-                        <div class="form-group">
-                            <select id="eventType" name="eventType" required>
-                                <option value="">Select Event Type</option>
-                                <option value="wedding">Wedding</option>
-                                <option value="corporate">Corporate Event</option>
-                                <option value="launch">Product Launch</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <input type="date" id="eventDate" name="eventDate" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Tell us about your event..." rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
-                <div class="contact-info-map">
-                    <div class="contact-details">
-                        <h3>Get in Touch</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> Sun Hospital, Kankarbagh Mein Road, Patna, Bihar - 800004</p>
-                        <p><i class="fas fa-phone"></i> +91 98350 99372</p>
-                        <p><i class="fas fa-envelope"></i> info@sparkingemgpatna.com </p>
-                        <p><i class="fas fa-clock"></i> Mon-Sat: 8:00 AM - 6:30 PM</p>
-                        
-                        <div class="social-links">
-                            <h3>Follow Us</h3>
-                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="map-container">
-                        <div id="map"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h2><i class="fas fa-sparkles"></i> Sparking Events</h2>
-                    <p>Creating unforgettable moments with precision, creativity, and excellence.</p>
-                </div>
-                <div class="footer-links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-services">
-                    <h3>Our Services</h3>
-                    <ul>
-                        <li>Corporate Events</li>
-                        <li>Wedding Planning</li>
-                        <li>Product Launches</li>
-                        <li>Event Decorations</li>
-                    </ul>
-                </div>
-                <div class="footer-newsletter">
-                    <h3>Subscribe</h3>
-                    <p>Subscribe to our newsletter for updates and special offers.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="email">
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 Sparking Event Management Group Patna. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r150/three.min.js"></script>
-</<div id="three-hero" style="width: 100%; height: 100vh;"></div>>
-</html>
-    <script>
-// Mobile Navigation
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
-
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-}));
-
-// Gallery Filter
-const filterBtns = document.querySelectorAll('.filter-btn');
-const galleryItems = document.querySelectorAll('.gallery-item');
-
-filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        // Remove active class from all buttons
-        filterBtns.forEach(btn => btn.classList.remove('active'));
-        // Add active class to clicked button
-        btn.classList.add('active');
+    <section id="services">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">Comprehensive event management solutions tailored to make your occasions extraordinary</p>
         
-        const filter = btn.getAttribute('data-filter');
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">💍</div>
+                <h3>Wedding Planning</h3>
+                <p>Complete wedding planning services from engagement to reception. Make your special day unforgettable.</p>
+                <ul class="service-features">
+                    <li>Venue Selection</li>
+                    <li>Decoration</li>
+                    <li>Catering</li>
+                    <li>Photography</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary" style="margin-top: 1rem;">Learn More</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <h3>Corporate Events</h3>
+                <p>Professional corporate event management for conferences, seminars, and business gatherings.</p>
+                <ul class="service-features">
+                    <li>Conference Planning</li>
+                    <li>Team Building</li>
+                    <li>Product Launch</li>
+                    <li>Business Meetings</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary" style="margin-top: 1rem;">Learn More</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🚀</div>
+                <h3>Product Launch</h3>
+                <p>Strategic product launch events that create buzz and drive engagement for your brand.</p>
+                <ul class="service-features">
+                    <li>Brand Activation</li>
+                    <li>Media Coverage</li>
+                    <li>Audience Engagement</li>
+                    <li>Marketing Strategy</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary" style="margin-top: 1rem;">Learn More</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🎉</div>
+                <h3>Special Occasions</h3>
+                <p>Birthday parties, anniversaries, and other special celebrations planned to perfection.</p>
+                <ul class="service-features">
+                    <li>Birthday Parties</li>
+                    <li>Anniversaries</li>
+                    <li>Family Gatherings</li>
+                    <li>Cultural Events</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary" style="margin-top: 1rem;">Learn More</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📸</div>
+                <h3>Photography & Videography</h3>
+                <p>Professional photography and videography services to capture your precious moments.</p>
+                <ul class="service-features">
+                    <li>Event Photography</li>
+                    <li>Videography</li>
+                    <li>Live Streaming</li>
+                    <li>Photo Editing</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary" style="margin-top: 1rem;">Learn More</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🎵</div>
+                <h3>Entertainment Services</h3>
+                <p>Complete entertainment solutions including DJ, live music, and performance artists.</p>
+                <ul class="service-features">
+                    <li>DJ Services</li>
+                    <li>Live Music</li>
+                    <li>Dance Performances</li>
+                    <li>Celebrity Management</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary" style="margin-top: 1rem;">Learn More</a>
+            </div>
+        </div>
+
+        <!-- Promoter Services -->
+        <h2 class="section-title" style="margin-top: 5rem;">Promoter Services</h2>
+        <p class="section-subtitle">Professional promoters to enhance your brand presence and event success</p>
         
-        galleryItems.forEach(item => {
-            if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                item.style.display = 'block';
-                setTimeout(() => {
-                    item.style.opacity = '1';
-                    item.style.transform = 'scale(1)';
-                }, 10);
-            } else {
-                item.style.opacity = '0';
-                item.style.transform = 'scale(0.8)';
-                setTimeout(() => {
-                    item.style.display = 'none';
-                }, 300);
-            }
-        });
-    });
-});
-
-// Form Submission
-<form id="eventForm">
-  <input type="text" name="name" placeholder="Your Name" required>
-  <input type="email" name="email" placeholder="Your Email" required>
-  <input type="text" name="phone" placeholder="Your Phone Number">
-  <input type="text" name="eventType" placeholder="Event Type">
-  <input type="date" name="eventDate">
-  <textarea name="message" placeholder="Event Details" required></textarea>
-  <button type="submit" class="btn">Submit</button>
-</form>
-
-// Newsletter Form
-document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
-    e.preventDefault();
+        <div class="promoter-grid">
+            <div class="promoter-card">
+                <div class="service-icon">👨‍💼</div>
+                <h3>Male Promoters</h3>
+                <p>Professional male promoters for your events and marketing campaigns.</p>
+                <ul class="service-features">
+                    <li>Brand Promotion</li>
+                    <li>Event Hosting</li>
+                    <li>Product Demonstration</li>
+                    <li>Customer Engagement</li>
     
-    const email = this.querySelector('input').value;
-    
-    if (email === '') {
-        alert('Please enter your email address');
-        return;
-    }
-    
-    // Here you would normally send the email to a server
-    // For demo purposes, we'll just show a success message
-    alert('Thank you for subscribing to our newsletter!');
-    
-    // Reset form
-    this.reset();
-});
-
-// Smooth scrolling for all links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-// Navbar scroll effect
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    
-    if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-    }
-});
-
-// Quote buttons
-document.querySelectorAll('.quote-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-    });
-});
-
-// Add animation on scroll
-const observerOptions = {
-    threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Observe elements
-document.querySelectorAll('.service-card, .testimonial, .team-member, .service-detail-item, .gallery-item').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
-});
-    </script>
-</body>
-</html>
