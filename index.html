@@ -610,7 +610,23 @@
         .gallery-item:hover .gallery-overlay {
             transform: translateY(0);
         }
+       .previous-event-btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: linear-gradient(135deg, #E91E8C, #000000); /* pink to black */
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 
+.previous-event-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(233,30,140,0.4);
+}
+        
         /* Modal */
         .modal {
             display: none;
@@ -1179,7 +1195,12 @@
             </div>
         </div>
     </section>
+    
+  <div class="gallery-button-container" style="text-align:center; margin: 2rem 0;">
+    <a href="previous-events.html" class="previous-event-btn">Previous Event</a>
+  </div>
 
+    
     <!-- Modal for Gallery -->
     <div class="modal" id="galleryModal">
         <div class="modal-content">
