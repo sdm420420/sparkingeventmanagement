@@ -451,7 +451,7 @@
             font-weight: 600;
         }
 
-        /* Promoter Cards */
+       /* Promoter Cards */
 .promoter-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -460,22 +460,15 @@
 }
 
 .promoter-card {
-    background: linear-gradient(135deg, #FF3CAC, #784BA0, #2B86C5, #20BF55, #FFD700); /* rainbow gradient */
-    color: white;
+    background: none; /* background removed */
+    color: black; /* text color black */
+    border: 2px solid #EC4899; /* pink border */
     border-radius: 25px;
     padding: 3rem;
     text-align: center;
     position: relative;
     overflow: hidden;
     transition: all 0.3s;
-    background-size: 400% 400%;
-    animation: gradientMove 10s ease infinite;
-}
-
-@keyframes gradientMove {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
 }
 
 .promoter-card::before {
@@ -485,7 +478,7 @@
     right: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 50%);
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.15), transparent 50%); /* subtle pink glow */
     transition: all 0.5s;
 }
 
@@ -495,15 +488,14 @@
 
 .promoter-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 60px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 60px rgba(236, 72, 153, 0.3); /* subtle pink shadow */
 }
 
 .promoter-card > * {
     position: relative;
     z-index: 1;
 }
-            
-        
+                 
         /* Gallery */
         .gallery-filters {
             display: flex;
