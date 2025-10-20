@@ -452,48 +452,57 @@
         }
 
         /* Promoter Cards */
-        .promoter-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
+.promoter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
 
-        .promoter-card {
-            background: linear-gradient(135deg, #1F2937 0%, #111827 100%);
-            color: white;
-            border-radius: 25px;
-            padding: 3rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s;
-        }
+.promoter-card {
+    background: linear-gradient(135deg, #FF3CAC, #784BA0, #2B86C5, #20BF55, #FFD700); /* rainbow gradient */
+    color: white;
+    border-radius: 25px;
+    padding: 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+}
 
-        .promoter-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.2), transparent 50%);
-            transition: all 0.5s;
-        }
+@keyframes gradientMove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
 
-        .promoter-card:hover::before {
-            transform: scale(1.2) rotate(30deg);
-        }
+.promoter-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 50%);
+    transition: all 0.5s;
+}
 
-        .promoter-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
-        }
+.promoter-card:hover::before {
+    transform: scale(1.2) rotate(30deg);
+}
 
-        .promoter-card > * {
-            position: relative;
-            z-index: 1;
-        }
+.promoter-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(255, 255, 255, 0.3);
+}
+
+.promoter-card > * {
+    position: relative;
+    z-index: 1;
+}
+            
         
         /* Gallery */
         .gallery-filters {
