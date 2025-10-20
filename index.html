@@ -451,6 +451,50 @@
             font-weight: 600;
         }
 
+        /* Promoter Cards */
+        .promoter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .promoter-card {
+            background: linear-gradient(135deg, #1F2937 0%, #111827 100%);
+            color: white;
+            border-radius: 25px;
+            padding: 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .promoter-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.2), transparent 50%);
+            transition: all 0.5s;
+        }
+
+        .promoter-card:hover::before {
+            transform: scale(1.2) rotate(30deg);
+        }
+
+        .promoter-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
+        }
+
+        .promoter-card > * {
+            position: relative;
+            z-index: 1;
+        }
+        
         /* Gallery */
         .gallery-filters {
             display: flex;
@@ -956,6 +1000,55 @@
             </div>
         </div>
     </section>
+
+    <!-- Promoter Services -->
+        <div class="section-header" style="margin-top: 6rem;">
+            <div class="section-badge">👥 Professional Team</div>
+            <h2 class="section-title">Promoter Services</h2>
+            <p class="section-subtitle">Professional promoters to enhance your brand presence and event success</p>
+        </div>
+        
+        <div class="promoter-grid">
+            <div class="promoter-card">
+                <div class="service-icon">👨‍💼</div>
+                <h3>Male Promoters</h3>
+                <p>Professional male promoters for your events and marketing campaigns with excellent communication skills.</p>
+                <ul class="service-features">
+                    <li>Brand Promotion</li>
+                    <li>Event Hosting</li>
+                    <li>Product Demonstration</li>
+                    <li>Customer Engagement</li>
+                </ul>
+                <a href="#contact" class="btn btn-secondary">Book Now</a>
+            </div>
+
+            <div class="promoter-card">
+                <div class="service-icon">👩‍💼</div>
+                <h3>Female Promoters</h3>
+                <p>Experienced female promoters to enhance your brand presence with professionalism and charm.</p>
+                <ul class="service-features">
+                    <li>Brand Ambassador</li>
+                    <li>Event Coordination</li>
+                    <li>Customer Relations</li>
+                    <li>Marketing Support</li>
+                </ul>
+                <a href="#contact" class="btn btn-secondary">Book Now</a>
+            </div>
+
+            <div class="promoter-card">
+                <div class="service-icon">🎤</div>
+                <h3>Professional Anchors</h3>
+                <p>Skilled anchors and hosts to make your events engaging and memorable with excellent stage presence.</p>
+                <ul class="service-features">
+                    <li>Event Hosting</li>
+                    <li>Crowd Management</li>
+                    <li>Entertainment</li>
+                    <li>Professional Presentation</li>
+                </ul>
+                <a href="#contact" class="btn btn-secondary">Book Now</a>
+            </div>
+        </div>
+</section>
 
     <!-- Gallery Section -->
     <section id="gallery" style="background: #F9FAFB;">
