@@ -672,132 +672,108 @@
             justify-content: center;
         }
 
-        /* Contact */
-        .contact-container {
+        /* Contact Section */
+.contact-container {
     display: flex;
-    flex-direction: column; /* sab kuch upar-niche dikhayega */
+    flex-direction: column; /* Mobile: upar-niche */
     align-items: center;
     gap: 3rem;
-        }
+    width: 100%;
+    padding: 0 1rem; /* thodi left-right padding mobile ke liye */
+    box-sizing: border-box;
+}
 
-        .info-card {
-            padding: 1.5rem;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
-            margin-bottom: 1rem;
-        }
+.info-card {
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    margin-bottom: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
 
-        .info-card h4 {
-            color: #333;
-            margin-bottom: 0.8rem;
-            font-weight: 700;
-        }
+.info-card h4 {
+    color: #333;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
 
-        .contact-form {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
+.contact-form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    width: 100%;
+    box-sizing: border-box;
+}
 
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
+.form-group {
+    margin-bottom: 1.5rem;
+}
 
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #333;
-        }
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+}
 
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 2px solid #E5E7EB;
-            border-radius: 8px;
-            font-family: inherit;
-            transition: border-color 0.3s;
-        }
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #E5E7EB;
+    border-radius: 8px;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
 
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #E91E8C;
-        }
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #E91E8C;
+}
 
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
 
-        .submit-btn {
-            width: 100%;
-            padding: 1rem;
-            background: #E91E8C;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: #E91E8C;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
 
-        .submit-btn:hover {
-            background: #d01a7d;
-            transform: translateY(-2px);
-        }
+.submit-btn:hover {
+    background: #d01a7d;
+    transform: translateY(-2px);
+}
 
-        /* Footer */
-        footer {
-            background: #1a1a1a;
-            color: white;
-            padding: 3rem 2rem 1.5rem;
-        }
+/* Desktop View: Left-Right layout */
+@media (min-width: 992px) {
+    .contact-container {
+        flex-direction: row; /* side by side */
+        justify-content: space-between;
+        align-items: flex-start;
+    }
 
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            color: #E91E8C;
-            margin-bottom: 1rem;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            padding: 0.4rem 0;
-        }
-
-        .footer-section a {
-            color: #999;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-section a:hover {
-            color: white;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid #333;
-            color: #999;
-        }
+    .info-card,
+    .contact-form {
+        flex: 1; /* dono equal width */
+        max-width: 48%; /* thodi gap ke liye */
+    }
+}
 
         /* Floating Button */
         .floating-btn {
