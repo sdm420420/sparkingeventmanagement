@@ -1777,3 +1777,15 @@ footer {
         font-size: 1rem;
     }
 }
+
+.contact-container {
+  display: flex;
+  flex-direction: column; /* sab kuch upar-niche dikhayega */
+  align-items: center; /* center alignment */
+  gap: 2rem; /* thoda space dono box ke beech */
+}
+
+.contact-info, .contact-form {
+  width: 100%;
+  max-width: 700px; /* optional - dono box ek size ke dikhenge */
+}
