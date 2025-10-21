@@ -755,81 +755,72 @@ gap: 3rem;
 
         /* Footer Section */
 footer {
-    background-color: #E91E8C; /* Pink background */
-    color: white; /* Text color */
+    position: relative;
+    z-index: 1;
     padding: 2rem 1rem;
     font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
-    position: relative;
-    z-index: 1; /* Floating button ke upar dikhne ke liye */
+    overflow: hidden; /* animation footer ke bahar na jaye */
 }
 
+/* Animated Background */
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    z-index: 0; /* content ke neeche rahe */
+}
+
+@keyframes gradientBG {
+    0% {background-position:0% 50%;}
+    50% {background-position:100% 50%;}
+    100% {background-position:0% 50%;}
+}
+
+/* Footer Content */
 .footer-container {
+    position: relative; /* background ke upar content */
+    z-index: 1;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* mobile me upar-niche */
     gap: 2rem;
 }
 
 .footer-container h4 {
+    color: white; /* Heading ka color white */
     margin-bottom: 1rem;
     font-weight: 600;
 }
 
 .footer-container p,
-.footer-container li {
-    margin: 0.3rem 0;
-}
-
-.footer-container ul {
-    list-style: none;
-    padding: 0;
-}
-
+.footer-container li,
 .footer-container a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
+    color: black; /* Baaki text ka color black */
 }
 
 .footer-container a:hover {
-    color: #FFD700;
+    color: #FFD700; /* Hover effect golden */
 }
 
+/* Footer ke copy text */
 .footer-copy {
+    position: relative;
+    z-index: 1;
     text-align: center;
     margin-top: 2rem;
     font-size: 0.9rem;
-}
-
-/* Floating Button */
-.floating-btn {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    background: #25D366;
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    box-shadow: 0 5px 20px rgba(37,211,102,0.4);
-    cursor: pointer;
-    transition: all 0.3s;
-    z-index: 999;
-    text-decoration: none;
-}
-
-.floating-btn:hover {
-    transform: scale(1.1);
+    color: black;
 }
 
 /* Desktop Layout */
 @media (min-width: 992px) {
     .footer-container {
-        flex-direction: row;
+        flex-direction: row; /* desktop me left-right */
         justify-content: space-between;
         align-items: flex-start;
     }
