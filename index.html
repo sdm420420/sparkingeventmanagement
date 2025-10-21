@@ -753,65 +753,72 @@ gap: 3rem;
         transform: translateY(-2px);  
     }
 
-        /* Footer Section with boxed content */
+        /* Footer Overall */
 footer {
-    background-color: white; /* Background white */
+    background-color: white;
     padding: 2rem 1rem;
     font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
 }
 
-.footer-container {
+/* Footer content container */
+.footer-content {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
-/* Box for each section */
-.footer-container > div {
+/* Each section box */
+.footer-section {
     border: 2px solid #E91E8C; /* Pink border */
     padding: 1rem;
     border-radius: 10px;
 }
 
-/* Headings and text pink */
-.footer-container h4,
-.footer-container p,
-.footer-container li,
-.footer-container a {
+/* Section headings and text */
+.footer-section h3,
+.footer-section p,
+.footer-section li,
+.footer-section a {
     color: #E91E8C; /* All text pink */
     margin: 0.3rem 0;
 }
 
-.footer-container a {
+.footer-section a {
     text-decoration: none;
 }
 
-.footer-container a:hover {
+.footer-section a:hover {
     opacity: 0.8;
 }
 
-.footer-container ul {
+.footer-section ul {
     list-style: none;
     padding: 0;
 }
 
-/* Footer copy text */
-.footer-copy {
+/* Footer bottom */
+.footer-bottom {
     text-align: center;
     margin-top: 2rem;
     font-size: 0.9rem;
     color: #E91E8C;
 }
 
+/* Connect icons hover effect */
+.footer-section div a:hover {
+    transform: scale(1.1);
+}
+
 /* Desktop Layout */
 @media (min-width: 992px) {
-    .footer-container {
+    .footer-content {
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
     }
 
-    .footer-container > div {
+    .footer-section {
         flex: 1;
         max-width: 23%;
     }
@@ -1368,7 +1375,7 @@ footer {
                 <div class="info-card">
                     <h4>📍 Address</h4>
                     <p style="color: #666;">Sun Hospital, Kankarbagh Main Road</p>
-                    <p style="color: #666;">Patna, Bihar - 800004</p>
+                    <p style="color: #666;">Patna, Bihar - 800026</p>
                 </div>
 
                 <div class="info-card">
@@ -1436,7 +1443,7 @@ footer {
             <div class="footer-section">
                 <h3>Sparking Event Management</h3>
                 <p style="margin-top: 1rem; color: #999; line-height: 1.7;">Transform your vision into unforgettable experiences with our professional event management services in Patna, Bihar.</p>
-                <p style="margin-top: 1.5rem; color: #999;">📍 Sun Hospital, Kankarbagh Main Road, Patna, Bihar - 800004</p>
+                <p style="margin-top: 1.5rem; color: #999;">📍 Sun Hospital, Kankarbagh Main Road, Patna, Bihar - 800026</p>
                 <p style="color: #999; margin-top: 0.5rem;">📞 +91 98350 99372</p>
                 <p style="color: #999;">✉️ info@sparkingemgpatna@gmail.com</p>
             </div>
@@ -1474,7 +1481,7 @@ footer {
         </div>
 
         <div class="footer-bottom">
-            <p>© 2024 Sparking Event Management Group Patna. All rights reserved.</p>
+            <p>© 2022 Sparking Event Management Group Patna. All rights reserved.</p>
         </div>
     </footer>
 
