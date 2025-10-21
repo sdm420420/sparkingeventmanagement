@@ -753,36 +753,41 @@ gap: 3rem;
         transform: translateY(-2px);  
     }
 
-        /* Footer Section */
+        /* Footer Section with boxed content */
 footer {
-    background-color: white; /* Simple white background */
+    background-color: white; /* Background white */
     padding: 2rem 1rem;
     font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
-    position: relative;
-    z-index: 1;
 }
 
 .footer-container {
     display: flex;
-    flex-direction: column; /* Mobile: up-down */
+    flex-direction: column;
     gap: 2rem;
 }
 
-.footer-container h4 {
-    color: #E91E8C; /* Pink headings */
-    margin-bottom: 1rem;
-    font-weight: 600;
+/* Box for each section */
+.footer-container > div {
+    border: 2px solid #E91E8C; /* Pink border */
+    padding: 1rem;
+    border-radius: 10px;
 }
 
+/* Headings and text pink */
+.footer-container h4,
 .footer-container p,
 .footer-container li,
 .footer-container a {
-    color: black; /* Normal text black */
+    color: #E91E8C; /* All text pink */
+    margin: 0.3rem 0;
+}
+
+.footer-container a {
+    text-decoration: none;
 }
 
 .footer-container a:hover {
-    color: #E91E8C; /* Hover pink */
+    opacity: 0.8;
 }
 
 .footer-container ul {
@@ -790,11 +795,12 @@ footer {
     padding: 0;
 }
 
+/* Footer copy text */
 .footer-copy {
     text-align: center;
     margin-top: 2rem;
     font-size: 0.9rem;
-    color: black;
+    color: #E91E8C;
 }
 
 /* Desktop Layout */
