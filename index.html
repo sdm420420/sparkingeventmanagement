@@ -672,109 +672,87 @@
             justify-content: center;
         }
 
-        /* Contact Section */
+        /* Contact */
 .contact-container {
-    display: flex;
-    flex-direction: column; /* Mobile: upar-niche */
-    align-items: center;
-    gap: 3rem;
-    width: 100%;
-    padding: 0 1rem; /* thodi left-right padding mobile ke liye */
-    box-sizing: border-box;
+display: flex;
+flex-direction: column; / sab kuch upar-niche dikhayega */
+align-items: center;
+gap: 3rem;
 }
 
-.info-card {
-    padding: 1.5rem;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
-    margin-bottom: 1rem;
-    width: 100%;
-    box-sizing: border-box;
-}
+.info-card {  
+        padding: 1.5rem;  
+        background: white;  
+        border-radius: 12px;  
+        box-shadow: 0 3px 15px rgba(0,0,0,0.08);  
+        margin-bottom: 1rem;  
+    }  
 
-.info-card h4 {
-    color: #333;
-    margin-bottom: 0.8rem;
-    font-weight: 700;
-}
+    .info-card h4 {  
+        color: #333;  
+        margin-bottom: 0.8rem;  
+        font-weight: 700;  
+    }  
 
-.contact-form {
-    background: white;
-    padding: 2.5rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    width: 100%;
-    box-sizing: border-box;
-}
+    .contact-form {  
+        background: white;  
+        padding: 2.5rem;  
+        border-radius: 15px;  
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);  
+    }  
 
-.form-group {
-    margin-bottom: 1.5rem;
-}
+    .form-group {  
+        margin-bottom: 1.5rem;  
+    }  
 
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: #333;
-}
+    .form-group label {  
+        display: block;  
+        margin-bottom: 0.5rem;  
+        font-weight: 600;  
+        color: #333;  
+    }  
 
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 2px solid #E5E7EB;
-    border-radius: 8px;
-    font-family: inherit;
-    transition: border-color 0.3s;
-}
+    .form-group input,  
+    .form-group select,  
+    .form-group textarea {  
+        width: 100%;  
+        padding: 0.8rem;  
+        border: 2px solid #E5E7EB;  
+        border-radius: 8px;  
+        font-family: inherit;  
+        transition: border-color 0.3s;  
+    }  
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #E91E8C;
-}
+    .form-group input:focus,  
+    .form-group select:focus,  
+    .form-group textarea:focus {  
+        outline: none;  
+        border-color: #E91E8C;  
+    }  
 
-.form-group textarea {
-    min-height: 120px;
-    resize: vertical;
-}
+    .form-group textarea {  
+        min-height: 120px;  
+        resize: vertical;  
+    }  
 
-.submit-btn {
-    width: 100%;
-    padding: 1rem;
-    background: #E91E8C;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s;
-}
+    .submit-btn {  
+        width: 100%;  
+        padding: 1rem;  
+        background: #E91E8C;  
+        color: white;  
+        border: none;  
+        border-radius: 8px;  
+        font-size: 1rem;  
+        font-weight: 600;  
+        cursor: pointer;  
+        transition: all 0.3s;  
+    }  
 
-.submit-btn:hover {
-    background: #d01a7d;
-    transform: translateY(-2px);
-}
-
-/* Desktop View: Left-Right layout */
-@media (min-width: 992px) {
-    .contact-container {
-        flex-direction: row; /* side by side */
-        justify-content: space-between;
-        align-items: flex-start;
+    .submit-btn:hover {  
+        background: #d01a7d;  
+        transform: translateY(-2px);  
     }
-
-    .info-card,
-    .contact-form {
-        flex: 1; /* dono equal width */
-        max-width: 48%; /* thodi gap ke liye */
-    }
-}
-
+    
         /* Floating Button */
         .floating-btn {
             position: fixed;
