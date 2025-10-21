@@ -755,44 +755,22 @@ gap: 3rem;
 
         /* Footer Section */
 footer {
-    position: relative;
-    z-index: 1;
+    background-color: white; /* Simple white background */
     padding: 2rem 1rem;
     font-family: 'Poppins', sans-serif;
-    overflow: hidden; /* animation footer ke bahar na jaye */
-}
-
-/* Animated Background */
-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-    z-index: 0; /* content ke neeche rahe */
-}
-
-@keyframes gradientBG {
-    0% {background-position:0% 50%;}
-    50% {background-position:100% 50%;}
-    100% {background-position:0% 50%;}
-}
-
-/* Footer Content */
-.footer-container {
-    position: relative; /* background ke upar content */
+    box-sizing: border-box;
+    position: relative;
     z-index: 1;
+}
+
+.footer-container {
     display: flex;
-    flex-direction: column; /* mobile me upar-niche */
+    flex-direction: column; /* Mobile: up-down */
     gap: 2rem;
 }
 
 .footer-container h4 {
-    color: white; /* Heading ka color white */
+    color: #E91E8C; /* Pink headings */
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -800,17 +778,19 @@ footer::before {
 .footer-container p,
 .footer-container li,
 .footer-container a {
-    color: black; /* Baaki text ka color black */
+    color: black; /* Normal text black */
 }
 
 .footer-container a:hover {
-    color: #FFD700; /* Hover effect golden */
+    color: #E91E8C; /* Hover pink */
 }
 
-/* Footer ke copy text */
+.footer-container ul {
+    list-style: none;
+    padding: 0;
+}
+
 .footer-copy {
-    position: relative;
-    z-index: 1;
     text-align: center;
     margin-top: 2rem;
     font-size: 0.9rem;
@@ -820,7 +800,7 @@ footer::before {
 /* Desktop Layout */
 @media (min-width: 992px) {
     .footer-container {
-        flex-direction: row; /* desktop me left-right */
+        flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
     }
