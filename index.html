@@ -778,23 +778,32 @@ footer {
 /* Section headings and text */
 .footer-section h3,
 .footer-section p,
-.footer-section li,
-.footer-section a {
+.footer-section li {
     color: #E91E8C; /* All text pink */
     margin: 0.3rem 0;
 }
 
+/* Footer links with pink underline */
 .footer-section a {
-    text-decoration: none;
+    color: #E91E8C;  /* Text pink */
+    text-decoration: underline; /* Underline added */
+    text-decoration-color: #E91E8C; /* Underline pink */
+    text-underline-offset: 3px; /* Gap between text and underline */
+    transition: opacity 0.3s;
 }
 
 .footer-section a:hover {
-    opacity: 0.8;
+    opacity: 0.8; /* Hover effect */
 }
 
 .footer-section ul {
     list-style: none;
     padding: 0;
+}
+
+/* Connect icons hover effect */
+.footer-section div a:hover {
+    transform: scale(1.1);
 }
 
 /* Footer bottom */
@@ -803,11 +812,6 @@ footer {
     margin-top: 2rem;
     font-size: 0.9rem;
     color: #E91E8C;
-}
-
-/* Connect icons hover effect */
-.footer-section div a:hover {
-    transform: scale(1.1);
 }
 
 /* Desktop Layout */
@@ -823,7 +827,7 @@ footer {
         max-width: 23%;
     }
 }
-    
+
         /* Floating Button */
         .floating-btn {
             position: fixed;
