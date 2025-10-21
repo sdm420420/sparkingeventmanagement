@@ -752,6 +752,93 @@ gap: 3rem;
         background: #d01a7d;  
         transform: translateY(-2px);  
     }
+
+        /* Footer Section */
+footer {
+    background-color: #E91E8C; /* Pink background */
+    color: white; /* Text color */
+    padding: 2rem 1rem;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1; /* Floating button ke upar dikhne ke liye */
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.footer-container h4 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.footer-container p,
+.footer-container li {
+    margin: 0.3rem 0;
+}
+
+.footer-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-container a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-container a:hover {
+    color: #FFD700;
+}
+
+.footer-copy {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+/* Floating Button */
+.floating-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: 0 5px 20px rgba(37,211,102,0.4);
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.floating-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Desktop Layout */
+@media (min-width: 992px) {
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .footer-container > div {
+        flex: 1;
+        max-width: 23%;
+    }
+}
     
         /* Floating Button */
         .floating-btn {
