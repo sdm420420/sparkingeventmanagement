@@ -261,15 +261,29 @@
             margin-bottom: 3rem;
         }
 
-        .section-badge {
+        /* Badge / Tag style for those headings */
+.section-badge,
+.badge-tag,
+.tag-heading {        /* अगर अलग क्लास भी हो सकती है */
   display: inline-block;
-  background: #ff4fa3;   /* 💖 Bright Pink Background */
-  color: #fff;
+  background-color: #ff4fa3;  /* पिंक बैकग्राउंड */
+  color: #ffffff;             /* सफेद टेक्स्ट */
   padding: 6px 14px;
-  border-radius: 20px;
+  border-radius: 25px;
   font-weight: 600;
   font-size: 0.9rem;
-        }
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(255,79,163,0.3);
+  transition: all 0.3s ease;
+}
+
+.section-badge:hover,
+.badge-tag:hover,
+.tag-heading:hover {
+  background-color: #ff2b8c;  /* होंवर पर थोड़ा गहरा पिंक */
+  box-shadow: 0 4px 12px rgba(255,79,163,0.5);
+  transform: translateY(-2px);
+}
 
         .section-title {
             font-size: 2.5rem;
