@@ -1,4 +1,4 @@
-<h1 align="center">✨ Sparkling Event Management Group Patna ✨</h1>
+<h1 align="center">✨ Sparking Event Management Group Patna ✨</h1>
 
 <p align="center">
   <strong>Creating unforgettable moments with precision, creativity, and excellence.</strong><br>
@@ -16,7 +16,7 @@
 ---
 
 ## 💖 About Us
-**Sparkling Event Management Group Patna** is a creative and professional event management company based in **Patna, Bihar (India)**.  
+**Sparking Event Management Group Patna** is a creative and professional event management company based in **Patna, Bihar (India)**.  
 We turn your dreams into well-crafted celebrations — whether it’s a wedding, corporate event, or a grand festival! 🎉
 
 🎯 **Mission:** Deliver high-quality, stress-free event experiences with innovation and excellence.  
