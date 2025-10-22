@@ -140,6 +140,23 @@
             justify-content: center;
             font-size: 4rem;
             color: white;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .event-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .event-card:hover .event-image img {
+            transform: scale(1.1);
+        }
+
+        .event-image-placeholder {
+            font-size: 4rem;
         }
 
         .event-content {
@@ -297,7 +314,10 @@
             
             <!-- Event 1 -->
             <div class="event-card">
-                <div class="event-image">🎊</div>
+                <div class="event-image">
+                    <!-- YAHA APNI IMAGE KA LINK DAALO -->
+                    <img src="https://i.postimg.cc/your-image-link-1.jpg" alt="Wedding Event" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'event-image-placeholder\'>🎊</div>'">
+                </div>
                 <div class="event-content">
                     <div class="event-date">📅 December 15, 2024</div>
                     <h3 class="event-title">Grand Wedding Ceremony</h3>
@@ -324,7 +344,10 @@
 
             <!-- Event 2 -->
             <div class="event-card">
-                <div class="event-image">🎂</div>
+                <div class="event-image">
+                    <!-- YAHA APNI IMAGE KA LINK DAALO -->
+                    <img src="https://i.postimg.cc/your-image-link-2.jpg" alt="Corporate Event" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'event-image-placeholder\'>🎂</div>'">
+                </div>
                 <div class="event-content">
                     <div class="event-date">📅 January 20, 2025</div>
                     <h3 class="event-title">Corporate Annual Gala</h3>
@@ -351,7 +374,10 @@
 
             <!-- Event 3 -->
             <div class="event-card">
-                <div class="event-image">🎈</div>
+                <div class="event-image">
+                    <!-- YAHA APNI IMAGE KA LINK DAALO -->
+                    <img src="https://i.postimg.cc/your-image-link-3.jpg" alt="Birthday Party" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'event-image-placeholder\'>🎈</div>'">
+                </div>
                 <div class="event-content">
                     <div class="event-date">📅 November 5, 2024</div>
                     <h3 class="event-title">Kids Birthday Extravaganza</h3>
@@ -378,7 +404,10 @@
 
             <!-- Event 4 -->
             <div class="event-card">
-                <div class="event-image">💍</div>
+                <div class="event-image">
+                    <!-- YAHA APNI IMAGE KA LINK DAALO -->
+                    <img src="https://i.postimg.cc/your-image-link-4.jpg" alt="Engagement Party" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'event-image-placeholder\'>💍</div>'">
+                </div>
                 <div class="event-content">
                     <div class="event-date">📅 September 28, 2024</div>
                     <h3 class="event-title">Romantic Engagement Party</h3>
@@ -405,7 +434,10 @@
 
             <!-- Event 5 -->
             <div class="event-card">
-                <div class="event-image">🎓</div>
+                <div class="event-image">
+                    <!-- YAHA APNI IMAGE KA LINK DAALO -->
+                    <img src="https://i.postimg.cc/your-image-link-5.jpg" alt="Farewell Party" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'event-image-placeholder\'>🎓</div>'">
+                </div>
                 <div class="event-content">
                     <div class="event-date">📅 August 12, 2024</div>
                     <h3 class="event-title">College Farewell Bash</h3>
@@ -432,7 +464,10 @@
 
             <!-- Event 6 -->
             <div class="event-card">
-                <div class="event-image">🎭</div>
+                <div class="event-image">
+                    <!-- YAHA APNI IMAGE KA LINK DAALO -->
+                    <img src="https://i.postimg.cc/your-image-link-6.jpg" alt="Cultural Festival" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'event-image-placeholder\'>🎭</div>'">
+                </div>
                 <div class="event-content">
                     <div class="event-date">📅 July 30, 2024</div>
                     <h3 class="event-title">Cultural Festival Celebration</h3>
