@@ -1573,31 +1573,6 @@ footer {
 </a>
 
     <script>
-        // Counter Animation
-        <script>
-const counters = document.querySelectorAll('.count');
-
-counters.forEach(counter => {
-    counter.innerText = '0';
-    const target = +counter.getAttribute('data-target');
-    const isFloat = target % 1 !== 0;
-
-    const updateCounter = () => {
-        const current = parseFloat(counter.innerText);
-        const increment = target / 200; // speed adjuster
-
-        if (current < target) {
-            let newValue = current + increment;
-            counter.innerText = isFloat ? newValue.toFixed(1) : Math.ceil(newValue);
-            setTimeout(updateCounter, 15);
-        } else {
-            counter.innerText = isFloat ? target.toFixed(1) : target;
-        }
-    };
-    updateCounter();
-});
-</script>
-        
         // Hero Slider
         let currentSlide = 0;
         const slides = document.querySelectorAll('.hero-slide');
