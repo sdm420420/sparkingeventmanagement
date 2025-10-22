@@ -753,6 +753,59 @@ gap: 3rem;
         transform: translateY(-2px);  
     }
 
+        /* Stats Section */
+.stats-section {
+  background: linear-gradient(135deg, #fff0f6, #ffe6f0);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.stat {
+  flex: 1;
+  min-width: 180px;
+  background: white;
+  padding: 25px 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.stat h3 {
+  font-size: 2.5rem;
+  color: #e91e63;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.stat p {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stats-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
         /* Footer Overall */
 footer {
     background-color: white;
@@ -1331,38 +1384,61 @@ footer {
     </section>
 
     <!-- About Section -->
-    <section id="about">
-        <div class="section-header">
-            <div class="section-badge">🌟 Who We Are</div>
-            <h2 class="section-title">About <span>Sparking Event Management</span></h2>
-            <p class="section-subtitle">Your trusted partner in creating unforgettable experiences and memorable celebrations</p>
-        </div>
-        
-        <div class="contact-container">
-            <div>
-                <h3 style="font-size: 2rem; color: #E91E8C; margin-bottom: 1.5rem;">Transforming Visions into Reality</h3>
-                <p style="color: #666; line-height: 1.8; margin-bottom: 1.5rem;">At Sparking Event Management Group Patna, we believe every celebration deserves to be extraordinary. With over 3 years of experience in the event management industry, we have successfully organized 300+ events, earning the trust of 250+ happy clients across Bihar.</p>
-                <p style="color: #666; line-height: 1.8; margin-bottom: 2rem;">Our team of dedicated professionals specializes in creating bespoke experiences that reflect your unique style and vision. From intimate gatherings to grand celebrations, we handle every detail with precision and care.</p>
-                
-                <ul class="service-features" style="margin-bottom: 0;">
-                    <li>Complete event planning and coordination</li>
-                    <li>Professional team of experienced planners</li>
-                    <li>Customized solutions for every budget</li>
-                    <li>24/7 support throughout your event</li>
-                </ul>
-            </div>
-            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                <div style="background: linear-gradient(135deg, #E91E8C, #F472B6); padding: 3rem; border-radius: 15px; text-align: center; color: white;">
-                    <h3 style="font-size: 3rem; margin-bottom: 1rem;">300+</h3>
-                    <p style="font-size: 1.2rem;">Important Occasions Celebrated</p>
-                </div>
-                <div style="background: #FFF5F9; padding: 2.5rem; border-radius: 15px; text-align: center; border: 2px solid #FFE0EE;">
-                    <h3 style="font-size: 2rem; color: #E91E8C; margin-bottom: 1rem;">Quality First</h3>
-                    <p style="color: #666;">Premium services that exceed expectations every time</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="about">
+  <div class="section-header">
+    <div class="section-badge">🌟 Who We Are</div>
+    <h2 class="section-title">About <span>Sparking Event Management</span></h2>
+    <p class="section-subtitle">
+      Your trusted partner in creating unforgettable experiences and memorable celebrations
+    </p>
+  </div>
+
+  <div class="contact-container">
+    <div>
+      <h3 style="font-size: 2rem; color: #E91E8C; margin-bottom: 1.5rem;">
+        Transforming Visions into Reality
+      </h3>
+      <p style="color: #666; line-height: 1.8; margin-bottom: 1.5rem;">
+        At Sparking Event Management Group Patna, we believe every celebration deserves to be extraordinary.
+        With over 3 years of experience in the event management industry, we have successfully organized
+        300+ events, earning the trust of 250+ happy clients across Bihar.
+      </p>
+      <p style="color: #666; line-height: 1.8; margin-bottom: 2rem;">
+        Our team of dedicated professionals specializes in creating bespoke experiences that reflect your unique style and vision.
+        From intimate gatherings to grand celebrations, we handle every detail with precision and care.
+      </p>
+
+      <ul class="service-features" style="margin-bottom: 0;">
+        <li>Complete event planning and coordination</li>
+        <li>Professional team of experienced planners</li>
+        <li>Customized solutions for every budget</li>
+        <li>24/7 support throughout your event</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section">
+  <div class="stats-container">
+    <div class="stat">
+      <h3>300+</h3>
+      <p>Events Completed</p>
+    </div>
+    <div class="stat">
+      <h3>290+</h3>
+      <p>Happy Clients</p>
+    </div>
+    <div class="stat">
+      <h3>3+</h3>
+      <p>Years Experience</p>
+    </div>
+    <div class="stat">
+      <h3>4.9⭐</h3>
+      <p>Client Rating</p>
+    </div>
+  </div>
+</section>
 
     <!-- Contact Section -->
     <section id="contact" style="background: #F9FAFB;">
