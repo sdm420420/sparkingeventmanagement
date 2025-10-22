@@ -374,129 +374,131 @@
         }
 
         /* Team Section */
-        /* Team Section */
-#team {
-    background: #FFF5F9;
-    padding: 4rem 2rem;
-    text-align: center;
+.team-section {
+  background: #FFF5F9;
+  padding: 60px 20px;
+  text-align: center;
 }
 
-.section-header .section-badge {
-    font-size: 1.1rem;
-    color: #E91E8C;
-    margin-bottom: 0.5rem;
+.section-header {
+  max-width: 700px;
+  margin: 0 auto 40px;
 }
 
-.section-header .section-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #111827;
-    margin-bottom: 0.5rem;
+.section-badge {
+  display: inline-block;
+  background: #ffb6d9;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
-.section-header .section-subtitle {
-    color: #6B7280;
-    max-width: 700px;
-    margin: 0 auto 3rem;
+.section-title {
+  font-size: 2rem;
+  margin: 10px 0;
+  color: #333;
 }
 
-/* Grid */
+.section-title span {
+  color: #ff4fa3;
+}
+
+.section-subtitle {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+/* Grid Layout */
 .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-items: center;
 }
 
-/* Card */
+/* Team Card */
 .team-card {
-    background: white;
-    border-radius: 15px;
-    padding: 2rem;
-    text-align: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    transition: all 0.3s;
-    text-decoration: none;
-    color: inherit;
-    display: block;
+  background: #fff;
+  border: 2px solid #ffb6d9;
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+  width: 100%;
+  max-width: 300px;
 }
 
 .team-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(233,30,140,0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  border-color: #ff4fa3;
 }
 
 /* Avatar */
-.team-avatar {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    margin: 0 auto 1rem;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .team-avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
 }
 
-/* Text */
-.team-card h3 {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 0.5rem;
-}
-
+/* Text Styles */
 .team-role {
-    color: #E91E8C;
-    font-weight: 600;
-    margin-bottom: 0.8rem;
+  color: #ff4fa3;
+  font-weight: 600;
+  margin: 5px 0;
 }
 
 .team-rating {
-    color: #FCD34D;
-    margin: 0.5rem 0;
+  font-size: 1rem;
+  margin: 5px 0;
 }
 
-.team-experience {
-    font-size: 0.9rem;
-    color: #9CA3AF;
-    margin-bottom: 1rem;
+.team-exp {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  margin-bottom: 10px;
 }
 
-.team-description {
-    color: #6B7280;
-    font-size: 0.95rem;
+.team-desc {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-bottom: 15px;
 }
 
-/* Skills */
+/* Skill Tags */
 .team-skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    justify-content: center;
-    margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
 }
 
 .skill-tag {
-    background: #FFF0F6;
-    padding: 0.4rem 0.8rem;
-    border-radius: 15px;
-    font-size: 0.85rem;
-    color: #E91E8C;
-    font-weight: 600;
+  background: #ffe6f0;
+  color: #ff4fa3;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
 }
 
-/* Hover effect on name */
-.team-card:hover h3 {
-    color: #E91E8C;
-    transition: color 0.3s ease;
+/* Responsive */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
+  .team-card {
+    max-width: 100%;
+  }
 }
-
+ 
        /* Promoter Cards */
 .promoter-grid {
     display: grid;
@@ -1292,102 +1294,104 @@ footer {
     </div>
 
     <!-- Team Section -->
-    <section id="team" style="background: #FFF5F9;">
-        <div class="section-header">
-            <div class="section-badge">👨‍💼 Meet Our Team</div>
-            <h2 class="section-title">Our <span>Team</span></h2>
-            <p class="section-subtitle">Meet the passionate professionals who bring your events to life with creativity and expertise</p>
-        </div>
-        
-        <div class="team-grid">
+<section id="team" class="team-section">
+  <div class="section-header">
+    <div class="section-badge">👨‍💼 Meet Our Team</div>
+    <h2 class="section-title">Our <span>Team</span></h2>
+    <p class="section-subtitle">
+      Meet the passionate professionals who bring your events to life with creativity and expertise.
+    </p>
+  </div>
+
+  <div class="team-grid">
+    
+    <!-- Sakshi -->
     <a href="sakshi.html" class="team-card">
-        <div class="team-avatar">
-            <img src="https://i.postimg.cc/JnDCN0Hf/sakshi-jpg.jpg" alt="Sakshi Parashar">
-        </div>
-        <h3>Sakshi Parashar</h3>
-        <p class="team-role">Professional Anchor</p>
-        <div class="team-rating">⭐⭐⭐⭐⭐ 4.9</div>
-        <p style="font-size: 0.9rem; color: #9CA3AF; margin-bottom: 1rem;">3+ Years Experience</p>
-        <p style="color: #6B7280; font-size: 0.95rem;">
-            Experienced anchor with expertise in hosting corporate events, weddings, and cultural programs.
-        </p>
-        <div class="team-skills">
-            <span class="skill-tag">Event Hosting</span>
-            <span class="skill-tag">Corporate Events</span>
-            <span class="skill-tag">Weddings</span>
-        </div>
+      <div class="team-avatar">
+        <img src="https://i.postimg.cc/JnDCN0Hf/sakshi-jpg.jpg" alt="Sakshi Parashar">
+      </div>
+      <h3>Sakshi Parashar</h3>
+      <p class="team-role">Professional Anchor</p>
+      <div class="team-rating">⭐⭐⭐⭐⭐ 4.9</div>
+      <p class="team-exp">3+ Years Experience</p>
+      <p class="team-desc">Experienced anchor with expertise in hosting corporate events, weddings, and cultural programs.</p>
+      <div class="team-skills">
+        <span class="skill-tag">Event Hosting</span>
+        <span class="skill-tag">Corporate Events</span>
+        <span class="skill-tag">Weddings</span>
+      </div>
     </a>
-        </div>
 
-            <a href="#" class="team-card">
-        <a href="deepu.html" class="team-card">
-                <div class="team-avatar">
-                        <img src="https://i.postimg.cc/pTbYV1xV/deepu-jpg.jpg" alt="Deepu Kumar">
-                </div>
-                <h3>Deepu Kumar</h3>
-                <p class="team-role">Corporate Events</p>
-                <div class="team-rating">⭐⭐⭐⭐⭐ 4.8</div>
-                <p style="font-size: 0.9rem; color: #9CA3AF; margin-bottom: 1rem;">5+ Years Experience</p>
-                <p style="color: #6B7280; font-size: 0.95rem;">Strategic leader specializing in corporate event planning and business relationship management.</p>
-                <div class="team-skills">
-                    <span class="skill-tag">Corporate Planning</span>
-                    <span class="skill-tag">Team Building</span>
-                    <span class="skill-tag">Conference Management</span>
-                </div>
-            </a>
+    <!-- Deepu -->
+    <a href="deepu.html" class="team-card">
+      <div class="team-avatar">
+        <img src="https://i.postimg.cc/pTbYV1xV/deepu-jpg.jpg" alt="Deepu Kumar">
+      </div>
+      <h3>Deepu Kumar</h3>
+      <p class="team-role">Corporate Events Head</p>
+      <div class="team-rating">⭐⭐⭐⭐⭐ 4.8</div>
+      <p class="team-exp">5+ Years Experience</p>
+      <p class="team-desc">Strategic leader specializing in corporate event planning and business relationship management.</p>
+      <div class="team-skills">
+        <span class="skill-tag">Corporate Planning</span>
+        <span class="skill-tag">Team Building</span>
+        <span class="skill-tag">Conference Management</span>
+      </div>
+    </a>
 
-            <a href="#" class="team-card">
-        <a href="dipendra.html" class="team-card">
-                <div class="team-avatar">
-                        <img src="https://i.postimg.cc/ZRWRgJXK/Dipendra.jpg" alt="Dipendra Jha">
-                </div>
-                <h3>Dipendra Jha</h3>
-                <p class="team-role">Wedding Planner</p>
-                <div class="team-rating">⭐⭐⭐⭐⭐ 5.0</div>
-                <p style="font-size: 0.9rem; color: #9CA3AF; margin-bottom: 1rem;">5+ Years Experience</p>
-                <p style="color: #6B7280; font-size: 0.95rem;">Creative wedding planner dedicated to making your special day perfect and memorable.</p>
-                <div class="team-skills">
-                    <span class="skill-tag">Wedding Planning</span>
-                    <span class="skill-tag">Decoration</span>
-                    <span class="skill-tag">Venue Selection</span>
-                </div>
-            </a>
+    <!-- Dipendra -->
+    <a href="dipendra.html" class="team-card">
+      <div class="team-avatar">
+        <img src="https://i.postimg.cc/ZRWRgJXK/Dipendra.jpg" alt="Dipendra Jha">
+      </div>
+      <h3>Dipendra Jha</h3>
+      <p class="team-role">Wedding Planner</p>
+      <div class="team-rating">⭐⭐⭐⭐⭐ 5.0</div>
+      <p class="team-exp">5+ Years Experience</p>
+      <p class="team-desc">Creative wedding planner dedicated to making your special day perfect and memorable.</p>
+      <div class="team-skills">
+        <span class="skill-tag">Wedding Planning</span>
+        <span class="skill-tag">Decoration</span>
+        <span class="skill-tag">Venue Selection</span>
+      </div>
+    </a>
 
-            <a href="#" class="team-card">
-        <a href="ganesh.html" class="team-card">
-                <div class="team-avatar">
-                       <img src="https://i.postimg.cc/26QJCZsg/retouch-2025101601303565.jpg" alt="Ganesh Kumar">
-                </div>
-                <h3>Mr. Ganesh Kumar</h3>
-                <p class="team-role">CEO</p>
-                <div class="team-rating">⭐⭐⭐⭐⭐ 4.9</div>
-                <p style="font-size: 0.9rem; color: #9CA3AF; margin-bottom: 1rem;">3+ Years Experience</p>
-                <p style="color: #6B7280; font-size: 0.95rem;">Visionary leader driving the company towards excellence in event management services.</p>
-                <div class="team-skills">
-                    <span class="skill-tag">Strategic Planning</span>
-                    <span class="skill-tag">Business Development</span>
-                    <span class="skill-tag">Leadership</span>
-                </div>
-            </a>
+    <!-- Ganesh -->
+    <a href="ganesh.html" class="team-card">
+      <div class="team-avatar">
+        <img src="https://i.postimg.cc/26QJCZsg/retouch-2025101601303565.jpg" alt="Ganesh Kumar">
+      </div>
+      <h3>Mr. Ganesh Kumar</h3>
+      <p class="team-role">CEO</p>
+      <div class="team-rating">⭐⭐⭐⭐⭐ 4.9</div>
+      <p class="team-exp">3+ Years Experience</p>
+      <p class="team-desc">Visionary leader driving the company towards excellence in event management services.</p>
+      <div class="team-skills">
+        <span class="skill-tag">Strategic Planning</span>
+        <span class="skill-tag">Business Development</span>
+        <span class="skill-tag">Leadership</span>
+      </div>
+    </a>
 
-            <a href="#" class="team-card">
-        <a href="kailash.html" class="team-card">
-                <div class="team-avatar">
-                      <img src="https://i.postimg.cc/FRXrP0bM/kailash.jpg" alt="Kailash Kumar">
-                </div>
-                <h3>Kailash Kumar</h3>
-                <p class="team-role">Founder & Creative Director</p>
-                <div class="team-rating">⭐⭐⭐⭐⭐ 5.0</div>
-                <p style="font-size: 0.9rem; color: #9CA3AF; margin-bottom: 1rem;">3+ Years Experience</p>
-                <p style="color: #6B7280; font-size: 0.95rem;">Creative visionary and founder with passion for creating extraordinary event experiences.</p>
-                <div class="team-skills">
-                    <span class="skill-tag">Creative Direction</span>
-                    <span class="skill-tag">Event Design</span>
-                    <span class="skill-tag">Innovation</span>
-                </div>
-            </a>
-        </div>
-    </section>
+    <!-- Kailash -->
+    <a href="kailash.html" class="team-card">
+      <div class="team-avatar">
+        <img src="https://i.postimg.cc/FRXrP0bM/kailash.jpg" alt="Kailash Kumar">
+      </div>
+      <h3>Kailash Kumar</h3>
+      <p class="team-role">Founder & Creative Director</p>
+      <div class="team-rating">⭐⭐⭐⭐⭐ 5.0</div>
+      <p class="team-exp">3+ Years Experience</p>
+      <p class="team-desc">Creative visionary and founder with passion for creating extraordinary event experiences.</p>
+      <div class="team-skills">
+        <span class="skill-tag">Creative Direction</span>
+        <span class="skill-tag">Event Design</span>
+        <span class="skill-tag">Innovation</span>
+      </div>
+    </a>
+
+  </div>
+</section>
 
     <!-- About Section -->
 <section id="about">
