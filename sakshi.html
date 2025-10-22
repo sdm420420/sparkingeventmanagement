@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sakshi Parashar | Event Manager - Sparkling Event Management Group Patna</title>
+  <title>Sakshi Parashar | Professional Anchor - Sparkling Event Management Group Patna</title>
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -11,108 +11,154 @@
   <!-- Lightbox CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
 
-  <!-- Stylesheet -->
+  <!-- Main Styles -->
   <link rel="stylesheet" href="styles.css">
 
   <style>
-    /* Page Header */
+    /* Header Section */
     .profile-header {
-      background: linear-gradient(135deg, #6a1b9a, #ff4081);
-      color: white;
+      background: linear-gradient(135deg, #ff007f, #6a1b9a);
+      color: #fff;
       text-align: center;
-      padding: 80px 20px;
+      padding: 90px 20px;
     }
     .profile-header img {
-      width: 180px;
-      height: 180px;
+      width: 190px;
+      height: 190px;
       border-radius: 50%;
-      border: 5px solid white;
+      border: 6px solid #fff;
       object-fit: cover;
       margin-bottom: 20px;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
     }
     .profile-header h1 {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
+      font-size: 2.3rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+      letter-spacing: 1px;
     }
     .profile-header p {
       font-size: 1.1rem;
-      opacity: 0.9;
+      opacity: 0.95;
     }
 
     /* About Section */
     .profile-about {
-      padding: 60px 20px;
+      padding: 70px 20px;
       max-width: 900px;
-      margin: 0 auto;
-      line-height: 1.8;
-      color: #333;
+      margin: auto;
       text-align: center;
+      color: #444;
+      line-height: 1.8;
     }
     .profile-about h2 {
-      color: #6a1b9a;
-      margin-bottom: 20px;
-      font-size: 1.8rem;
+      color: #ff007f;
+      font-size: 2rem;
+      margin-bottom: 25px;
+      position: relative;
+    }
+    .profile-about h2::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: #ff007f;
+      margin: 10px auto 0;
+      border-radius: 2px;
     }
 
-    /* Photo Gallery */
+    /* Gallery Section */
     .gallery {
-      padding: 50px 20px;
-      background: #f8f9fa;
+      padding: 60px 20px;
+      background: #fff5f8;
     }
     .gallery h2 {
       text-align: center;
       color: #6a1b9a;
       margin-bottom: 30px;
+      font-size: 2rem;
     }
     .gallery-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      justify-content: center;
-      padding: 0 10px;
+      gap: 25px;
+      max-width: 1100px;
+      margin: auto;
     }
-    .gallery-container a {
-      display: block;
-    }
-    .gallery-container img {
+    .gallery-container a img {
       width: 100%;
-      height: 250px;
+      height: 270px;
+      border-radius: 12px;
       object-fit: cover;
-      border-radius: 10px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
+      transition: 0.4s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
-    .gallery-container img:hover {
+    .gallery-container a img:hover {
       transform: scale(1.05);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      box-shadow: 0 10px 30px rgba(255, 20, 147, 0.4);
+    }
+
+    /* Achievements Section */
+    .achievements {
+      padding: 60px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #f8f9fa, #fff5f8);
+    }
+    .achievements h2 {
+      color: #6a1b9a;
+      margin-bottom: 30px;
+    }
+    .achievements .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .achievements .card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      width: 250px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+    .achievements .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(255, 20, 147, 0.3);
+    }
+    .achievements .card i {
+      font-size: 2rem;
+      color: #ff007f;
+      margin-bottom: 10px;
+    }
+    .achievements .card p {
+      font-weight: 600;
+      color: #444;
     }
 
     /* Contact Section */
     .contact {
       background: linear-gradient(135deg, #6a1b9a, #4a148c);
-      color: white;
+      color: #fff;
       text-align: center;
-      padding: 60px 20px;
+      padding: 70px 20px;
     }
     .contact h2 {
       margin-bottom: 20px;
+      font-size: 2rem;
     }
     .contact p {
-      margin-bottom: 10px;
       font-size: 1rem;
-    }
-    .social-links {
-      margin-top: 15px;
+      margin-bottom: 10px;
     }
     .social-links a {
-      color: white;
-      font-size: 20px;
-      margin: 0 10px;
-      display: inline-block;
-      transition: transform 0.3s ease, color 0.3s ease;
+      color: #fff;
+      font-size: 22px;
+      margin: 0 12px;
+      transition: 0.3s;
     }
     .social-links a:hover {
-      color: #ff4081;
+      color: #ff80bf;
       transform: scale(1.2);
     }
 
@@ -120,19 +166,21 @@
     .back-btn {
       display: inline-block;
       margin-top: 30px;
-      padding: 10px 20px;
-      background: #ff4081;
+      padding: 12px 26px;
+      background: #ff007f;
       color: white;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
+      letter-spacing: 0.5px;
       transition: 0.3s;
     }
     .back-btn:hover {
-      background: #e91e63;
-      transform: translateY(-3px);
+      background: #e60073;
+      transform: translateY(-4px);
     }
 
+    /* Footer */
     footer {
       background: #111;
       color: #bbb;
@@ -142,9 +190,11 @@
     }
 
     @media (max-width: 768px) {
-      .profile-header h1 {
-        font-size: 1.8rem;
-      }
+      .profile-header h1 { font-size: 1.8rem; }
+      .gallery-container { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .gallery-container { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -153,40 +203,63 @@
 
   <!-- Header -->
   <section class="profile-header">
-    <img src="Images/sakshi.jpg" alt="Sakshi Parashar">
+    <img src="https://i.postimg.cc/JnDCN0Hf/sakshi-jpg.jpg" alt="Sakshi Parashar">
     <h1>Sakshi Parashar</h1>
-    <p>Event Manager | Sparkling Event Management Group Patna</p>
+    <p>Founder & Creative Director | Sparkling Event Management Group Patna</p>
   </section>
 
   <!-- About -->
   <section class="profile-about">
     <h2>About Sakshi</h2>
     <p>
-      Sakshi Parashar is an experienced Event Manager, known for her creativity, organizational skills, 
-      and attention to detail. She has successfully managed numerous weddings, corporate events, 
-      and social celebrations with elegance and efficiency.
+      Sakshi Parashar is the Founder & Creative Director of Sparkling Event Management Group Patna.
+      With more than 3 years of professional experience, she has successfully led hundreds of events across
+      Bihar and Patna — from luxurious weddings to grand corporate shows and cultural celebrations.
     </p>
     <p>
-      Her passion for event planning and commitment to client satisfaction have made her a valuable asset 
-      to Sparkling Event Management Group Patna.
+      Her attention to detail, creative vision, and leadership make her one of the most trusted event professionals
+      in the region. She continues to inspire her team and clients with her innovative ideas and dedication.
     </p>
+  </section>
+
+  <!-- Achievements -->
+  <section class="achievements">
+    <h2>Key Highlights</h2>
+    <div class="cards">
+      <div class="card">
+        <i class="fa-solid fa-heart"></i>
+        <p>300+ Events Managed</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-people-group"></i>
+        <p>290+ Happy Clients</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-award"></i>
+        <p>4.9★ Client Rating</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-calendar-check"></i>
+        <p>3+ Years Experience</p>
+      </div>
+    </div>
   </section>
 
   <!-- Gallery -->
   <section class="gallery">
-    <h2>Previous Events</h2>
+    <h2>Event Gallery</h2>
     <div class="gallery-container">
       <a href="Images/sp5.jpg" data-lightbox="events" data-title="Wedding Event">
-        <img src="Images/sp5.jpg" alt="Wedding Event 1">
+        <img src="Images/sp5.jpg" alt="Wedding Event">
       </a>
       <a href="Images/sp6.jpg" data-lightbox="events" data-title="Corporate Event">
-        <img src="Images/sp6.jpg" alt="Corporate Event 2">
+        <img src="Images/sp6.jpg" alt="Corporate Event">
       </a>
       <a href="Images/sp7.jpg" data-lightbox="events" data-title="Birthday Party">
-        <img src="Images/sp7.jpg" alt="Birthday Party 3">
+        <img src="Images/sp7.jpg" alt="Birthday Event">
       </a>
-      <a href="Images/sp8.jpg" data-lightbox="events" data-title="Anniversary Event">
-        <img src="Images/sp8.jpg" alt="Anniversary Event 4">
+      <a href="Images/sp8.jpg" data-lightbox="events" data-title="Anniversary Celebration">
+        <img src="Images/sp8.jpg" alt="Anniversary Event">
       </a>
     </div>
   </section>
@@ -199,21 +272,4 @@
     <div class="social-links">
       <a href="#"><i class="fab fa-facebook-f"></i></a>
       <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-linkedin-in"></i></a>
-    </div>
-
-    <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
-  </section>
-
-  <footer>
-    &copy; 2025 Sparkling Event Management Group Patna. All Rights Reserved.
-  </footer>
-
-  <!-- jQuery (Required for Lightbox) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  
-  <!-- Lightbox JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
-
-</body>
-</html>
+      <a href="#"><i class="fab fa-linkedin-in
