@@ -2091,120 +2091,538 @@ footer {
             </div>
         </div>
 
-        <!-- Contact Form -->
-        <div class="contact-form-wrapper" style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 40px rgba(236, 72, 153, 0.15);">
-            <form id="contactForm" class="contact-form" onsubmit="handleSubmit(event)">
-                <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: #333; font-weight: 800;">Send us a Message</h3>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #contact {
+            background: linear-gradient(180deg, #FFF1F2 0%, #F9FAFB 100%);
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 300px;
+            background: radial-gradient(circle at 50% 0%, rgba(236, 72, 153, 0.08), transparent 70%);
+            pointer-events: none;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #EC4899, #F97316);
+            color: white;
+            padding: 0.6rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
+            animation: fadeIn 0.6s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            animation: fadeIn 0.8s ease 0.2s backwards;
+        }
+
+        .section-title span {
+            background: linear-gradient(135deg, #EC4899, #F97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            color: #666;
+            font-size: 1.15rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+            animation: fadeIn 1s ease 0.4s backwards;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            animation: slideInLeft 0.8s ease;
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #1a1a1a;
+            font-weight: 900;
+        }
+
+        .info-card {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid #EC4899;
+            box-shadow: 0 8px 25px rgba(236, 72, 153, 0.12);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.05), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 12px 35px rgba(236, 72, 153, 0.2);
+            border-left-color: #F97316;
+        }
+
+        .info-card:hover::before {
+            opacity: 1;
+        }
+
+        .info-card h4 {
+            color: #EC4899;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-card p {
+            color: #666;
+            margin: 0.3rem 0;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .info-card a {
+            color: #EC4899;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .info-card a:hover {
+            color: #F97316;
+            transform: translateX(5px);
+        }
+
+        /* Contact Form */
+        .contact-form-wrapper {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 25px;
+            box-shadow: 0 15px 50px rgba(236, 72, 153, 0.15);
+            animation: slideInRight 0.8s ease;
+            border: 2px solid rgba(236, 72, 153, 0.1);
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .contact-form h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #1a1a1a;
+            font-weight: 900;
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: #333;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1.1rem 1.3rem;
+            border: 2px solid #E5E7EB;
+            border-radius: 15px;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            outline: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #FAFAFA;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #EC4899;
+            box-shadow: 0 0 0 4px rgba(236, 72, 153, 0.1);
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23EC4899' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 20px;
+            padding-right: 3rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+            line-height: 1.6;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.3rem;
+            background: linear-gradient(135deg, #EC4899, #F97316);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.15rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 10px 30px rgba(236, 72, 153, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .submit-btn:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 45px rgba(236, 72, 153, 0.5);
+        }
+
+        .submit-btn:active {
+            transform: translateY(-2px);
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 1.8rem;
+            background: linear-gradient(135deg, #10B981, #059669);
+            color: white;
+            border-radius: 20px;
+            text-align: center;
+            animation: slideUp 0.5s ease;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .success-message h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        .success-message p {
+            margin: 0;
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #contact {
+                padding: 3rem 1.5rem;
+            }
+
+            .section-header {
+                margin-bottom: 3rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+
+            .contact-info h3,
+            .contact-form h3 {
+                font-size: 1.6rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .contact-form-wrapper {
+                padding: 2rem 1.5rem;
+            }
+
+            .info-card {
+                padding: 1.5rem;
+            }
+
+            .form-group {
+                margin-bottom: 1.5rem;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 1rem;
+            }
+
+            .submit-btn {
+                padding: 1.1rem;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #contact {
+                padding: 2.5rem 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.95rem;
+            }
+
+            .contact-info h3,
+            .contact-form h3 {
+                font-size: 1.5rem;
+            }
+
+            .info-card h4 {
+                font-size: 1.1rem;
+            }
+
+            .info-card p,
+            .info-card a {
+                font-size: 0.95rem;
+            }
+
+            .contact-form-wrapper {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-header">
+            <div class="section-badge">📞 Get In Touch</div>
+            <h2 class="section-title"><span>Contact</span> Us</h2>
+            <p class="section-subtitle">Ready to start planning your perfect event? Get in touch with us today for a personalized consultation.</p>
+        </div>
+
+        <div class="contact-container">
+            
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
                 
-                <div class="form-group" style="margin-bottom: 1.5rem;">
-                    <label for="name" style="display: block; color: #333; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Full Name *</label>
-                    <input type="text" id="name" placeholder="Your full name" required style="width: 100%; padding: 1rem; border: 2px solid #E5E7EB; border-radius: 12px; font-size: 1rem; transition: all 0.3s; outline: none;">
+                <div class="info-card">
+                    <h4>📍 Address</h4>
+                    <p>Sun Hospital, Kankarbagh Main Road</p>
+                    <p>Patna, Bihar - 800026</p>
                 </div>
 
-                <div class="form-group" style="margin-bottom: 1.5rem;">
-                    <label for="phone" style="display: block; color: #333; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Phone Number *</label>
-                    <input type="tel" id="phone" placeholder="Your phone number" required style="width: 100%; padding: 1rem; border: 2px solid #E5E7EB; border-radius: 12px; font-size: 1rem; transition: all 0.3s; outline: none;">
+                <div class="info-card">
+                    <h4>📞 Phone</h4>
+                    <p><a href="tel:+919835099372">+91 98350 99372</a></p>
                 </div>
 
-                <div class="form-group" style="margin-bottom: 1.5rem;">
-                    <label for="email" style="display: block; color: #333; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Email Address *</label>
-                    <input type="email" id="email" placeholder="your.email@example.com" required style="width: 100%; padding: 1rem; border: 2px solid #E5E7EB; border-radius: 12px; font-size: 1rem; transition: all 0.3s; outline: none;">
+                <div class="info-card">
+                    <h4>✉️ Email</h4>
+                    <p><a href="mailto:sparkingemgpatna@gmail.com">sparkingemgpatna@gmail.com</a></p>
                 </div>
 
-                <div class="form-group" style="margin-bottom: 1.5rem;">
-                    <label for="eventType" style="display: block; color: #333; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Event Type</label>
-                    <select id="eventType" style="width: 100%; padding: 1rem; border: 2px solid #E5E7EB; border-radius: 12px; font-size: 1rem; transition: all 0.3s; outline: none; background: white; cursor: pointer;">
-                        <option value="">Select Event Type</option>
-                        <option value="Wedding">Wedding</option>
-                        <option value="Corporate Event">Corporate Event</option>
-                        <option value="Product Launch">Product Launch</option>
-                        <option value="Male/Female Promoter">Male/Female Promoter</option>
-                        <option value="Professional Anchor">Professional Anchor</option>
-                        <option value="Birthday Party">Birthday Party</option>
-                        <option value="Other">Other</option>
-                    </select>
+                <div class="info-card">
+                    <h4>🕐 Business Hours</h4>
+                    <p>Monday - Saturday: 9:00 AM - 7:00 PM</p>
+                    <p>Sunday: 10:00 AM - 5:00 PM</p>
                 </div>
+            </div>
 
-                <div class="form-group" style="margin-bottom: 1.5rem;">
-                    <label for="message" style="display: block; color: #333; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Message</label>
-                    <textarea id="message" rows="4" placeholder="Tell us about your event requirements, preferred date, venue, and any special requests..." style="width: 100%; padding: 1rem; border: 2px solid #E5E7EB; border-radius: 12px; font-size: 1rem; transition: all 0.3s; outline: none; resize: vertical; font-family: inherit;"></textarea>
+            <!-- Contact Form -->
+            <div class="contact-form-wrapper">
+                <form id="contactForm" class="contact-form">
+                    <h3>Send us a Message</h3>
+                    
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventType">Event Type</label>
+                        <select id="eventType" name="eventType">
+                            <option value="">Select Event Type</option>
+                            <option value="Wedding">Wedding</option>
+                            <option value="Corporate Event">Corporate Event</option>
+                            <option value="Product Launch">Product Launch</option>
+                            <option value="Male/Female Promoter">Male/Female Promoter</option>
+                            <option value="Professional Anchor">Professional Anchor</option>
+                            <option value="Birthday Party">Birthday Party</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your event requirements, preferred date, venue, and any special requests..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        💬 Send via WhatsApp
+                    </button>
+                </form>
+
+                <!-- Success Message -->
+                <div id="successMessage" class="success-message">
+                    <h4>✅ Opening WhatsApp...</h4>
+                    <p>Your message is ready to send!</p>
                 </div>
-
-                <button type="submit" class="submit-btn" style="width: 100%; padding: 1.2rem; background: linear-gradient(135deg, #EC4899, #F97316); color: white; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.3s; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 8px 25px rgba(236, 72, 153, 0.4);">
-                    💬 Send via WhatsApp
-                </button>
-            </form>
-
-            <!-- Success Message (Hidden by default) -->
-            <div id="successMessage" style="display: none; margin-top: 1.5rem; padding: 1.5rem; background: linear-gradient(135deg, #10B981, #059669); color: white; border-radius: 15px; text-align: center; animation: slideIn 0.5s ease;">
-                <h4 style="margin: 0 0 0.5rem 0; font-size: 1.2rem;">✅ Message Sent!</h4>
-                <p style="margin: 0; font-size: 0.95rem;">Redirecting to WhatsApp...</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<style>
-    /* Form Input Focus Effect */
-    .contact-form input:focus,
-    .contact-form select:focus,
-    .contact-form textarea:focus {
-        border-color: #EC4899 !important;
-        box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1) !important;
-    }
-
-    /* Button Hover Effect */
-    .submit-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 12px 35px rgba(236, 72, 153, 0.5) !important;
-    }
-
-    .submit-btn:active {
-        transform: translateY(-1px);
-    }
-
-    /* Success Message Animation */
-    @keyframes slideIn {
-        from {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        .contact-container {
-            grid-template-columns: 1fr !important;
-            gap: 2rem !important;
-        }
-        
-        #contact {
-            padding: 3rem 1rem !important;
-        }
-        
-        .contact-form-wrapper {
-            padding: 1.5rem !important;
-        }
-    }
-</style>
-
-<script>
-function handleSubmit(event) {
-    event.preventDefault();
-    
-    // Get form values
-    const name = document.getElementById('name').value;
-    const phone = document.getElementById('phone').value;
-    const email = document.getElementById('email').value;
-    const eventType = document.getElementById('eventType').value || 'Not specified';
-    const message = document.getElementById('message').value || 'No additional message';
-    
-    // Format WhatsApp message
-    const whatsappMessage = `🎉 *New Event Inquiry*
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const eventType = document.getElementById('eventType').value || 'Not specified';
+            const message = document.getElementById('message').value.trim() || 'No additional message';
+            
+            // Validate required fields
+            if (!name || !phone || !email) {
+                alert('Please fill all required fields!');
+                return;
+            }
+            
+            // Format WhatsApp message with line breaks
+            const whatsappMessage = 
+`🎉 *New Event Inquiry*
 
 👤 *Name:* ${name}
 📞 *Phone:* ${phone}
@@ -2216,32 +2634,35 @@ ${message}
 
 ---
 _Sent from Sparking Events Website_`;
+            
+            // Encode message for URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // Your WhatsApp number (with country code, no + or spaces)
+            const whatsappNumber = '919835099372';
+            
+            // Create WhatsApp URL (works for both mobile and desktop)
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            
+            // Show success message
+            const successMsg = document.getElementById('successMessage');
+            successMsg.classList.add('show');
+            
+            // Open WhatsApp after 1 second
+            setTimeout(function() {
+                window.open(whatsappURL, '_blank');
+                
+                // Reset form and hide success message after 3 seconds
+                setTimeout(function() {
+                    document.getElementById('contactForm').reset();
+                    successMsg.classList.remove('show');
+                }, 3000);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
     
-    // Encode message for URL
-    const encodedMessage = encodeURIComponent(whatsappMessage);
-    
-    // Your WhatsApp number (with country code, no + or spaces)
-    const whatsappNumber = '919835099372';
-    
-    // Create WhatsApp URL
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-    
-    // Show success message
-    document.getElementById('successMessage').style.display = 'block';
-    
-    // Redirect to WhatsApp after 1 second
-    setTimeout(() => {
-        window.open(whatsappURL, '_blank');
-        
-        // Reset form after 2 seconds
-        setTimeout(() => {
-            document.getElementById('contactForm').reset();
-            document.getElementById('successMessage').style.display = 'none';
-        }, 2000);
-    }, 1000);
-}
-</script>
-
     <!-- Footer -->
     <footer>
         <div class="footer-content">
