@@ -2055,81 +2055,192 @@ footer {
 </section>
 
     <!-- Contact Section -->
-    <section id="contact" style="background: #F9FAFB;">
-        <div class="section-header">
-            <div class="section-badge">📞 Get In Touch</div>
-            <h2 class="section-title"><span>Contact</span> Us</h2>
-            <p class="section-subtitle">Ready to start planning your perfect event? Get in touch with us today for a personalized consultation.</p>
-        </div>
+<section id="contact" style="background: #F9FAFB; padding: 5rem 2rem;">
+    <div class="section-header" style="text-align: center; margin-bottom: 4rem;">
+        <div class="section-badge" style="display: inline-block; background: linear-gradient(135deg, #EC4899, #F97316); color: white; padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 700; margin-bottom: 1rem;">📞 Get In Touch</div>
+        <h2 class="section-title" style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem;"><span style="color: #EC4899;">Contact</span> Us</h2>
+        <p class="section-subtitle" style="color: #666; font-size: 1.1rem; max-width: 700px; margin: 0 auto;">Ready to start planning your perfect event? Get in touch with us today for a personalized consultation.</p>
+    </div>
 
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: #333;">Get in Touch</h3>
-                
-                <div class="info-card">
-                    <h4>📍 Address</h4>
-                    <p style="color: #666;">Sun Hospital, Kankarbagh Main Road</p>
-                    <p style="color: #666;">Patna, Bihar - 800026</p>
-                </div>
-
-                <div class="info-card">
-                    <h4>📞 Phone</h4>
-                    <p><a href="tel:+919835099372" style="color: #E91E8C; text-decoration: none; font-weight: 600;">+91 98350 99372</a></p>
-                </div>
-
-                <div class="info-card">
-                    <h4>✉️ Email</h4>
-                    <p><a href="mailto:info@sparkingemgpatna@gmail.com" style="color: #E91E8C; text-decoration: none; font-weight: 600;">info@sparkingemgpatna@gmail.com</a></p>
-                </div>
-
-                <div class="info-card">
-                    <h4>🕐 Business Hours</h4>
-                    <p style="color: #666;">Monday - Saturday: 9:00 AM - 7:00 PM</p>
-                    <p style="color: #666;">Sunday: 10:00 AM - 5:00 PM</p>
-                </div>
+    <div class="contact-container" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+        
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: #333; font-weight: 800;">Get in Touch</h3>
+            
+            <div class="info-card" style="background: white; padding: 1.5rem; border-radius: 15px; margin-bottom: 1.5rem; border-left: 4px solid #EC4899; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+                <h4 style="color: #EC4899; font-size: 1.2rem; margin-bottom: 0.5rem; font-weight: 700;">📍 Address</h4>
+                <p style="color: #666; margin: 0.25rem 0;">Sun Hospital, Kankarbagh Main Road</p>
+                <p style="color: #666; margin: 0.25rem 0;">Patna, Bihar - 800026</p>
             </div>
 
-            <form class="contact-form" onsubmit="handleSubmit(event)">
-                <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: #333;">Send us a Message</h3>
+            <div class="info-card" style="background: white; padding: 1.5rem; border-radius: 15px; margin-bottom: 1.5rem; border-left: 4px solid #EC4899; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+                <h4 style="color: #EC4899; font-size: 1.2rem; margin-bottom: 0.5rem; font-weight: 700;">📞 Phone</h4>
+                <p style="margin: 0;"><a href="tel:+919835099372" style="color: #EC4899; text-decoration: none; font-weight: 600; font-size: 1.1rem;">+91 98350 99372</a></p>
+            </div>
+
+            <div class="info-card" style="background: white; padding: 1.5rem; border-radius: 15px; margin-bottom: 1.5rem; border-left: 4px solid #EC4899; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+                <h4 style="color: #EC4899; font-size: 1.2rem; margin-bottom: 0.5rem; font-weight: 700;">✉️ Email</h4>
+                <p style="margin: 0;"><a href="mailto:sparkingemgpatna@gmail.com" style="color: #EC4899; text-decoration: none; font-weight: 600;">sparkingemgpatna@gmail.com</a></p>
+            </div>
+
+            <div class="info-card" style="background: white; padding: 1.5rem; border-radius: 15px; margin-bottom: 1.5rem; border-left: 4px solid #EC4899; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+                <h4 style="color: #EC4899; font-size: 1.2rem; margin-bottom: 0.5rem; font-weight: 700;">🕐 Business Hours</h4>
+                <p style="color: #666; margin: 0.25rem 0;">Monday - Saturday: 9:00 AM - 7:00 PM</p>
+                <p style="color: #666; margin: 0.25rem 0;">Sunday: 10:00 AM - 5:00 PM</p>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrapper" style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 40px rgba(236, 72, 153, 0.15);">
+            <form id="contactForm" class="contact-form" onsubmit="handleSubmit(event)">
+                <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: #333; font-weight: 800;">Send us a Message</h3>
                 
-                <div class="form-group">
-                    <label for="name">Full Name *</label>
-                    <input type="text" id="name" placeholder="Your full name" required>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="name" style="display: block; color: #333; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Full Name *</label>
+                    <input type="text" id="name" placeholder="Your full name" required style="width: 100%; padding: 1rem; border: 2px solid #E5E7EB; border-radius: 12px; font-size: 1rem; transition: all 0.3s; outline: none;">
                 </div>
 
-                <div class="form-group">
-                    <label for="phone">Phone Number *</label>
-                    <input type="tel" id="phone" placeholder="Your phone number" required>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="phone" style="display: block; color: #333; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Phone Number *</label>
+                    <input type="tel" id="phone" placeholder="Your phone number" required style="width: 100%; padding: 1rem; border: 2px solid #E5E7EB; border-radius: 12px; font-size: 1rem; transition: all 0.3s; outline: none;">
                 </div>
 
-                <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" placeholder="your.email@example.com" required>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="email" style="display: block; color: #333; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Email Address *</label>
+                    <input type="email" id="email" placeholder="your.email@example.com" required style="width: 100%; padding: 1rem; border: 2px solid #E5E7EB; border-radius: 12px; font-size: 1rem; transition: all 0.3s; outline: none;">
                 </div>
 
-                <div class="form-group">
-                    <label for="eventType">Event Type</label>
-                    <select id="eventType">
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="eventType" style="display: block; color: #333; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Event Type</label>
+                    <select id="eventType" style="width: 100%; padding: 1rem; border: 2px solid #E5E7EB; border-radius: 12px; font-size: 1rem; transition: all 0.3s; outline: none; background: white; cursor: pointer;">
                         <option value="">Select Event Type</option>
-                        <option value="wedding">Wedding</option>
-                        <option value="corporate">Corporate Event</option>
-                        <option value="launch">Product Launch</option>
-                        <option value="promoter">Male/Female Promoter</option>
-                        <option value="anchor">Professional Anchor</option>
-                        <option value="birthday">Birthday Party</option>
-                        <option value="other">Other</option>
+                        <option value="Wedding">Wedding</option>
+                        <option value="Corporate Event">Corporate Event</option>
+                        <option value="Product Launch">Product Launch</option>
+                        <option value="Male/Female Promoter">Male/Female Promoter</option>
+                        <option value="Professional Anchor">Professional Anchor</option>
+                        <option value="Birthday Party">Birthday Party</option>
+                        <option value="Other">Other</option>
                     </select>
                 </div>
 
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" placeholder="Tell us about your event requirements, preferred date, venue, and any special requests..."></textarea>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="message" style="display: block; color: #333; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">Message</label>
+                    <textarea id="message" rows="4" placeholder="Tell us about your event requirements, preferred date, venue, and any special requests..." style="width: 100%; padding: 1rem; border: 2px solid #E5E7EB; border-radius: 12px; font-size: 1rem; transition: all 0.3s; outline: none; resize: vertical; font-family: inherit;"></textarea>
                 </div>
 
-                <button type="submit" class="submit-btn">Send Message</button>
+                <button type="submit" class="submit-btn" style="width: 100%; padding: 1.2rem; background: linear-gradient(135deg, #EC4899, #F97316); color: white; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.3s; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 8px 25px rgba(236, 72, 153, 0.4);">
+                    💬 Send via WhatsApp
+                </button>
             </form>
+
+            <!-- Success Message (Hidden by default) -->
+            <div id="successMessage" style="display: none; margin-top: 1.5rem; padding: 1.5rem; background: linear-gradient(135deg, #10B981, #059669); color: white; border-radius: 15px; text-align: center; animation: slideIn 0.5s ease;">
+                <h4 style="margin: 0 0 0.5rem 0; font-size: 1.2rem;">✅ Message Sent!</h4>
+                <p style="margin: 0; font-size: 0.95rem;">Redirecting to WhatsApp...</p>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+    /* Form Input Focus Effect */
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+        border-color: #EC4899 !important;
+        box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1) !important;
+    }
+
+    /* Button Hover Effect */
+    .submit-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 35px rgba(236, 72, 153, 0.5) !important;
+    }
+
+    .submit-btn:active {
+        transform: translateY(-1px);
+    }
+
+    /* Success Message Animation */
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .contact-container {
+            grid-template-columns: 1fr !important;
+            gap: 2rem !important;
+        }
+        
+        #contact {
+            padding: 3rem 1rem !important;
+        }
+        
+        .contact-form-wrapper {
+            padding: 1.5rem !important;
+        }
+    }
+</style>
+
+<script>
+function handleSubmit(event) {
+    event.preventDefault();
+    
+    // Get form values
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const email = document.getElementById('email').value;
+    const eventType = document.getElementById('eventType').value || 'Not specified';
+    const message = document.getElementById('message').value || 'No additional message';
+    
+    // Format WhatsApp message
+    const whatsappMessage = `🎉 *New Event Inquiry*
+
+👤 *Name:* ${name}
+📞 *Phone:* ${phone}
+📧 *Email:* ${email}
+🎊 *Event Type:* ${eventType}
+
+💬 *Message:*
+${message}
+
+---
+_Sent from Sparking Events Website_`;
+    
+    // Encode message for URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    
+    // Your WhatsApp number (with country code, no + or spaces)
+    const whatsappNumber = '919835099372';
+    
+    // Create WhatsApp URL
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+    
+    // Show success message
+    document.getElementById('successMessage').style.display = 'block';
+    
+    // Redirect to WhatsApp after 1 second
+    setTimeout(() => {
+        window.open(whatsappURL, '_blank');
+        
+        // Reset form after 2 seconds
+        setTimeout(() => {
+            document.getElementById('contactForm').reset();
+            document.getElementById('successMessage').style.display = 'none';
+        }, 2000);
+    }, 1000);
+}
+</script>
 
     <!-- Footer -->
     <footer>
