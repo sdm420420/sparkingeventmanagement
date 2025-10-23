@@ -29,26 +29,6 @@
       opacity: 0.9;
     }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      padding: 2rem;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: 340px;
-      object-fit: cover;
-      border-radius: 14px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.03);
-    }
-
     .profile-about {
       padding: 2rem;
       max-width: 900px;
@@ -69,6 +49,31 @@
       margin-bottom: 1rem;
     }
 
+    /* Gallery Section */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      background: #fff0f6;
+      border-top: 2px solid #ffe0ed;
+      border-bottom: 2px solid #ffe0ed;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.04);
+      box-shadow: 0 10px 25px rgba(255, 20, 147, 0.3);
+    }
+
     .view-events {
       text-align: center;
       margin: 2rem 0;
@@ -86,6 +91,7 @@
 
     .view-events a:hover {
       background: #ff69b4;
+      transform: translateY(-3px);
     }
 
     footer {
@@ -94,6 +100,26 @@
       background: #fff0f6;
       color: #ff1493;
       font-weight: 500;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      .gallery img {
+        height: 270px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .gallery img {
+        height: 250px;
+      }
     }
   </style>
 </head>
@@ -104,13 +130,7 @@
     <p>Professional Anchor | Sparking Event Management Group Patna</p>
   </header>
 
-  <section class="gallery">
-    <img src="https://i.postimg.cc/PqFqYMVg/Picsart-25-10-23-20-25-33-408.jpg" alt="Sakshi Parashar">
-    <img src="https://i.postimg.cc/BZP0w3tS/retouch-2025102320144604.jpg" alt="Sakshi Parashar">
-    <img src="https://i.postimg.cc/pXMgGngQ/retouch-2025102320135339.jpg" alt="Sakshi Parashar">
-    <img src="https://i.postimg.cc/d1TxnqnQ/retouch-2025102320105167.jpg" alt="Sakshi Parashar">
-  </section>
-
+  <!-- About Section -->
   <section class="profile-about">
     <h2>About Sakshi</h2>
     <p>
@@ -129,12 +149,20 @@
     </p>
   </section>
 
+  <!-- Gallery Section (moved below) -->
+  <section class="gallery">
+    <img src="https://i.postimg.cc/PqFqYMVg/Picsart-25-10-23-20-25-33-408.jpg" alt="Sakshi Parashar">
+    <img src="https://i.postimg.cc/BZP0w3tS/retouch-2025102320144604.jpg" alt="Sakshi Parashar">
+    <img src="https://i.postimg.cc/pXMgGngQ/retouch-2025102320135339.jpg" alt="Sakshi Parashar">
+    <img src="https://i.postimg.cc/d1TxnqnQ/retouch-2025102320105167.jpg" alt="Sakshi Parashar">
+  </section>
+
   <div class="view-events">
     <a href="previous-events.html">View More Events</a>
   </div>
 
   <footer>
-    © 2025 Sparking Event Management Group Patna | All Rights Reserved
+    © 2025 Sparking Event Management Group Patna. All Rights Reserved.
   </footer>
 
 </body>
