@@ -6,63 +6,480 @@
     <title>Previous Events - Sparkling Events</title>
     <style>
         * { margin:0; padding:0; box-sizing:border-box; }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: #333;
             min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
         }
+
+        /* Animated Background Particles */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(255, 255, 255, 0.06) 0%, transparent 50%);
+            animation: particleFloat 15s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes particleFloat {
+            0%, 100% { opacity: 1; transform: translateY(0); }
+            50% { opacity: 0.8; transform: translateY(-20px); }
+        }
+
+        /* Header */
         header {
-            background: rgba(255,255,255,0.95);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky; top:0; z-index:1000;
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: sticky; 
+            top:0; 
+            z-index:1000;
+            animation: slideDown 0.5s ease-out;
         }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
         nav {
-            display:flex; justify-content:space-between; align-items:center;
-            padding:1rem 5%; max-width:1400px; margin:0 auto;
+            display:flex; 
+            justify-content:space-between; 
+            align-items:center;
+            padding:1.2rem 5%; 
+            max-width:1400px; 
+            margin:0 auto;
         }
-        .logo { font-size:1.8rem; font-weight:bold; cursor:pointer; }
+
+        .logo { 
+            font-size:1.8rem; 
+            font-weight:bold; 
+            cursor:pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
         .logo a { text-decoration:none; color:inherit; }
-        .logo span:first-child { color:#667eea; }
-        .logo span:last-child { color:#764ba2; }
-        .nav-links { display:flex; list-style:none; gap:2rem; }
-        .nav-links a { text-decoration:none; color:#333; font-weight:500; transition:color 0.3s; }
-        .nav-links a:hover { color:#667eea; }
-        .hamburger { display:none; flex-direction:column; cursor:pointer; gap:5px; }
-        .hamburger span { width:25px; height:3px; background:#333; transition:0.3s; }
-        .hero { text-align:center; padding:4rem 5%; color:white; }
-        .hero h1 { font-size:3rem; margin-bottom:1rem; text-shadow:2px 2px 4px rgba(0,0,0,0.3); }
-        .hero p { font-size:1.2rem; opacity:0.9; }
-        .events-container { max-width:1400px; margin:0 auto; padding:3rem 5%; }
-        .events-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(350px,1fr)); gap:2rem; margin-bottom:3rem; }
+        .logo span:first-child { 
+            color:#667eea;
+            text-shadow: 2px 2px 4px rgba(102, 126, 234, 0.3);
+        }
+        .logo span:last-child { 
+            color:#764ba2;
+            text-shadow: 2px 2px 4px rgba(118, 75, 162, 0.3);
+        }
+
+        .nav-links { 
+            display:flex; 
+            list-style:none; 
+            gap:2.5rem; 
+        }
+
+        .nav-links a { 
+            text-decoration:none; 
+            color:#333; 
+            font-weight:600; 
+            transition:all 0.3s;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover {
+            color:#667eea;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger { 
+            display:none; 
+            flex-direction:column; 
+            cursor:pointer; 
+            gap:5px; 
+        }
+
+        .hamburger span { 
+            width:25px; 
+            height:3px; 
+            background:#333; 
+            transition:0.3s;
+            border-radius: 2px;
+        }
+
+        /* Hero Section */
+        .hero { 
+            text-align:center; 
+            padding:5rem 5% 4rem 5%; 
+            color:white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 { 
+            font-size:3.5rem; 
+            margin-bottom:1rem; 
+            text-shadow:3px 3px 6px rgba(0,0,0,0.4);
+            animation: fadeInUp 0.8s ease-out;
+            background: linear-gradient(135deg, #ffffff, #f0f0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p { 
+            font-size:1.3rem; 
+            opacity:0.95;
+            animation: fadeInUp 1s ease-out 0.2s backwards;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Events Container */
+        .events-container { 
+            max-width:1400px; 
+            margin:0 auto; 
+            padding:3rem 5%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .events-grid { 
+            display:grid; 
+            grid-template-columns:repeat(auto-fit,minmax(350px,1fr)); 
+            gap:2.5rem; 
+            margin-bottom:3rem;
+        }
+
+        /* Event Card - Premium Design */
         .event-card {
-            background:white; border-radius:15px; overflow:hidden; 
-            box-shadow:0 10px 30px rgba(0,0,0,0.2); transition: transform 0.3s, box-shadow 0.3s;
+            background:white; 
+            border-radius:25px; 
+            overflow:hidden; 
+            box-shadow:0 15px 40px rgba(0,0,0,0.2);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            border: 3px solid transparent;
+            animation: cardFadeIn 0.6s ease-out backwards;
         }
-        .event-card:hover { transform: translateY(-10px); box-shadow:0 15px 40px rgba(0,0,0,0.3); }
-        .event-image { width:100%; height:250px; display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative; }
-        .event-image img { width:100%; height:100%; object-fit:cover; transition: transform 0.3s; }
-        .event-card:hover .event-image img { transform: scale(1.1); }
-        .event-image-placeholder { font-size:4rem; }
-        .event-content { padding:1.5rem; }
-        .event-date { color:#667eea; font-weight:bold; font-size:0.9rem; margin-bottom:0.5rem; }
-        .event-title { font-size:1.5rem; margin-bottom:0.5rem; color:#333; }
-        .event-location { color:#666; margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem; }
-        .event-description { color:#555; line-height:1.6; margin-bottom:1rem; }
-        .back-btn-container { text-align:center; padding:2rem 0 4rem 0; }
+
+        @keyframes cardFadeIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Staggered animation */
+        .event-card:nth-child(1) { animation-delay: 0.1s; }
+        .event-card:nth-child(2) { animation-delay: 0.2s; }
+        .event-card:nth-child(3) { animation-delay: 0.3s; }
+        .event-card:nth-child(4) { animation-delay: 0.4s; }
+        .event-card:nth-child(5) { animation-delay: 0.5s; }
+        .event-card:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Gradient Border Animation */
+        .event-card::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 25px;
+            padding: 3px;
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb, #667eea);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            animation: borderRotate 3s linear infinite;
+        }
+
+        @keyframes borderRotate {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        .event-card:hover::before {
+            opacity: 1;
+        }
+
+        .event-card:hover { 
+            transform: translateY(-15px) scale(1.02); 
+            box-shadow:0 25px 60px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Event Image */
+        .event-image { 
+            width:100%; 
+            height:280px; 
+            display:flex; 
+            align-items:center; 
+            justify-content:center; 
+            overflow:hidden; 
+            position:relative;
+        }
+
+        .event-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.3) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .event-card:hover .event-image::after {
+            opacity: 1;
+        }
+
+        .event-image img { 
+            width:100%; 
+            height:100%; 
+            object-fit:cover; 
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .event-card:hover .event-image img { 
+            transform: scale(1.15);
+        }
+
+        /* Event Content */
+        .event-content { 
+            padding:2rem;
+            position: relative;
+        }
+
+        .event-date { 
+            color:#667eea; 
+            font-weight:bold; 
+            font-size:0.95rem; 
+            margin-bottom:0.75rem;
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            border-radius: 20px;
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .event-card:hover .event-date {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-color: transparent;
+            transform: translateY(-3px);
+        }
+
+        .event-title { 
+            font-size:1.6rem; 
+            margin-bottom:0.75rem; 
+            color:#333;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: all 0.3s ease;
+        }
+
+        .event-card:hover .event-title {
+            transform: translateX(5px);
+            letter-spacing: 0.5px;
+        }
+
+        .event-location { 
+            color:#666; 
+            margin-bottom:1.2rem; 
+            display:flex; 
+            align-items:center; 
+            gap:0.5rem;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .event-description { 
+            color:#555; 
+            line-height:1.8; 
+            margin-bottom:1rem;
+            font-size: 1.05rem;
+        }
+
+        /* View Details Button (appears on hover) */
+        .event-card::after {
+            content: '👁️ View Details';
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .event-card:hover::after {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* Back Button Container */
+        .back-btn-container { 
+            text-align:center; 
+            padding:2rem 0 4rem 0; 
+        }
+
         .back-btn {
-            display:inline-block; padding:1rem 3rem; background:white; color:#667eea; text-decoration:none;
-            border-radius:50px; font-weight:bold; font-size:1.1rem; transition:all 0.3s; box-shadow:0 5px 15px rgba(0,0,0,0.2);
+            display:inline-block; 
+            padding:1.2rem 3.5rem; 
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color:white; 
+            text-decoration:none;
+            border-radius:50px; 
+            font-weight:bold; 
+            font-size:1.15rem; 
+            transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow:0 10px 30px rgba(102, 126, 234, 0.4);
+            position: relative;
+            overflow: hidden;
         }
-        .back-btn:hover { transform:scale(1.05); box-shadow:0 8px 20px rgba(0,0,0,0.3); background:#667eea; color:white; }
-        footer { background:rgba(0,0,0,0.8); color:white; text-align:center; padding:2rem 5%; margin-top:3rem; }
+
+        .back-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .back-btn:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .back-btn:hover { 
+            transform:scale(1.08) translateY(-3px); 
+            box-shadow:0 15px 40px rgba(102, 126, 234, 0.6);
+        }
+
+        .back-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Footer */
+        footer { 
+            background:rgba(0,0,0,0.9); 
+            color:white; 
+            text-align:center; 
+            padding:2.5rem 5%; 
+            margin-top:3rem;
+            border-top: 3px solid rgba(102, 126, 234, 0.5);
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        footer p:last-child {
+            margin-bottom: 0;
+            font-size: 1.1rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        /* Responsive Design */
         @media(max-width:768px) {
-            .nav-links { display:none; }
+            .nav-links { 
+                display:none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255,255,255,0.98);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
             .hamburger { display:flex; }
-            .hero h1 { font-size:2rem; }
-            .hero p { font-size:1rem; }
-            .events-grid { grid-template-columns:1fr; }
-            .event-title { font-size:1.3rem; }
+            
+            .hero { padding: 4rem 5% 3rem 5%; }
+            .hero h1 { font-size:2.5rem; }
+            .hero p { font-size:1.1rem; }
+            
+            .events-grid { 
+                grid-template-columns:1fr; 
+                gap: 2rem;
+            }
+            
+            .event-title { font-size:1.4rem; }
+            .event-image { height: 220px; }
+            
+            .back-btn {
+                padding: 1rem 2.5rem;
+                font-size: 1rem;
+            }
+        }
+
+        @media(max-width:480px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            
+            .events-grid { gap: 1.5rem; }
+            .event-content { padding: 1.5rem; }
+            .event-image { height: 200px; }
+            
+            .back-btn {
+                width: 100%;
+                max-width: 300px;
+            }
         }
     </style>
 </head>
@@ -70,7 +487,7 @@
     <header>
         <nav>
             <div class="logo"><a href="index.html"><span>Sparkling</span> <span>Events</span></a></div>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#services">Services</a></li>
                 <li><a href="index.html#gallery">Gallery</a></li>
@@ -78,7 +495,11 @@
                 <li><a href="index.html#team">Team</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
-            <div class="hamburger"><span></span><span></span><span></span></div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
@@ -92,7 +513,7 @@
             <!-- Event 1 -->
             <div class="event-card">
                 <div class="event-image">
-                    <img src="https://i.postimg.cc/PqFqYMVg/Picsart-25-10-23-20-25-33-408.jpg" alt="Event 1">
+                    <img src="https://i.postimg.cc/PqFqYMVg/Picsart-25-10-23-20-25-33-408.jpg" alt="Grand Wedding Ceremony">
                 </div>
                 <div class="event-content">
                     <div class="event-date">📅 December 15, 2024</div>
@@ -105,7 +526,7 @@
             <!-- Event 2 -->
             <div class="event-card">
                 <div class="event-image">
-                    <img src="https://i.postimg.cc/pXMgGngQ/retouch-2025102320135339.jpg" alt="Event 2">
+                    <img src="https://i.postimg.cc/pXMgGngQ/retouch-2025102320135339.jpg" alt="Corporate Annual Gala">
                 </div>
                 <div class="event-content">
                     <div class="event-date">📅 January 20, 2025</div>
@@ -118,7 +539,7 @@
             <!-- Event 3 -->
             <div class="event-card">
                 <div class="event-image">
-                    <img src="https://i.postimg.cc/nrsk1T11/retouch-2025102320552125.jpg" alt="Event 3">
+                    <img src="https://i.postimg.cc/nrsk1T11/retouch-2025102320552125.jpg" alt="Kids Birthday Extravaganza">
                 </div>
                 <div class="event-content">
                     <div class="event-date">📅 November 5, 2024</div>
@@ -131,7 +552,7 @@
             <!-- Event 4 -->
             <div class="event-card">
                 <div class="event-image">
-                    <img src="https://i.postimg.cc/BZP0w3tS/retouch-2025102320144604.jpg" alt="Event 4">
+                    <img src="https://i.postimg.cc/BZP0w3tS/retouch-2025102320144604.jpg" alt="Romantic Engagement Party">
                 </div>
                 <div class="event-content">
                     <div class="event-date">📅 September 28, 2024</div>
@@ -144,21 +565,20 @@
             <!-- Event 5 -->
             <div class="event-card">
                 <div class="event-image">
-                    <img src="https://i.postimg.cc/d1TxnqnQ/retouch-2025102320105167.jpg" alt="Event 5">
+                    <img src="https://i.postimg.cc/d1TxnqnQ/retouch-2025102320105167.jpg" alt="Festival of Diwali">
                 </div>
                 <div class="event-content">
                     <div class="event-date">📅 August 12, 2024</div>
                     <h3 class="event-title">Festival of Diwali</h3>
                     <div class="event-location">📍 Green Valley Resort, Pune</div>
-                    <p class="event-description">“Celebrate Diwali with exclusive offers, live performances, delicious treats, and mesmerizing entertainment for everyone!”
-                    </p>
+                    <p class="event-description">Celebrate Diwali with exclusive offers, live performances, delicious treats, and mesmerizing entertainment for everyone!</p>
                 </div>
             </div>
 
             <!-- Event 6 -->
             <div class="event-card">
                 <div class="event-image">
-                    <img src="https://i.postimg.cc/2608r7hB/retouch-2025102320420159.jpg" alt="Event 6">
+                    <img src="https://i.postimg.cc/2608r7hB/retouch-2025102320420159.jpg" alt="Cultural Festival Celebration">
                 </div>
                 <div class="event-content">
                     <div class="event-date">📅 July 30, 2024</div>
@@ -181,12 +601,12 @@
     </footer>
 
     <script>
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
 
         hamburger.addEventListener('click', () => {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.classList.toggle('active');
         });
-    </script>
-</body>
-</html>
+
+        // Close menu when clicking on a link
+        navLinks.que
