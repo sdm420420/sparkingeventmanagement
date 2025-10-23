@@ -1625,35 +1625,32 @@ footer {
         }
 
         // Gallery Modal
-        const galleryImages = [
-            'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1200&q=80',
-            'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1200&q=80',
-            'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1200&q=80',
-            'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&q=80',
-            'https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=1200&q=80',
-            'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1200&q=80',
-            'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80',
-            'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=1200&q=80',
-            'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=1200&q=80'
-        ];
+const galleryImages = [
+    'https://i.postimg.cc/BZP0w3tS/retouch-2025102320144604.jpg',
+    'https://i.postimg.cc/pXMgGngQ/retouch-2025102320135339.jpg',
+    'https://i.postimg.cc/d1TxnqnQ/retouch-2025102320105167.jpg',
+    'https://i.postimg.cc/PqFqYMVg/Picsart-25-10-23-20-25-33-408.jpg',
+    'https://i.postimg.cc/2608r7hB/retouch-2025102320420159.jpg',
+    'https://i.postimg.cc/nrsk1T11/retouch-2025102320552125.jpg'
+];
 
-        function openModal(index) {
-            const modal = document.getElementById('galleryModal');
-            const modalImage = document.getElementById('modalImage');
-            modalImage.src = galleryImages[index];
-            modal.classList.add('active');
-        }
+function openModal(index) {
+    const modal = document.getElementById('galleryModal');
+    const modalImage = document.getElementById('modalImage');
+    modalImage.src = galleryImages[index];
+    modal.classList.add('active');
+}
 
-        function closeModal() {
-            document.getElementById('galleryModal').classList.remove('active');
-        }
+function closeModal() {
+    document.getElementById('galleryModal').classList.remove('active');
+}
 
-        // Close modal on outside click
-        document.getElementById('galleryModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
-        });
+// Close modal on outside click
+document.getElementById('galleryModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeModal();
+    }
+});
 
         // Form Submit
         function handleSubmit(e) {
