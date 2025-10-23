@@ -5,287 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Previous Events - Sparkling Events</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin:0; padding:0; box-sizing:border-box; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: #333;
             min-height: 100vh;
         }
-
-        /* Header */
         header {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255,255,255,0.95);
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            position: sticky; top:0; z-index:1000;
         }
-
         nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
+            display:flex; justify-content:space-between; align-items:center;
+            padding:1rem 5%; max-width:1400px; margin:0 auto;
         }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .logo a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .logo span:first-child {
-            color: #667eea;
-        }
-
-        .logo span:last-child {
-            color: #764ba2;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #667eea;
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: #333;
-            transition: 0.3s;
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 4rem 5%;
-            color: white;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        /* Events Grid */
-        .events-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 3rem 5%;
-        }
-
-        .events-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
+        .logo { font-size:1.8rem; font-weight:bold; cursor:pointer; }
+        .logo a { text-decoration:none; color:inherit; }
+        .logo span:first-child { color:#667eea; }
+        .logo span:last-child { color:#764ba2; }
+        .nav-links { display:flex; list-style:none; gap:2rem; }
+        .nav-links a { text-decoration:none; color:#333; font-weight:500; transition:color 0.3s; }
+        .nav-links a:hover { color:#667eea; }
+        .hamburger { display:none; flex-direction:column; cursor:pointer; gap:5px; }
+        .hamburger span { width:25px; height:3px; background:#333; transition:0.3s; }
+        .hero { text-align:center; padding:4rem 5%; color:white; }
+        .hero h1 { font-size:3rem; margin-bottom:1rem; text-shadow:2px 2px 4px rgba(0,0,0,0.3); }
+        .hero p { font-size:1.2rem; opacity:0.9; }
+        .events-container { max-width:1400px; margin:0 auto; padding:3rem 5%; }
+        .events-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(350px,1fr)); gap:2rem; margin-bottom:3rem; }
         .event-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
+            background:white; border-radius:15px; overflow:hidden; 
+            box-shadow:0 10px 30px rgba(0,0,0,0.2); transition: transform 0.3s, box-shadow 0.3s;
         }
-
-        .event-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        }
-
-        .event-image {
-            width: 100%;
-            height: 250px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: white;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .event-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s;
-        }
-
-        .event-card:hover .event-image img {
-            transform: scale(1.1);
-        }
-
-        .event-image-placeholder {
-            font-size: 4rem;
-        }
-
-        .event-content {
-            padding: 1.5rem;
-        }
-
-        .event-date {
-            color: #667eea;
-            font-weight: bold;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .event-title {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: #333;
-        }
-
-        .event-location {
-            color: #666;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .event-description {
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .event-stats {
-            display: flex;
-            gap: 1.5rem;
-            padding-top: 1rem;
-            border-top: 1px solid #eee;
-        }
-
-        .stat {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .stat-number {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #667eea;
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            color: #666;
-        }
-
-        /* Back Button */
-        .back-btn-container {
-            text-align: center;
-            padding: 2rem 0 4rem 0;
-        }
-
+        .event-card:hover { transform: translateY(-10px); box-shadow:0 15px 40px rgba(0,0,0,0.3); }
+        .event-image { width:100%; height:250px; display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative; }
+        .event-image img { width:100%; height:100%; object-fit:cover; transition: transform 0.3s; }
+        .event-card:hover .event-image img { transform: scale(1.1); }
+        .event-image-placeholder { font-size:4rem; }
+        .event-content { padding:1.5rem; }
+        .event-date { color:#667eea; font-weight:bold; font-size:0.9rem; margin-bottom:0.5rem; }
+        .event-title { font-size:1.5rem; margin-bottom:0.5rem; color:#333; }
+        .event-location { color:#666; margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem; }
+        .event-description { color:#555; line-height:1.6; margin-bottom:1rem; }
+        .back-btn-container { text-align:center; padding:2rem 0 4rem 0; }
         .back-btn {
-            display: inline-block;
-            padding: 1rem 3rem;
-            background: white;
-            color: #667eea;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            display:inline-block; padding:1rem 3rem; background:white; color:#667eea; text-decoration:none;
+            border-radius:50px; font-weight:bold; font-size:1.1rem; transition:all 0.3s; box-shadow:0 5px 15px rgba(0,0,0,0.2);
         }
-
-        .back-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-            background: #667eea;
-            color: white;
-        }
-
-        /* Footer */
-        footer {
-            background: rgba(0,0,0,0.8);
-            color: white;
-            text-align: center;
-            padding: 2rem 5%;
-            margin-top: 3rem;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .events-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .event-title {
-                font-size: 1.3rem;
-            }
+        .back-btn:hover { transform:scale(1.05); box-shadow:0 8px 20px rgba(0,0,0,0.3); background:#667eea; color:white; }
+        footer { background:rgba(0,0,0,0.8); color:white; text-align:center; padding:2rem 5%; margin-top:3rem; }
+        @media(max-width:768px) {
+            .nav-links { display:none; }
+            .hamburger { display:flex; }
+            .hero h1 { font-size:2rem; }
+            .hero p { font-size:1rem; }
+            .events-grid { grid-template-columns:1fr; }
+            .event-title { font-size:1.3rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <nav>
-            <div class="logo">
-                <a href="index.html">
-                    <span>Sparkling</span> <span>Events</span>
-                </a>
-            </div>
+            <div class="logo"><a href="index.html"><span>Sparkling</span> <span>Events</span></a></div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#services">Services</a></li>
@@ -294,204 +78,94 @@
                 <li><a href="index.html#team">Team</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <div class="hamburger"><span></span><span></span><span></span></div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <h1>🎉 Our Previous Events</h1>
         <p>Memorable moments we've created for our amazing clients</p>
     </section>
 
-    <!-- Events Container -->
     <div class="events-container">
         <div class="events-grid">
-            
             <!-- Event 1 -->
             <div class="event-card">
                 <div class="event-image">
-                    <!-- YAHA APNI IMAGE KA LINK DAALO -->
-                    <img src="https://i.postimg.cc/your-image-link-1.jpg" alt="Wedding Event" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'event-image-placeholder\'>🎊</div>'">
+                    <img src="https://i.postimg.cc/PqFqYMVg/Picsart-25-10-23-20-25-33-408.jpg" alt="Event 1">
                 </div>
                 <div class="event-content">
                     <div class="event-date">📅 December 15, 2024</div>
                     <h3 class="event-title">Grand Wedding Ceremony</h3>
                     <div class="event-location">📍 The Royal Palace Hotel, Mumbai</div>
-                    <p class="event-description">
-                        A magnificent 3-day wedding celebration featuring traditional ceremonies, vibrant sangeet night, and an elegant reception. Complete with stunning decor and entertainment.
-                    </p>
-                    <div class="event-stats">
-                        <div class="stat">
-                            <span class="stat-number">500+</span>
-                            <span class="stat-label">Guests</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">3</span>
-                            <span class="stat-label">Days</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">⭐⭐⭐⭐⭐</span>
-                            <span class="stat-label">Rating</span>
-                        </div>
-                    </div>
+                    <p class="event-description">A magnificent 3-day wedding celebration with stunning decor and entertainment.</p>
                 </div>
             </div>
 
             <!-- Event 2 -->
             <div class="event-card">
                 <div class="event-image">
-                    <!-- YAHA APNI IMAGE KA LINK DAALO -->
-                    <img src="https://i.postimg.cc/your-image-link-2.jpg" alt="Corporate Event" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'event-image-placeholder\'>🎂</div>'">
+                    <img src="https://i.postimg.cc/BZP0w3tS/retouch-2025102320144604.jpg" alt="Event 2">
                 </div>
                 <div class="event-content">
                     <div class="event-date">📅 January 20, 2025</div>
                     <h3 class="event-title">Corporate Annual Gala</h3>
                     <div class="event-location">📍 Grand Hyatt, Delhi</div>
-                    <p class="event-description">
-                        An elegant corporate event celebrating company achievements. Featured keynote speakers, awards ceremony, live music, and gourmet dining experience.
-                    </p>
-                    <div class="event-stats">
-                        <div class="stat">
-                            <span class="stat-number">300+</span>
-                            <span class="stat-label">Guests</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">1</span>
-                            <span class="stat-label">Day</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">⭐⭐⭐⭐⭐</span>
-                            <span class="stat-label">Rating</span>
-                        </div>
-                    </div>
+                    <p class="event-description">Elegant corporate event with awards, keynote speakers, live music, and gourmet dining.</p>
                 </div>
             </div>
 
             <!-- Event 3 -->
             <div class="event-card">
                 <div class="event-image">
-                    <!-- YAHA APNI IMAGE KA LINK DAALO -->
-                    <img src="https://i.postimg.cc/your-image-link-3.jpg" alt="Birthday Party" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'event-image-placeholder\'>🎈</div>'">
+                    <img src="https://i.postimg.cc/pXMgGngQ/retouch-2025102320135339.jpg" alt="Event 3">
                 </div>
                 <div class="event-content">
                     <div class="event-date">📅 November 5, 2024</div>
                     <h3 class="event-title">Kids Birthday Extravaganza</h3>
                     <div class="event-location">📍 Dreamland Resort, Bangalore</div>
-                    <p class="event-description">
-                        A magical birthday party with superhero theme, interactive games, face painting, magic show, and custom-designed cake. Pure joy and laughter!
-                    </p>
-                    <div class="event-stats">
-                        <div class="stat">
-                            <span class="stat-number">80+</span>
-                            <span class="stat-label">Guests</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">1</span>
-                            <span class="stat-label">Day</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">⭐⭐⭐⭐⭐</span>
-                            <span class="stat-label">Rating</span>
-                        </div>
-                    </div>
+                    <p class="event-description">A magical birthday party with superhero theme, games, magic show, and cake.</p>
                 </div>
             </div>
 
             <!-- Event 4 -->
             <div class="event-card">
                 <div class="event-image">
-                    <!-- YAHA APNI IMAGE KA LINK DAALO -->
-                    <img src="https://i.postimg.cc/your-image-link-4.jpg" alt="Engagement Party" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'event-image-placeholder\'>💍</div>'">
+                    <img src="https://i.postimg.cc/d1TxnqnQ/retouch-2025102320105167.jpg" alt="Event 4">
                 </div>
                 <div class="event-content">
                     <div class="event-date">📅 September 28, 2024</div>
                     <h3 class="event-title">Romantic Engagement Party</h3>
                     <div class="event-location">📍 Beachside Villa, Goa</div>
-                    <p class="event-description">
-                        An intimate beachside engagement with sunset ceremony, fairy lights, acoustic music, and candlelit dinner. A dream come true moment!
-                    </p>
-                    <div class="event-stats">
-                        <div class="stat">
-                            <span class="stat-number">120+</span>
-                            <span class="stat-label">Guests</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">1</span>
-                            <span class="stat-label">Day</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">⭐⭐⭐⭐⭐</span>
-                            <span class="stat-label">Rating</span>
-                        </div>
-                    </div>
+                    <p class="event-description">Intimate beachside engagement with sunset ceremony, fairy lights, acoustic music, and candlelit dinner.</p>
                 </div>
             </div>
 
             <!-- Event 5 -->
             <div class="event-card">
                 <div class="event-image">
-                    <!-- YAHA APNI IMAGE KA LINK DAALO -->
-                    <img src="https://i.postimg.cc/your-image-link-5.jpg" alt="Farewell Party" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'event-image-placeholder\'>🎓</div>'">
+                    <img src="https://i.postimg.cc/2608r7hB/retouch-2025102320420159.jpg" alt="Event 5">
                 </div>
                 <div class="event-content">
                     <div class="event-date">📅 August 12, 2024</div>
                     <h3 class="event-title">College Farewell Bash</h3>
                     <div class="event-location">📍 Green Valley Resort, Pune</div>
-                    <p class="event-description">
-                        A memorable farewell event with DJ night, awards, photo booth, karaoke, and emotional moments. Celebrating friendships and new beginnings.
-                    </p>
-                    <div class="event-stats">
-                        <div class="stat">
-                            <span class="stat-number">250+</span>
-                            <span class="stat-label">Guests</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">1</span>
-                            <span class="stat-label">Day</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">⭐⭐⭐⭐⭐</span>
-                            <span class="stat-label">Rating</span>
-                        </div>
-                    </div>
+                    <p class="event-description">Farewell event with DJ night, awards, photo booth, karaoke, and emotional moments.</p>
                 </div>
             </div>
 
             <!-- Event 6 -->
             <div class="event-card">
                 <div class="event-image">
-                    <!-- YAHA APNI IMAGE KA LINK DAALO -->
-                    <img src="https://i.postimg.cc/your-image-link-6.jpg" alt="Cultural Festival" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'event-image-placeholder\'>🎭</div>'">
+                    <img src="https://i.postimg.cc/nrsk1T11/retouch-2025102320552125.jpg" alt="Event 6">
                 </div>
                 <div class="event-content">
                     <div class="event-date">📅 July 30, 2024</div>
                     <h3 class="event-title">Cultural Festival Celebration</h3>
                     <div class="event-location">📍 Convention Center, Kolkata</div>
-                    <p class="event-description">
-                        A grand cultural festival showcasing traditional dances, music performances, art exhibitions, and authentic cuisines from various regions.
-                    </p>
-                    <div class="event-stats">
-                        <div class="stat">
-                            <span class="stat-number">1000+</span>
-                            <span class="stat-label">Guests</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">2</span>
-                            <span class="stat-label">Days</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">⭐⭐⭐⭐⭐</span>
-                            <span class="stat-label">Rating</span>
-                        </div>
-                    </div>
+                    <p class="event-description">Grand cultural festival with dances, music performances, art exhibitions, and cuisines from various regions.</p>
                 </div>
             </div>
-
         </div>
 
         <!-- Back to Home Button -->
@@ -500,28 +174,17 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Sparkling Events. All rights reserved.</p>
         <p>Making your events unforgettable! ✨</p>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
 
         hamburger.addEventListener('click', () => {
             navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        });
-
-        // Smooth scroll animation on load
-        window.addEventListener('load', () => {
-            document.body.style.opacity = '0';
-            setTimeout(() => {
-                document.body.style.transition = 'opacity 0.5s';
-                document.body.style.opacity = '1';
-            }, 100);
         });
     </script>
 </body>
