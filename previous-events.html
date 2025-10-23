@@ -9,7 +9,7 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #EC4899 0%, #F97316 50%, #8B5CF6 100%);
             color: #333;
             min-height: 100vh;
             position: relative;
@@ -25,24 +25,24 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 40% 20%, rgba(255, 255, 255, 0.06) 0%, transparent 50%);
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
             animation: particleFloat 15s ease-in-out infinite;
             pointer-events: none;
             z-index: 0;
         }
 
         @keyframes particleFloat {
-            0%, 100% { opacity: 1; transform: translateY(0); }
-            50% { opacity: 0.8; transform: translateY(-20px); }
+            0%, 100% { opacity: 1; transform: translateY(0) scale(1); }
+            50% { opacity: 0.8; transform: translateY(-30px) scale(1.05); }
         }
 
         /* Header */
         header {
             background: rgba(255,255,255,0.98);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 4px 30px rgba(236, 72, 153, 0.2);
             position: sticky; 
             top:0; 
             z-index:1000;
@@ -58,14 +58,14 @@
             display:flex; 
             justify-content:space-between; 
             align-items:center;
-            padding:1.2rem 5%; 
+            padding:1rem 5%; 
             max-width:1400px; 
             margin:0 auto;
         }
 
         .logo { 
             font-size:1.8rem; 
-            font-weight:bold; 
+            font-weight:900; 
             cursor:pointer;
             transition: transform 0.3s ease;
         }
@@ -76,27 +76,28 @@
 
         .logo a { text-decoration:none; color:inherit; }
         .logo span:first-child { 
-            color:#667eea;
-            text-shadow: 2px 2px 4px rgba(102, 126, 234, 0.3);
+            color:#EC4899;
+            text-shadow: 2px 2px 4px rgba(236, 72, 153, 0.3);
         }
         .logo span:last-child { 
-            color:#764ba2;
-            text-shadow: 2px 2px 4px rgba(118, 75, 162, 0.3);
+            color:#F97316;
+            text-shadow: 2px 2px 4px rgba(249, 115, 22, 0.3);
         }
 
         .nav-links { 
             display:flex; 
             list-style:none; 
-            gap:2.5rem; 
+            gap:2rem; 
         }
 
         .nav-links a { 
             text-decoration:none; 
             color:#333; 
-            font-weight:600; 
+            font-weight:700; 
             transition:all 0.3s;
             position: relative;
             padding: 0.5rem 0;
+            font-size: 0.95rem;
         }
 
         .nav-links a::after {
@@ -106,13 +107,13 @@
             left: 0;
             width: 0;
             height: 3px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
+            background: linear-gradient(90deg, #EC4899, #F97316);
             transition: width 0.3s ease;
             border-radius: 2px;
         }
 
         .nav-links a:hover {
-            color:#667eea;
+            color:#EC4899;
         }
 
         .nav-links a:hover::after {
@@ -134,31 +135,29 @@
             border-radius: 2px;
         }
 
-        /* Hero Section */
+        /* Hero Section - Compact */
         .hero { 
             text-align:center; 
-            padding:5rem 5% 4rem 5%; 
+            padding:3rem 5% 2.5rem 5%; 
             color:white;
             position: relative;
             z-index: 1;
         }
 
         .hero h1 { 
-            font-size:3.5rem; 
-            margin-bottom:1rem; 
-            text-shadow:3px 3px 6px rgba(0,0,0,0.4);
+            font-size:2.8rem; 
+            margin-bottom:0.75rem; 
+            text-shadow:3px 3px 8px rgba(0,0,0,0.4);
             animation: fadeInUp 0.8s ease-out;
-            background: linear-gradient(135deg, #ffffff, #f0f0ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-weight: 900;
         }
 
         .hero p { 
-            font-size:1.3rem; 
+            font-size:1.15rem; 
             opacity:0.95;
             animation: fadeInUp 1s ease-out 0.2s backwards;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-weight: 500;
         }
 
         @keyframes fadeInUp {
@@ -170,56 +169,57 @@
         .events-container { 
             max-width:1400px; 
             margin:0 auto; 
-            padding:3rem 5%;
+            padding:2rem 5% 3rem 5%;
             position: relative;
             z-index: 1;
         }
 
         .events-grid { 
             display:grid; 
-            grid-template-columns:repeat(auto-fit,minmax(350px,1fr)); 
-            gap:2.5rem; 
+            grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); 
+            gap:2rem; 
             margin-bottom:3rem;
         }
 
-        /* Event Card - Premium Design */
+        /* Event Card - Compact & Modern */
         .event-card {
             background:white; 
-            border-radius:25px; 
+            border-radius:20px; 
             overflow:hidden; 
-            box-shadow:0 15px 40px rgba(0,0,0,0.2);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow:0 10px 35px rgba(236, 72, 153, 0.25);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             border: 3px solid transparent;
             animation: cardFadeIn 0.6s ease-out backwards;
+            height: fit-content;
         }
 
         @keyframes cardFadeIn {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; transform: translateY(40px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
         /* Staggered animation */
         .event-card:nth-child(1) { animation-delay: 0.1s; }
-        .event-card:nth-child(2) { animation-delay: 0.2s; }
-        .event-card:nth-child(3) { animation-delay: 0.3s; }
-        .event-card:nth-child(4) { animation-delay: 0.4s; }
-        .event-card:nth-child(5) { animation-delay: 0.5s; }
-        .event-card:nth-child(6) { animation-delay: 0.6s; }
+        .event-card:nth-child(2) { animation-delay: 0.15s; }
+        .event-card:nth-child(3) { animation-delay: 0.2s; }
+        .event-card:nth-child(4) { animation-delay: 0.25s; }
+        .event-card:nth-child(5) { animation-delay: 0.3s; }
+        .event-card:nth-child(6) { animation-delay: 0.35s; }
 
         /* Gradient Border Animation */
         .event-card::before {
             content: '';
             position: absolute;
             inset: -3px;
-            border-radius: 25px;
+            border-radius: 20px;
             padding: 3px;
-            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb, #667eea);
+            background: linear-gradient(135deg, #EC4899, #F97316, #8B5CF6, #EC4899);
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
             mask-composite: exclude;
             opacity: 0;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.4s ease;
             animation: borderRotate 3s linear infinite;
         }
 
@@ -233,14 +233,14 @@
         }
 
         .event-card:hover { 
-            transform: translateY(-15px) scale(1.02); 
-            box-shadow:0 25px 60px rgba(102, 126, 234, 0.4);
+            transform: translateY(-12px) scale(1.02); 
+            box-shadow:0 20px 50px rgba(236, 72, 153, 0.35);
         }
 
-        /* Event Image */
+        /* Event Image - Compact */
         .event-image { 
             width:100%; 
-            height:280px; 
+            height:200px; 
             display:flex; 
             align-items:center; 
             justify-content:center; 
@@ -252,7 +252,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.3) 100%);
+            background: linear-gradient(180deg, transparent 0%, rgba(236, 72, 153, 0.3) 100%);
             opacity: 0;
             transition: opacity 0.4s ease;
         }
@@ -269,112 +269,116 @@
         }
 
         .event-card:hover .event-image img { 
-            transform: scale(1.15);
+            transform: scale(1.15) rotate(2deg);
         }
 
-        /* Event Content */
+        /* Event Content - Compact */
         .event-content { 
-            padding:2rem;
+            padding:1.5rem;
             position: relative;
         }
 
         .event-date { 
-            color:#667eea; 
-            font-weight:bold; 
-            font-size:0.95rem; 
-            margin-bottom:0.75rem;
+            color:#EC4899; 
+            font-weight:800; 
+            font-size:0.85rem; 
+            margin-bottom:0.5rem;
             display: inline-block;
-            padding: 0.4rem 1rem;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
-            border-radius: 20px;
-            border: 2px solid rgba(102, 126, 234, 0.3);
+            padding: 0.35rem 0.9rem;
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.12), rgba(249, 115, 22, 0.12));
+            border-radius: 15px;
+            border: 2px solid rgba(236, 72, 153, 0.3);
             transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .event-card:hover .event-date {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #EC4899, #F97316);
             color: white;
             border-color: transparent;
-            transform: translateY(-3px);
+            transform: translateX(3px);
         }
 
         .event-title { 
-            font-size:1.6rem; 
-            margin-bottom:0.75rem; 
-            color:#333;
+            font-size:1.35rem; 
+            margin-bottom:0.5rem; 
+            color:#1a1a1a;
             font-weight: 800;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            line-height: 1.3;
             transition: all 0.3s ease;
         }
 
         .event-card:hover .event-title {
-            transform: translateX(5px);
-            letter-spacing: 0.5px;
+            color: #EC4899;
+            transform: translateX(3px);
         }
 
         .event-location { 
             color:#666; 
-            margin-bottom:1.2rem; 
+            margin-bottom:0.75rem; 
             display:flex; 
             align-items:center; 
-            gap:0.5rem;
+            gap:0.4rem;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
 
         .event-description { 
             color:#555; 
-            line-height:1.8; 
-            margin-bottom:1rem;
-            font-size: 1.05rem;
-        }
-
-        /* View Details Button (appears on hover) */
-        .event-card::after {
-            content: '👁️ View Details';
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%) translateY(20px);
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            font-weight: 700;
+            line-height:1.6; 
             font-size: 0.95rem;
-            opacity: 0;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            pointer-events: none;
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
-        .event-card:hover::after {
+        /* View Details Badge */
+        .view-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(135deg, #EC4899, #F97316);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 5px 15px rgba(236, 72, 153, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .event-card:hover .view-badge {
             opacity: 1;
-            transform: translateX(-50%) translateY(0);
+            transform: translateY(0);
         }
 
         /* Back Button Container */
         .back-btn-container { 
             text-align:center; 
-            padding:2rem 0 4rem 0; 
+            padding:2rem 0 3rem 0; 
         }
 
         .back-btn {
             display:inline-block; 
-            padding:1.2rem 3.5rem; 
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding:1rem 3rem; 
+            background: linear-gradient(135deg, #EC4899, #F97316);
             color:white; 
             text-decoration:none;
             border-radius:50px; 
-            font-weight:bold; 
-            font-size:1.15rem; 
+            font-weight:800; 
+            font-size:1.05rem; 
             transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow:0 10px 30px rgba(102, 126, 234, 0.4);
+            box-shadow:0 10px 30px rgba(236, 72, 153, 0.4);
             position: relative;
             overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .back-btn::before {
@@ -396,8 +400,8 @@
         }
 
         .back-btn:hover { 
-            transform:scale(1.08) translateY(-3px); 
-            box-shadow:0 15px 40px rgba(102, 126, 234, 0.6);
+            transform:scale(1.05) translateY(-3px); 
+            box-shadow:0 15px 40px rgba(236, 72, 153, 0.6);
         }
 
         .back-btn:active {
@@ -406,30 +410,35 @@
 
         /* Footer */
         footer { 
-            background:rgba(0,0,0,0.9); 
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.95), rgba(249, 115, 22, 0.95));
             color:white; 
             text-align:center; 
-            padding:2.5rem 5%; 
+            padding:2rem 5%; 
             margin-top:3rem;
-            border-top: 3px solid rgba(102, 126, 234, 0.5);
+            border-top: 3px solid rgba(255, 255, 255, 0.3);
         }
 
         footer p {
             margin-bottom: 0.5rem;
-            font-size: 1.05rem;
+            font-size: 1rem;
+            font-weight: 600;
         }
 
         footer p:last-child {
             margin-bottom: 0;
             font-size: 1.1rem;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 700;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
         /* Responsive Design */
+        @media(max-width:1024px) {
+            .events-grid { 
+                grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); 
+                gap: 1.75rem;
+            }
+        }
+
         @media(max-width:768px) {
             .nav-links { 
                 display:none;
@@ -439,9 +448,9 @@
                 right: 0;
                 background: rgba(255,255,255,0.98);
                 flex-direction: column;
-                padding: 2rem;
-                gap: 1.5rem;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                padding: 1.5rem;
+                gap: 1rem;
+                box-shadow: 0 10px 30px rgba(236, 72, 153, 0.3);
             }
 
             .nav-links.active {
@@ -450,35 +459,40 @@
 
             .hamburger { display:flex; }
             
-            .hero { padding: 4rem 5% 3rem 5%; }
-            .hero h1 { font-size:2.5rem; }
-            .hero p { font-size:1.1rem; }
+            .hero { padding: 2.5rem 5% 2rem 5%; }
+            .hero h1 { font-size:2.2rem; }
+            .hero p { font-size:1rem; }
             
             .events-grid { 
                 grid-template-columns:1fr; 
-                gap: 2rem;
+                gap: 1.5rem;
             }
             
-            .event-title { font-size:1.4rem; }
-            .event-image { height: 220px; }
+            .event-title { font-size:1.25rem; }
+            .event-image { height: 180px; }
+            .event-content { padding: 1.25rem; }
             
             .back-btn {
-                padding: 1rem 2.5rem;
-                font-size: 1rem;
+                padding: 0.9rem 2.5rem;
+                font-size: 0.95rem;
             }
         }
 
         @media(max-width:480px) {
-            .hero h1 { font-size: 2rem; }
-            .hero p { font-size: 1rem; }
+            .hero h1 { font-size: 1.9rem; }
+            .hero p { font-size: 0.95rem; }
             
-            .events-grid { gap: 1.5rem; }
-            .event-content { padding: 1.5rem; }
-            .event-image { height: 200px; }
+            .events-grid { gap: 1.25rem; }
+            .event-content { padding: 1rem; }
+            .event-image { height: 160px; }
+            .event-title { font-size: 1.15rem; }
+            .event-description { font-size: 0.9rem; }
             
             .back-btn {
                 width: 100%;
-                max-width: 300px;
+                max-width: 280px;
+                padding: 0.85rem 2rem;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -512,11 +526,12 @@
         <div class="events-grid">
             <!-- Event 1 -->
             <div class="event-card">
+                <div class="view-badge">✨ View</div>
                 <div class="event-image">
                     <img src="https://i.postimg.cc/PqFqYMVg/Picsart-25-10-23-20-25-33-408.jpg" alt="Grand Wedding Ceremony">
                 </div>
                 <div class="event-content">
-                    <div class="event-date">📅 December 15, 2024</div>
+                    <div class="event-date">📅 Dec 15, 2024</div>
                     <h3 class="event-title">Grand Wedding Ceremony</h3>
                     <div class="event-location">📍 The Royal Palace Hotel, Mumbai</div>
                     <p class="event-description">A magnificent 3-day wedding celebration with stunning decor and entertainment.</p>
@@ -525,11 +540,12 @@
 
             <!-- Event 2 -->
             <div class="event-card">
+                <div class="view-badge">✨ View</div>
                 <div class="event-image">
                     <img src="https://i.postimg.cc/pXMgGngQ/retouch-2025102320135339.jpg" alt="Corporate Annual Gala">
                 </div>
                 <div class="event-content">
-                    <div class="event-date">📅 January 20, 2025</div>
+                    <div class="event-date">📅 Jan 20, 2025</div>
                     <h3 class="event-title">Corporate Annual Gala</h3>
                     <div class="event-location">📍 Grand Hyatt, Delhi</div>
                     <p class="event-description">Elegant corporate event with awards, keynote speakers, live music, and gourmet dining.</p>
@@ -538,11 +554,12 @@
 
             <!-- Event 3 -->
             <div class="event-card">
+                <div class="view-badge">✨ View</div>
                 <div class="event-image">
                     <img src="https://i.postimg.cc/nrsk1T11/retouch-2025102320552125.jpg" alt="Kids Birthday Extravaganza">
                 </div>
                 <div class="event-content">
-                    <div class="event-date">📅 November 5, 2024</div>
+                    <div class="event-date">📅 Nov 5, 2024</div>
                     <h3 class="event-title">Kids Birthday Extravaganza</h3>
                     <div class="event-location">📍 Dreamland Resort, Bangalore</div>
                     <p class="event-description">A magical birthday party with superhero theme, games, magic show, and cake.</p>
@@ -551,11 +568,12 @@
 
             <!-- Event 4 -->
             <div class="event-card">
+                <div class="view-badge">✨ View</div>
                 <div class="event-image">
                     <img src="https://i.postimg.cc/BZP0w3tS/retouch-2025102320144604.jpg" alt="Romantic Engagement Party">
                 </div>
                 <div class="event-content">
-                    <div class="event-date">📅 September 28, 2024</div>
+                    <div class="event-date">📅 Sep 28, 2024</div>
                     <h3 class="event-title">Romantic Engagement Party</h3>
                     <div class="event-location">📍 Beachside Villa, Goa</div>
                     <p class="event-description">Intimate beachside engagement with sunset ceremony, fairy lights, acoustic music, and candlelit dinner.</p>
@@ -564,11 +582,12 @@
 
             <!-- Event 5 -->
             <div class="event-card">
+                <div class="view-badge">✨ View</div>
                 <div class="event-image">
                     <img src="https://i.postimg.cc/d1TxnqnQ/retouch-2025102320105167.jpg" alt="Festival of Diwali">
                 </div>
                 <div class="event-content">
-                    <div class="event-date">📅 August 12, 2024</div>
+                    <div class="event-date">📅 Aug 12, 2024</div>
                     <h3 class="event-title">Festival of Diwali</h3>
                     <div class="event-location">📍 Green Valley Resort, Pune</div>
                     <p class="event-description">Celebrate Diwali with exclusive offers, live performances, delicious treats, and mesmerizing entertainment for everyone!</p>
@@ -577,36 +596,12 @@
 
             <!-- Event 6 -->
             <div class="event-card">
+                <div class="view-badge">✨ View</div>
                 <div class="event-image">
                     <img src="https://i.postimg.cc/2608r7hB/retouch-2025102320420159.jpg" alt="Cultural Festival Celebration">
                 </div>
                 <div class="event-content">
-                    <div class="event-date">📅 July 30, 2024</div>
+                    <div class="event-date">📅 Jul 30, 2024</div>
                     <h3 class="event-title">Cultural Festival Celebration</h3>
                     <div class="event-location">📍 Convention Center, Kolkata</div>
-                    <p class="event-description">Grand cultural festival with dances, music performances, art exhibitions, and cuisines from various regions.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Back to Home Button -->
-        <div class="back-btn-container">
-            <a href="index.html" class="back-btn">← Back to Home</a>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2025 Sparkling Events. All rights reserved.</p>
-        <p>Making your events unforgettable! ✨</p>
-    </footer>
-
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Close menu when clicking on a link
-        navLinks.que
+                    <p class="event-description">Grand cultural festival with dances, mus
