@@ -508,27 +508,65 @@
     max-width: 100%;
   }
 }
- 
-       /* Promoter Cards */
+        
+/* Promoter Services Section */
 .promoter-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2.5rem;
     margin-top: 3rem;
+    padding: 0 1rem;
 }
 
 .promoter-card {
-    background: none; /* background removed */
-    color: black; /* text color black */
-    border: 2px solid #EC4899; /* pink border */
-    border-radius: 25px;
-    padding: 3rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(252, 231, 243, 0.95) 100%);
+    color: #1a1a1a;
+    border: 3px solid transparent;
+    background-image: 
+        linear-gradient(white, white),
+        linear-gradient(135deg, #EC4899, #F97316, #EC4899);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border-radius: 30px;
+    padding: 3rem 2rem;
     text-align: center;
     position: relative;
     overflow: hidden;
-    transition: all 0.3s;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 40px rgba(236, 72, 153, 0.15);
 }
 
+/* Animated Gradient Border on Hover */
+.promoter-card::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 30px;
+    padding: 3px;
+    background: linear-gradient(135deg, #EC4899, #F97316, #8B5CF6, #EC4899);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    animation: borderRotate 3s linear infinite;
+    z-index: 0;
+}
+
+@keyframes borderRotate {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.promoter-card:hover::after {
+    opacity: 1;
+}
+
+/* Floating Background Effect */
 .promoter-card::before {
     content: '';
     position: absolute;
@@ -536,22 +574,318 @@
     right: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(236, 72, 153, 0.15), transparent 50%); /* subtle pink glow */
-    transition: all 0.5s;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.15), rgba(249, 115, 22, 0.1), transparent 60%);
+    transition: all 0.6s ease;
+    pointer-events: none;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    33% {
+        transform: translate(20px, -20px) rotate(120deg);
+    }
+    66% {
+        transform: translate(-20px, 20px) rotate(240deg);
+    }
 }
 
 .promoter-card:hover::before {
-    transform: scale(1.2) rotate(30deg);
+    transform: scale(1.3) rotate(45deg);
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.25), rgba(249, 115, 22, 0.15), transparent 60%);
 }
 
 .promoter-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 60px rgba(236, 72, 153, 0.3); /* subtle pink shadow */
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 70px rgba(236, 72, 153, 0.35);
 }
 
 .promoter-card > * {
     position: relative;
     z-index: 1;
+}
+
+/* Service Icon with Pulse Animation */
+.promoter-card .service-icon {
+    font-size: 4.5rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    filter: drop-shadow(0 8px 20px rgba(236, 72, 153, 0.3));
+    position: relative;
+}
+
+.promoter-card .service-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.3), transparent 70%);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+}
+
+.promoter-card:hover .service-icon {
+    transform: scale(1.15) rotate(10deg);
+    filter: drop-shadow(0 12px 30px rgba(236, 72, 153, 0.5));
+}
+
+/* Card Title with Gradient */
+.promoter-card h3 {
+    font-size: 1.85rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #EC4899, #F97316);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    display: inline-block;
+}
+
+.promoter-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #EC4899, #F97316);
+    transition: width 0.4s ease;
+    border-radius: 2px;
+}
+
+.promoter-card:hover h3::after {
+    width: 80%;
+}
+
+/* Card Description */
+.promoter-card > p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: #4a5568;
+    font-weight: 500;
+}
+
+/* Service Features List with Icons */
+.service-features {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.service-features li {
+    padding: 0.9rem 1.2rem;
+    margin-bottom: 0.75rem;
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.08), rgba(249, 115, 22, 0.05));
+    border-left: 4px solid #EC4899;
+    border-radius: 12px;
+    font-size: 1rem;
+    color: #2d3748;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-features li::before {
+    content: '✨';
+    position: absolute;
+    left: -30px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.service-features li:hover {
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.15), rgba(249, 115, 22, 0.1));
+    transform: translateX(10px);
+    border-left-color: #F97316;
+    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.2);
+    padding-left: 2.5rem;
+}
+
+.service-features li:hover::before {
+    left: 1rem;
+    opacity: 1;
+}
+
+/* Book Now Button - Premium Pink Design */
+.promoter-card .btn-secondary {
+    background: linear-gradient(135deg, #EC4899, #F97316);
+    color: #000000;
+    font-weight: 700;
+    padding: 1.1rem 3rem;
+    border-radius: 50px;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(236, 72, 153, 0.4);
+}
+
+.promoter-card .btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.promoter-card .btn-secondary:hover::before {
+    width: 400px;
+    height: 400px;
+}
+
+.promoter-card .btn-secondary:hover {
+    background: linear-gradient(135deg, #F97316, #EC4899);
+    transform: scale(1.08) translateY(-3px);
+    box-shadow: 0 15px 40px rgba(236, 72, 153, 0.6);
+}
+
+.promoter-card .btn-secondary:active {
+    transform: scale(0.95);
+}
+
+/* Sparkle Effect on Hover */
+.promoter-card:hover {
+    animation: sparkle 0.6s ease-in-out;
+}
+
+@keyframes sparkle {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.1); }
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+    .promoter-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+    
+    .promoter-card {
+        padding: 2.5rem 1.5rem;
+    }
+    
+    .promoter-card .service-icon {
+        font-size: 3.5rem;
+    }
+    
+    .promoter-card h3 {
+        font-size: 1.6rem;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .promoter-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+    
+    .promoter-card {
+        padding: 2rem 1.5rem;
+        border-radius: 25px;
+    }
+    
+    .promoter-card .service-icon {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .promoter-card h3 {
+        font-size: 1.6rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .promoter-card > p {
+        font-size: 0.95rem;
+        margin-bottom: 1.25rem;
+    }
+    
+    .service-features {
+        margin: 1.5rem 0;
+    }
+    
+    .service-features li {
+        padding: 0.75rem 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .promoter-card .btn-secondary {
+        padding: 1rem 2.5rem;
+        font-size: 0.95rem;
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .promoter-grid {
+        gap: 1.5rem;
+        padding: 0 0.75rem;
+    }
+    
+    .promoter-card {
+        padding: 1.75rem 1.25rem;
+        border-radius: 20px;
+    }
+    
+    .promoter-card .service-icon {
+        font-size: 3rem;
+    }
+    
+    .promoter-card h3 {
+        font-size: 1.45rem;
+    }
+    
+    .promoter-card > p {
+        font-size: 0.9rem;
+    }
+    
+    .service-features li {
+        padding: 0.65rem 0.9rem;
+        font-size: 0.9rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .promoter-card .btn-secondary {
+        padding: 0.9rem 2rem;
+        font-size: 0.9rem;
+    }
 }
                  
         /* Gallery */
