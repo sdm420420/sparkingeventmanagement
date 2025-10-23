@@ -29,6 +29,7 @@
       opacity: 0.9;
     }
 
+    /* About Section */
     .profile-about {
       padding: 2rem;
       max-width: 900px;
@@ -50,14 +51,24 @@
     }
 
     /* Gallery Section */
+    .profile-gallery {
+      padding: 2rem;
+      text-align: center;
+      background: #fff0f6;
+      border-top: 2px solid #ffe0ed;
+      border-bottom: 2px solid #ffe0ed;
+    }
+
+    .profile-gallery h2 {
+      color: #ff1493;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.5rem;
-      padding: 2rem;
-      background: #fff0f6;
-      border-top: 2px solid #ffe0ed;
-      border-bottom: 2px solid #ffe0ed;
     }
 
     .gallery img {
@@ -67,16 +78,16 @@
       border-radius: 14px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
     }
 
     .gallery img:hover {
-      transform: scale(1.04);
-      box-shadow: 0 10px 25px rgba(255, 20, 147, 0.3);
+      transform: scale(1.05);
+      box-shadow: 0 12px 28px rgba(255, 20, 147, 0.35);
     }
 
     .view-events {
-      text-align: center;
-      margin: 2rem 0;
+      margin-top: 2rem;
     }
 
     .view-events a {
@@ -87,6 +98,7 @@
       text-decoration: none;
       font-weight: 600;
       transition: all 0.3s ease;
+      display: inline-block;
     }
 
     .view-events a:hover {
@@ -125,9 +137,9 @@
 </head>
 <body>
 
+  <!-- Header -->
   <header>
-    <section class="profile-header">
-    <img src="https://i.postimg.cc/nrsk1T11/retouch-2025102320552125.jpg" alt="Sakshi Parashar">
+    <img src="https://i.postimg.cc/nrsk1T11/retouch-2025102320552125.jpg" alt="Sakshi Parashar" style="width:180px; height:180px; border-radius:50%; margin-bottom:15px; border:5px solid #fff; object-fit:cover;">
     <h1>Sakshi Parashar</h1>
     <p>Professional Anchor | Sparking Event Management Group Patna</p>
   </header>
@@ -151,19 +163,26 @@
     </p>
   </section>
 
-  <!-- Gallery -->
-<section class="profile-gallery">
-  <h2>Gallery</h2>
-  <div class="gallery">
-    <img src="https://i.postimg.cc/BZP0w3tS/retouch-2025102320144604.jpg" alt="Gallery 1">
-    <img src="https://i.postimg.cc/pXMgGngQ/retouch-2025102320135339.jpg" alt="Gallery 2">
-    <img src="https://i.postimg.cc/d1TxnqnQ/retouch-2025102320105167.jpg" alt="Gallery 3">
-    <img src="https://i.postimg.cc/PqFqYMVg/Picsart-25-10-23-20-25-33-408.jpg" alt="Gallery 4">
-    <img src="https://i.postimg.cc/2608r7hB/retouch-2025102320420159.jpg" alt="Gallery 5">
-    <img src="https://i.postimg.cc/nrsk1T11/retouch-2025102320552125.jpg" alt="Gallery 6">
-  </div>
+  <!-- Gallery Section -->
+  <section class="profile-gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="https://i.postimg.cc/BZP0w3tS/retouch-2025102320144604.jpg" alt="Gallery 1">
+      <img src="https://i.postimg.cc/pXMgGngQ/retouch-2025102320135339.jpg" alt="Gallery 2">
+      <img src="https://i.postimg.cc/d1TxnqnQ/retouch-2025102320105167.jpg" alt="Gallery 3">
+      <img src="https://i.postimg.cc/PqFqYMVg/Picsart-25-10-23-20-25-33-408.jpg" alt="Gallery 4">
+      <img src="https://i.postimg.cc/2608r7hB/retouch-2025102320420159.jpg" alt="Gallery 5">
+      <img src="https://i.postimg.cc/6qVc8T6F/retouch-2025102320163526.jpg" alt="Gallery 6">
+    </div>
 
-  <a href="https://sparkingevents.vercel.app/previous-events.html" class="btn">View More Events</a>
-</section>
+    <div class="view-events">
+      <a href="https://sparkingevents.vercel.app/previous-events.html">View More Events</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Sparking Event Management Group Patna. All Rights Reserved.
+  </footer>
+
 </body>
 </html>
