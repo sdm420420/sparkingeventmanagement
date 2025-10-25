@@ -1354,21 +1354,25 @@
 
         /* Contact Section */
 #contact {
-    padding: 80px 20px;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 80px 15px;
+    background: linear-gradient(135deg, #ffe4ec 0%, #ffd2e1 100%);
+    width: 100%;
+    box-sizing: border-box;
 }
 
+/* Header */
 .section-header {
     text-align: center;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto 60px;
 }
 
 .section-badge {
     display: inline-block;
     padding: 8px 20px;
-    background: rgba(255, 107, 107, 0.1);
-    color: #ff6b6b;
+    background: rgba(255, 107, 168, 0.1);
+    color: #ff4b8b;
+    border: 1.5px solid #ff8ebc;
     border-radius: 30px;
     font-size: 14px;
     font-weight: 600;
@@ -1376,116 +1380,112 @@
 }
 
 .section-title {
-    font-size: 42px;
-    margin-bottom: 15px;
-    color: #2d3436;
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #d63384;
 }
 
 .section-title span {
-    color: #ff6b6b;
+    color: #ff4b8b;
 }
 
 .section-subtitle {
     font-size: 16px;
-    color: #636e72;
+    color: #7a2f58;
     line-height: 1.6;
 }
 
-/* Contact Container - Single Column Layout */
+/* 🌺 Contact Container */
 .contact-container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 40px;
 }
 
-/* Contact Info */
+/* 🌸 Info Box */
 .contact-info {
-    background: white;
+    background: #fff0f6;
     padding: 40px;
+    border: 2px solid #ff8ebc;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(255, 107, 168, 0.15);
 }
 
 .contact-info h3 {
-    font-size: 28px;
-    color: #2d3436;
+    font-size: 26px;
+    color: #d63384;
     margin-bottom: 30px;
-    margin-top: 0;
-    padding-bottom: 15px;
-    border-bottom: 3px solid #ff6b6b;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #ff4b8b;
 }
 
+/* Info Cards */
 .info-card {
     display: flex;
-    gap: 20px;
-    padding: 20px;
-    margin-bottom: 20px;
-    background: #f8f9fa;
+    gap: 18px;
+    padding: 18px;
+    margin-bottom: 18px;
+    background: #ffeaf1;
     border-radius: 12px;
+    border: 1.5px solid #ff8ebc;
     transition: all 0.3s ease;
 }
 
 .info-card:hover {
-    background: #fff;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: #fff0f6;
     transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 168, 0.25);
 }
 
 .info-icon {
-    font-size: 28px;
-    min-width: 50px;
-    height: 50px;
+    font-size: 26px;
+    min-width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #ff6b6b, #ff8787);
-    border-radius: 12px;
+    background: linear-gradient(135deg, #ff6b9b, #ff8ebc);
+    color: white;
+    border-radius: 10px;
 }
 
 .info-content h4 {
-    font-size: 18px;
-    color: #2d3436;
-    margin: 0 0 8px 0;
+    font-size: 17px;
+    color: #c2185b;
+    margin: 0 0 6px 0;
 }
 
-.info-content p {
-    font-size: 14px;
-    color: #636e72;
-    margin: 0;
-    line-height: 1.6;
-}
-
+.info-content p,
 .info-content a {
-    color: #ff6b6b;
+    font-size: 14px;
+    color: #6b244a;
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
 .info-content a:hover {
-    color: #ff5252;
+    color: #ff4b8b;
 }
 
-/* Contact Form Wrapper */
+/* 🌷 Form Box */
 .contact-form-wrapper {
-    background: white;
+    background: #fff0f6;
     padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    position: relative;
+    border: 2px solid #ff8ebc;
+    box-shadow: 0 8px 20px rgba(255, 107, 168, 0.15);
 }
 
 .contact-form h3 {
-    font-size: 28px;
-    color: #2d3436;
+    font-size: 26px;
+    color: #d63384;
     margin-bottom: 30px;
-    margin-top: 0;
-    padding-bottom: 15px;
-    border-bottom: 3px solid #ff6b6b;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #ff4b8b;
 }
 
-/* Form Groups */
+/* Inputs */
 .form-group {
     margin-bottom: 20px;
 }
@@ -1494,7 +1494,7 @@
     display: block;
     font-size: 14px;
     font-weight: 600;
-    color: #2d3436;
+    color: #a2165c;
     margin-bottom: 8px;
 }
 
@@ -1504,57 +1504,48 @@
     width: 100%;
     padding: 12px 16px;
     font-size: 15px;
-    border: 2px solid #e1e8ed;
+    border: 2px solid #ffb6d2;
     border-radius: 10px;
     transition: all 0.3s ease;
-    font-family: inherit;
-    box-sizing: border-box;
+    background: #fff;
+    color: #4a0f2a;
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #ff6b6b;
-    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+    border-color: #ff4b8b;
+    box-shadow: 0 0 0 3px rgba(255, 107, 168, 0.15);
 }
 
-.form-group textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
-/* Submit Button */
+/* 🌸 Button */
 .submit-btn {
     width: 100%;
     padding: 15px 30px;
     font-size: 16px;
     font-weight: 600;
     color: white;
-    background: linear-gradient(135deg, #ff6b6b, #ff8787);
+    background: linear-gradient(135deg, #ff4b8b, #ff8ebc);
     border: none;
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+    box-shadow: 0 5px 15px rgba(255, 107, 168, 0.3);
 }
 
 .submit-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+    box-shadow: 0 8px 20px rgba(255, 107, 168, 0.4);
 }
 
-.submit-btn:active {
-    transform: translateY(0);
-}
-
-/* Success Message */
+/* ✅ Success Message */
 .success-message {
     display: none;
     text-align: center;
     padding: 30px;
-    background: #d4edda;
-    border: 2px solid #c3e6cb;
+    background: #ffebf4;
+    border: 2px solid #ffb6d2;
     border-radius: 12px;
     margin-top: 20px;
 }
@@ -1566,104 +1557,46 @@
 
 .success-message h4 {
     font-size: 20px;
-    color: #155724;
-    margin: 0 0 10px 0;
+    color: #c2185b;
+    margin-bottom: 10px;
 }
 
 .success-message p {
     font-size: 14px;
-    color: #155724;
-    margin: 0;
+    color: #8a2856;
 }
 
+/* Animation */
 @keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Mobile Responsive */
+/* 🌸 Mobile Responsive */
 @media (max-width: 768px) {
     #contact {
-        padding: 50px 15px;
-    }
-
-    .section-title {
-        font-size: 32px;
-    }
-
-    .section-subtitle {
-        font-size: 14px;
+        padding: 50px 10px;
     }
 
     .contact-container {
         gap: 30px;
     }
 
-    .contact-info,
-    .contact-form-wrapper {
+    .contact-info, .contact-form-wrapper {
         padding: 25px;
+        border-radius: 15px;
     }
 
-    .contact-info h3,
-    .contact-form h3 {
-        font-size: 24px;
-        margin-bottom: 20px;
-    }
-
-    .info-card {
-        padding: 15px;
-        gap: 15px;
-    }
-
-    .info-icon {
-        font-size: 24px;
-        min-width: 45px;
-        height: 45px;
-    }
-
-    .info-content h4 {
-        font-size: 16px;
-    }
-
-    .info-content p {
-        font-size: 13px;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        padding: 10px 14px;
-        font-size: 14px;
+    .contact-info h3, .contact-form h3 {
+        font-size: 22px;
     }
 
     .submit-btn {
-        padding: 12px 25px;
+        padding: 12px 20px;
         font-size: 15px;
     }
 }
 
-@media (max-width: 480px) {
-    .section-title {
-        font-size: 28px;
-    }
-
-    .contact-info,
-    .contact-form-wrapper {
-        padding: 20px;
-    }
-
-    .contact-info h3,
-    .contact-form h3 {
-        font-size: 22px;
-    }
-}
-        
         /* Footer Overall */
 footer {
     background-color: white;
