@@ -16,54 +16,41 @@
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       overflow-x: hidden;
-      background: #0a0a0a;
+      background: #f8f9fa;
+      color: #333;
     }
 
-    /* Animated Background Particles */
-    .particles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 0;
-    }
-    
-    .particle {
-      position: absolute;
-      background: rgba(212, 175, 55, 0.1);
-      border-radius: 50%;
-      animation: float 20s infinite ease-in-out;
-    }
-    
-    @keyframes float {
-      0%, 100% { transform: translateY(0) translateX(0); }
-      33% { transform: translateY(-100px) translateX(50px); }
-      66% { transform: translateY(-50px) translateX(-50px); }
+    /* Animated scrolling indicator */
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
     }
 
-    /* Profile Header with Glassmorphism */
+    /* Profile Header - Website Style */
     .profile-header {
       position: relative;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
       text-align: center;
-      padding: 100px 20px 80px;
+      padding: 120px 20px 80px;
       overflow: hidden;
     }
     
     .profile-header::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: 
-        radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(26, 54, 93, 0.15) 0%, transparent 50%);
-      pointer-events: none;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: moveBackground 20s linear infinite;
+    }
+    
+    @keyframes moveBackground {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(50px, 50px); }
     }
     
     .header-content {
@@ -75,54 +62,73 @@
       position: relative;
       display: inline-block;
       margin-bottom: 30px;
-      animation: fadeInScale 1s ease-out;
+      animation: fadeInDown 1s ease-out;
     }
     
-    @keyframes fadeInScale {
+    @keyframes fadeInDown {
       from {
         opacity: 0;
-        transform: scale(0.8);
+        transform: translateY(-50px);
       }
       to {
         opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .profile-img-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .profile-img-wrapper::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      border-radius: 50%;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% {
         transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.1);
+        opacity: 0.5;
       }
     }
     
     .profile-header img {
-      width: 200px;
-      height: 200px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
-      border: 6px solid rgba(255, 255, 255, 0.2);
+      border: 5px solid white;
       object-fit: cover;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
-                  0 0 0 15px rgba(212, 175, 55, 0.1);
-      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      transition: transform 0.5s ease;
     }
     
     .profile-header img:hover {
-      transform: scale(1.1) rotate(5deg);
-      box-shadow: 0 25px 80px rgba(212, 175, 55, 0.4),
-                  0 0 0 20px rgba(212, 175, 55, 0.2);
+      transform: scale(1.1);
     }
     
     .profile-header h1 {
-      font-size: 3rem;
+      font-size: 2.8rem;
       margin-bottom: 15px;
       font-weight: 700;
-      letter-spacing: 2px;
-      background: linear-gradient(135deg, #ffffff, #d4af37);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
       animation: fadeInUp 1s ease-out 0.3s both;
     }
     
     .profile-header p {
-      font-size: 1.3rem;
-      opacity: 0.9;
+      font-size: 1.2rem;
+      opacity: 0.95;
       font-weight: 300;
-      letter-spacing: 1px;
       animation: fadeInUp 1s ease-out 0.6s both;
     }
     
@@ -137,150 +143,211 @@
       }
     }
 
-    /* About Section with Glass Card */
+    /* Stats Section - Animated */
+    .stats-section {
+      background: white;
+      padding: 60px 20px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+    
+    .stats-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      text-align: center;
+    }
+    
+    .stat-item {
+      animation: fadeInUp 1s ease-out both;
+    }
+    
+    .stat-item:nth-child(1) { animation-delay: 0.2s; }
+    .stat-item:nth-child(2) { animation-delay: 0.4s; }
+    .stat-item:nth-child(3) { animation-delay: 0.6s; }
+    .stat-item:nth-child(4) { animation-delay: 0.8s; }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+    }
+    
+    .stat-label {
+      font-size: 1rem;
+      color: #666;
+      font-weight: 500;
+    }
+
+    /* About Section - Website Style */
     .profile-about {
-      position: relative;
       padding: 80px 20px;
-      background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+      background: #f8f9fa;
     }
     
     .about-container {
       max-width: 1000px;
       margin: 0 auto;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 30px;
-      padding: 60px 50px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 1s ease-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+    
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: #333;
+      margin-bottom: 15px;
+      font-weight: 700;
       animation: fadeInUp 1s ease-out;
     }
     
-    .profile-about h2 {
-      color: #d4af37;
-      margin-bottom: 30px;
-      font-size: 2.5rem;
-      text-align: center;
-      font-weight: 700;
-      position: relative;
-      display: inline-block;
-      width: 100%;
-    }
-    
-    .profile-about h2::after {
+    .section-title::after {
       content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
+      display: block;
+      width: 80px;
       height: 4px;
-      background: linear-gradient(90deg, transparent, #d4af37, transparent);
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      margin: 0 auto;
       border-radius: 2px;
+      animation: expandWidth 1s ease-out;
     }
     
-    .profile-about p {
-      line-height: 2;
-      color: #e0e0e0;
-      text-align: center;
+    @keyframes expandWidth {
+      from { width: 0; }
+      to { width: 80px; }
+    }
+    
+    .about-content {
+      background: white;
+      padding: 50px;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 1s ease-out 0.3s both;
+    }
+    
+    .about-content:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 50px rgba(102, 126, 234, 0.15);
+    }
+    
+    .about-content p {
+      line-height: 1.8;
+      color: #555;
       font-size: 1.1rem;
       margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .skills-section {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    
+    .skill-item {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      animation: fadeInUp 1s ease-out both;
+    }
+    
+    .skill-item:nth-child(1) { animation-delay: 0.4s; }
+    .skill-item:nth-child(2) { animation-delay: 0.5s; }
+    .skill-item:nth-child(3) { animation-delay: 0.6s; }
+    
+    .skill-item:hover {
+      transform: translateY(-5px) scale(1.05);
+    }
+    
+    .skill-item i {
+      font-size: 2rem;
+      margin-bottom: 10px;
     }
 
-    /* Gallery Section */
+    /* Gallery Section - Website Style */
     .gallery {
       padding: 80px 20px;
-      background: #0a0a0a;
-    }
-    
-    .gallery h2 {
-      text-align: center;
-      color: #d4af37;
-      margin-bottom: 50px;
-      font-size: 2.5rem;
-      font-weight: 700;
-      position: relative;
-      display: inline-block;
-      width: 100%;
-    }
-    
-    .gallery h2::after {
-      content: '';
-      position: absolute;
-      bottom: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 120px;
-      height: 4px;
-      background: linear-gradient(90deg, transparent, #d4af37, transparent);
-      border-radius: 2px;
+      background: white;
     }
     
     .gallery-container {
+      max-width: 1200px;
+      margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
-      max-width: 1200px;
-      margin: 0 auto;
       padding: 0 10px;
     }
     
     .gallery-item {
       position: relative;
       overflow: hidden;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      transition: transform 0.5s ease;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 1s ease-out both;
+      background: white;
     }
+    
+    .gallery-item:nth-child(1) { animation-delay: 0.2s; }
+    .gallery-item:nth-child(2) { animation-delay: 0.4s; }
+    .gallery-item:nth-child(3) { animation-delay: 0.6s; }
+    .gallery-item:nth-child(4) { animation-delay: 0.8s; }
     
     .gallery-item:hover {
       transform: translateY(-10px);
+      box-shadow: 0 15px 50px rgba(102, 126, 234, 0.2);
     }
     
     .gallery-item img {
       width: 100%;
-      height: 300px;
+      height: 280px;
       object-fit: cover;
-      transition: transform 0.7s ease;
-    }
-    
-    .gallery-item:hover img {
-      transform: scale(1.2);
-    }
-    
-    .gallery-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.8) 100%);
-      opacity: 0;
-      transition: opacity 0.5s ease;
-      display: flex;
-      align-items: flex-end;
-      padding: 20px;
-    }
-    
-    .gallery-item:hover .gallery-overlay {
-      opacity: 1;
-    }
-    
-    .overlay-text {
-      color: white;
-      font-size: 1.2rem;
-      font-weight: 600;
-      transform: translateY(20px);
       transition: transform 0.5s ease;
     }
     
-    .gallery-item:hover .overlay-text {
-      transform: translateY(0);
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    
+    .gallery-caption {
+      padding: 20px;
+      background: white;
+    }
+    
+    .gallery-caption h3 {
+      color: #333;
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+    
+    .gallery-caption p {
+      color: #666;
+      font-size: 0.9rem;
     }
 
-    /* Contact Section with Premium Design */
+    /* Contact Section - Website Style */
     .contact {
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
       text-align: center;
       padding: 80px 20px;
@@ -295,54 +362,60 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: 
-        radial-gradient(circle at 30% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 70% 80%, rgba(26, 54, 93, 0.1) 0%, transparent 50%);
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: moveBackground 20s linear infinite;
     }
     
     .contact-content {
       position: relative;
       z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
     }
     
     .contact h2 {
       margin-bottom: 40px;
       font-size: 2.5rem;
       font-weight: 700;
-      color: #d4af37;
+      animation: fadeInDown 1s ease-out;
     }
     
     .contact-info {
       display: flex;
       justify-content: center;
-      gap: 50px;
+      gap: 40px;
       margin-bottom: 40px;
       flex-wrap: wrap;
+      animation: fadeInUp 1s ease-out 0.3s both;
     }
     
     .contact-item {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(10px);
-      padding: 20px 40px;
+      padding: 25px 40px;
       border-radius: 15px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       transition: all 0.3s ease;
+      animation: fadeInUp 1s ease-out both;
     }
     
+    .contact-item:nth-child(1) { animation-delay: 0.4s; }
+    .contact-item:nth-child(2) { animation-delay: 0.6s; }
+    
     .contact-item:hover {
-      background: rgba(212, 175, 55, 0.1);
+      background: rgba(255, 255, 255, 0.25);
       transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
     }
     
     .contact-item i {
       margin-right: 10px;
-      color: #d4af37;
       font-size: 1.2rem;
     }
     
     .social-links {
-      margin-top: 30px;
+      margin: 40px 0;
+      animation: fadeInUp 1s ease-out 0.8s both;
     }
     
     .social-links a {
@@ -352,48 +425,48 @@
       width: 50px;
       height: 50px;
       margin: 0 10px;
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 50%;
       color: white;
       font-size: 20px;
-      transition: all 0.4s ease;
+      transition: all 0.3s ease;
     }
     
     .social-links a:hover {
-      background: #d4af37;
-      transform: translateY(-5px) rotate(360deg);
-      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+      background: white;
+      color: #667eea;
+      transform: translateY(-5px) scale(1.1);
     }
 
     .back-btn {
       display: inline-block;
-      margin-top: 40px;
+      margin-top: 30px;
       padding: 15px 40px;
-      background: linear-gradient(135deg, #d4af37, #b8941f);
-      color: white;
+      background: white;
+      color: #667eea;
       border-radius: 50px;
       text-decoration: none;
       font-weight: 600;
       font-size: 1.1rem;
-      transition: all 0.4s ease;
-      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      animation: fadeInUp 1s ease-out 1s both;
     }
     
     .back-btn:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
-      background: linear-gradient(135deg, #b8941f, #d4af37);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+      background: #f8f9fa;
     }
 
     footer {
-      background: #000;
-      color: #888;
+      background: #1a1a1a;
+      color: #999;
       text-align: center;
       padding: 30px;
       font-size: 0.95rem;
-      border-top: 1px solid rgba(212, 175, 55, 0.2);
     }
 
     @media (max-width: 768px) {
@@ -406,80 +479,126 @@
         height: 150px;
       }
       
-      .about-container {
-        padding: 40px 30px;
+      .about-content {
+        padding: 30px 20px;
       }
       
       .contact-info {
         flex-direction: column;
         gap: 20px;
       }
+      
+      .stat-number {
+        font-size: 2.5rem;
+      }
     }
   </style>
 </head>
 
 <body>
-  <!-- Animated Particles Background -->
-  <div class="particles">
-    <div class="particle" style="width: 100px; height: 100px; top: 10%; left: 10%; animation-delay: 0s;"></div>
-    <div class="particle" style="width: 150px; height: 150px; top: 50%; left: 80%; animation-delay: 5s;"></div>
-    <div class="particle" style="width: 80px; height: 80px; top: 70%; left: 20%; animation-delay: 10s;"></div>
-    <div class="particle" style="width: 120px; height: 120px; top: 30%; left: 60%; animation-delay: 7s;"></div>
-  </div>
 
   <!-- Profile Header -->
   <section class="profile-header">
     <div class="header-content">
       <div class="profile-img-container">
-        <img src="https://i.postimg.cc/FRXrP0bM/kailash.jpg" alt="Kailash Kumar">
+        <div class="profile-img-wrapper">
+          <img src="https://i.postimg.cc/FRXrP0bM/kailash.jpg" alt="Kailash Kumar">
+        </div>
       </div>
       <h1>Kailash Kumar</h1>
       <p>Event Manager | Sparking Event Management Group Patna</p>
     </div>
   </section>
 
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="stats-container">
+      <div class="stat-item">
+        <div class="stat-number">6+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">150+</div>
+        <div class="stat-label">Events Managed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">120+</div>
+        <div class="stat-label">Happy Clients</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">4.9</div>
+        <div class="stat-label">Client Rating</div>
+      </div>
+    </div>
+  </section>
+
   <!-- About Section -->
   <section class="profile-about">
     <div class="about-container">
-      <h2>About Kailash</h2>
-      <p>
-        Kailash Kumar is a dedicated Event Manager with expertise in planning and executing 
-        seamless corporate and social events. With 6 years of experience, he specializes in 
-        coordinating logistics, vendor management, and ensuring every event runs flawlessly.
-      </p>
-      <p>
-        His attention to detail and organizational skills make him an invaluable member of 
-        Sparking Event Management Group Patna, guaranteeing exceptional experiences for all clients.
-      </p>
+      <div class="section-title">
+        <h2>About Kailash</h2>
+      </div>
+      <div class="about-content">
+        <p>
+          Kailash Kumar is a dedicated Event Manager with expertise in planning and executing 
+          seamless corporate and social events. With 6 years of experience, he specializes in 
+          coordinating logistics, vendor management, and ensuring every event runs flawlessly.
+        </p>
+        <p>
+          His attention to detail and organizational skills make him an invaluable member of 
+          Sparking Event Management Group Patna, guaranteeing exceptional experiences for all clients.
+        </p>
+        
+        <div class="skills-section">
+          <div class="skill-item">
+            <i class="fas fa-tasks"></i>
+            <h3>Event Planning</h3>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-users"></i>
+            <h3>Vendor Management</h3>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-clipboard-check"></i>
+            <h3>Logistics Coordination</h3>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Gallery Section -->
   <section class="gallery">
-    <h2>Previous Events</h2>
+    <div class="section-title">
+      <h2>Previous Events</h2>
+    </div>
     <div class="gallery-container">
       <div class="gallery-item">
         <img src="Images/kailash-event1.jpg" alt="Event 1">
-        <div class="gallery-overlay">
-          <span class="overlay-text">Corporate Event</span>
+        <div class="gallery-caption">
+          <h3>Corporate Event</h3>
+          <p>Annual Business Conference 2024</p>
         </div>
       </div>
       <div class="gallery-item">
         <img src="Images/kailash-event2.jpg" alt="Event 2">
-        <div class="gallery-overlay">
-          <span class="overlay-text">Wedding Celebration</span>
+        <div class="gallery-caption">
+          <h3>Wedding Celebration</h3>
+          <p>Grand Wedding Reception</p>
         </div>
       </div>
       <div class="gallery-item">
         <img src="Images/kailash-event3.jpg" alt="Event 3">
-        <div class="gallery-overlay">
-          <span class="overlay-text">Social Gathering</span>
+        <div class="gallery-caption">
+          <h3>Social Gathering</h3>
+          <p>Community Festival Event</p>
         </div>
       </div>
       <div class="gallery-item">
         <img src="Images/kailash-event4.jpg" alt="Event 4">
-        <div class="gallery-overlay">
-          <span class="overlay-text">Brand Launch</span>
+        <div class="gallery-caption">
+          <h3>Brand Launch</h3>
+          <p>Product Launch Ceremony</p>
         </div>
       </div>
     </div>
